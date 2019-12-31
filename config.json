@@ -1,0 +1,29 @@
+{
+    "baseurl": "https://example.org/",
+    "languageCode": "en-us",
+    "title": "Hugo Bootstrap v4 Blog",
+    "paginate": 5,
+    "enableRobotsTXT": true,
+    "menu": {
+        "navbar": [
+            {
+                "identifier": "home",
+                "name": "Home",
+                "url": "/",
+                "weight": -200
+            },
+            {
+                "identifier": "blog",
+                "name": "Blog",
+                "title": "blog section",
+                "url": "/posts",
+                "weight": -110
+            }
+        ]
+    },
+    "params": {
+        "author": "Your Name",
+        "description": "A simple Hugo with Webpack based on the Bootstrap v4.",
+        "date_format": "Mon Jan 02, 2006"
+    }
+}

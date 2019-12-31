@@ -1,0 +1,26 @@
+<div class="card">
+    {{ $original := .Resources.GetMatch "featuredImage" }}
+    {{ if $original }}
+    {{ .Scratch.Set "image_card" ($original.Fill "400x300 Center") }}
+    {{ $image_card := .Scratch.Get "image_card" }}
+    <img src="{{ $image_card.RelPermalink }}" class="card-img-top" alt="{{ .Title }}">
+    {{ end }}
+    <div class="card-body">
+        <h6 class="font-weight-bold">in<span class="text-uppercase text-muted ml-2">
+                {{ range .Params.categories }}
+                &nbsp;<a class="text-secondary" href="/categories/{{ . | urlize }}">{{ . }}</a>
+                {{ end }}
+            </span> </h6>
+        <h6 class="text-uppercase"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML  }}</a></h6>
+        <p class="text-muted"><small>{{ .Date.Format "Jan 2, 2006" }} - {{ .FuzzyWordCount }} Words</small></p>
+        <p class="font-weight-normal" style="line-height: 120%;">{{ .Params.subTitle | safeHTML }}</p>
+        <p class="font-weight-light" style="line-height: 120%;">{{ .Summary }}</p>
+
+    </div>
+    <div class="card-footer bg-white border-0">
+        <div class="float-right"><a class="text-muted stretched-link"
+                href='{{ .RelPermalink }}'>
+                {{ i18n "readMore" }}</a>
+        </div>
+    </div>
+</div>

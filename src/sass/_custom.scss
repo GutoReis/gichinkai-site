@@ -1,0 +1,32 @@
+
+@import "color";
+
+$body-color: $oc-gray-9;
+
+
+$blue:    $oc-blue-7;
+$indigo:  $oc-indigo-7;
+$purple:  $oc-violet-7;
+$pink:    $oc-pink-7;
+$red:     $oc-red-7;
+$orange:  $oc-orange-7;
+$yellow:  $oc-yellow-7;
+$green:   $oc-green-7;
+$teal:    $oc-teal-7;
+$cyan:    $oc-cyan-7;
+
+$primary:       $red;
+$secondary:     $oc-gray-6;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $oc-gray-1;
+$dark:          $oc-gray-8;
+
+$enable-shadows: true;
+$enable-gradients: true;
+$enable-responsive-font-sizes: true;
+$enable-transitions: true;
+$enable-print-styles: true;
+
