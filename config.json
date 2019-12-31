@@ -1,7 +1,7 @@
 {
     "baseurl": "https://example.org/",
     "languageCode": "en-us",
-    "title": "Hugo Bootstrap v4 Blog",
+    "title": "Associação Gichinkai de Karate-do",
     "paginate": 5,
     "enableRobotsTXT": true,
     "menu": {
@@ -11,6 +11,12 @@
                 "name": "Home",
                 "url": "/",
                 "weight": -200
+            },
+            {
+                "identifier": "memorial",
+                "name": "Memorial",
+                "url": "/memorial",
+                "weight": -180
             },
             {
                 "identifier": "blog",
