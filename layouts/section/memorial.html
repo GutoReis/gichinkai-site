@@ -1,7 +1,17 @@
 {{ define "main" }}
 <div class="container">
-    <h1>{{ .Title | markdownify }}</h1>
-
-    {{ .Content }}
+    <h1 class="memorial-title text-center">{{ .Params.memory | markdownify }}</h1>
+    {{ with .Params.images }}
+        <figure class="title-image">
+            <img src="{{ index . 0 }}" alt="">
+        </figure>
+    {{ end }}
+    <article>
+        <div class="columns is-centered">
+            <div class="column max-1000px">
+                {{ .Content }}
+            </div>
+        </div>
+    </article>
 </div>
 {{ end }}
