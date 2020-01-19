@@ -1,3 +1,69 @@
+{{ define "page_css"}}
+<style>
+  /* Set the size of the div element that contains the map */
+  #map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+  }
+</style>
+{{ end }}
+
+{{ define "page_js"}}
+<script>
+  // Initialize and add the map
+  console.log("Teste initMap");
+  function initMap() {
+    // The location of Dojo's
+    var augusta = {lat: -23.5615359, lng: -46.6635528};
+    var contentStringAugusta = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h3 id="firstHeading" class="firstHeading">Aikido Nova Era</h3>'+
+        '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
+        '</div>';
+    var infowindowAugusta = new google.maps.InfoWindow({content: contentStringAugusta});
+
+    var tatuape = {lat: -23.5431694, lng: -46.5674751};
+    var contentStringTatuape = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h3 id="firstHeading" class="firstHeading">Tatuape</h3>'+
+        '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
+        '</div>';
+    var infowindowTatuape = new google.maps.InfoWindow({content: contentStringTatuape});
+
+    var ciaAthletica = {lat: -23.5620661, lng: -46.5619989};
+    var contentStringCiaAthletica = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h3 id="firstHeading" class="firstHeading">Cia Athletica Analia Franco</h3>'+
+        '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
+        '</div>';
+    var infowindowCiaAthletica = new google.maps.InfoWindow({content: contentStringCiaAthletica});
+
+    // The map, centered at dojo
+    var map = new google.maps.Map(document.getElementById("map"), {zoom: 13, center: {lat: -23.5552111, lng: -46.6187217}});
+
+    // The marker, positioned at augusta
+    var markerAugusta = new google.maps.Marker({position: augusta, map: map, title: 'Aikido Nova Era'});
+    markerAugusta.addListener('click', function(){
+      infowindowAugusta.open(map, markerAugusta);
+    });
+    var markerTatuape = new google.maps.Marker({position: tatuape, map: map});
+    markerTatuape.addListener('click', function() {
+      infowindowTatuape.open(map, markerTatuape);
+    });
+    var markerCiaAthletica = new google.maps.Marker({position: ciaAthletica, map:map});
+    markerCiaAthletica.addListener('click', function() {
+      infowindowCiaAthletica.open(map, markerCiaAthletica);
+    });
+  }
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbUik7BI-m72iILlFRt3Hi9Rt6MUW0_2k&callback=initMap">
+</script>
+{{ end }}
+
 {{ define "main"}}
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -177,11 +243,18 @@
 
   <!-- /END THE FEATURETTES -->
 
-  <!-- CONTACT AREA -->
-  <div class="row">
-    <h1>Contact area with a feature of hover over the area to show a photo of the local when mouse over the location</h1>
+  <!-- Locais de treino -->
+  <hr class="featurette-divider">
+
+  <div class="container about-karate">
+    <div class="row">
+      <h2 class="mx-auto">Locais de Treino</h2>
+      <div id="map"></div>
+    </div>
   </div>
 
 </div>
+
+
 
 {{ end }}
