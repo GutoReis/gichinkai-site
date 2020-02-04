@@ -19,7 +19,9 @@
         '<div id="siteNotice">'+
         '</div>'+
         '<h3 id="firstHeading" class="firstHeading">Aikido Nova Era</h3>'+
+        '<a href="https://www.google.com/maps/dir//-23.5615359,-46.6635528/@-23.561536,-46.663553,16z?hl=en" target="_blank">'+
         '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
+        '</a>'+
         '</div>';
     var infowindowAugusta = new google.maps.InfoWindow({content: contentStringAugusta});
 
@@ -28,7 +30,9 @@
         '<div id="siteNotice">'+
         '</div>'+
         '<h3 id="firstHeading" class="firstHeading">Tatuape</h3>'+
+        '<a href="https://www.google.com/maps/dir//-23.5431743,-46.5652864/@-23.543174,-46.565286,16z?hl=en" target="_blank">'+
         '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
+        '</a>';
         '</div>';
     var infowindowTatuape = new google.maps.InfoWindow({content: contentStringTatuape});
 
@@ -37,7 +41,9 @@
         '<div id="siteNotice">'+
         '</div>'+
         '<h3 id="firstHeading" class="firstHeading">Cia Athletica Analia Franco</h3>'+
+        '<a href="https://www.google.com/maps/dir//-23.562071,-46.5598102/@-23.562071,-46.55981,16z?hl=en" target="_blank">'+
         '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
+        '</a>';
         '</div>';
     var infowindowCiaAthletica = new google.maps.InfoWindow({content: contentStringCiaAthletica});
 
@@ -167,9 +173,10 @@
         massa justo sit amet risus.</p>
     </div><!-- /.col-lg-4 -->
   </div><!-- /.row -->
+</div>
 
-  <!-- Quem pode treinar featurette-** -->
-
+<!-- Quem pode treinar featurette-** -->
+<div class="container marketing">
   <hr class="featurette-divider">
 
   <div class="container about-karate">
@@ -240,10 +247,11 @@
       <img class="featurette-image img-fluid mx-auto" src="https://source.unsplash.com/c_xS7ngiWhQ/500x500" alt="Generic placeholder image">
     </div>
   </div>
+</div>
+<!-- /END THE FEATURETTES -->
 
-  <!-- /END THE FEATURETTES -->
-
-  <!-- Locais de treino -->
+<!-- Locais de treino -->
+<div class="container marketing">
   <hr class="featurette-divider">
 
   <div class="container about-karate">
@@ -251,10 +259,43 @@
       <h2 class="mx-auto">Locais de Treino</h2>
       <div id="map"></div>
     </div>
+    <!-- Contact area -->
+    <div class="row">
+      <div class="mx-auto text-center">
+        <h2>Contato</h2>
+        <i class="material-icons-outlined" style="font-size:20px;color: var(--red);">gmail</i>
+        gichinkai@gmail.com
+        <i class="material-icons-outlined" style="font-size:20px;color: var(--red);">phone</i>
+        (11) 98525-5207
+      </div>
+    </div>
+    <form>
+      <div class="form-row  justify-content-center">
+        <div class="col-sm-4 mr-1 mb-3">
+          <label for="inputName" class="sr-only" for="inputName">Nome</label>
+          <input type="text" class="form-control form-control-sm" id="inputName" placeholder="Nome">
+        </div>
+        <div class="col-sm-4 mr-1 mb-3">
+          <label for="inputEmail" class="sr-only" for="inputEmail">Email</label>
+          <input type="email" class="form-control form-control-sm" id="inputEmail" placeholder="Email">
+        </div>
+        <div class="col-sm-4 mr-1 mb-3">
+          <label for="inputPhone" class="sr-only" for="inputPhone">Telefone</label>
+          <input type="tel" class="form-control form-control-sm" id="inputPhone" placeholder="Telefone">
+        </div>
+        <div class="col-sm-4 mr-1 mb-3">
+          <label for="inputSub" class="sr-only" for="inputSub">Assunto</label>
+          <input type="text" class="form-control form-control-sm" id="inputSub" placeholder="Assunto">
+        </div>
+        <div class="col-md-8 mb-3">
+          <label for="inputMsg" class="sr-only" for="inputMsg">Mensagem</label>
+          <textarea class="form-control" id="inputMsg" rows="4" placeholder="Mensagem"></textarea>
+        </div>
+        <div class="col-md-8 text-right">
+          <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+        </div>
+      </div>
+    </form>
   </div>
-
 </div>
-
-
-
 {{ end }}
