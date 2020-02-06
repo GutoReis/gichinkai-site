@@ -112,3 +112,10 @@ body {
 .memorial-title {
   padding-top: 1em;
 }
+
+.btn-primary {
+  background-image: none;
+  &:hover {
+    background-image: none;
+  }
+}

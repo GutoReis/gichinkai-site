@@ -54,7 +54,11 @@ $oc-red-list: (
   "6": #fa5252,
   "7": #f03e3e,
   "8": #e03131,
-  "9": #c92a2a
+  "9": #c92a2a,
+  // Gichinkai Red color list
+  "10": #e23926, //Normal
+  "11": #ff6f51, //Light
+  "12": #a80000 //Dark
 );
 
 $oc-red-0: map-get($oc-red-list, "0");
@@ -67,6 +71,9 @@ $oc-red-6: map-get($oc-red-list, "6");
 $oc-red-7: map-get($oc-red-list, "7");
 $oc-red-8: map-get($oc-red-list, "8");
 $oc-red-9: map-get($oc-red-list, "9");
+$oc-red-10: map-get($oc-red-list, "10");
+$oc-red-11: map-get($oc-red-list, "11");
+$oc-red-12: map-get($oc-red-list, "12");
 
 
 //  Pink
