@@ -1,5 +1,6 @@
 
 @import "color";
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans:400,700&display=swap');
 
 $body-color: $oc-gray-9;
 
@@ -30,3 +31,6 @@ $enable-responsive-font-sizes: true;
 $enable-transitions: true;
 $enable-print-styles: true;
 
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$headings-font-family: 'Kaushan Script', cursive;;
+$headings-color: $primary;
