@@ -64,6 +64,10 @@ body {
   }
 }
 
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
 /* Featurettes (Quem pode treinar)
 ------------------------- */
 
@@ -94,11 +98,11 @@ body {
   }
 }
 
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
-}
+// @media (min-width: 62em) {
+//   .featurette-heading {
+//     margin-top: 7rem;
+//   }
+// }
 
 .max-800px {
   max-width: 800px;
