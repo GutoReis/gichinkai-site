@@ -36,6 +36,14 @@ body {
   }
 }
 
+.overlay-div {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #000;
+  opacity: .1;
+}
+
 /* ABOUT KARATE CONTENT */
 .about-karate {
   .row {
