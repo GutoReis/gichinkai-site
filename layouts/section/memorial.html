@@ -1,11 +1,19 @@
 {{ define "main" }}
-<div class="container">
-    <h1 class="memorial-title text-center">{{ .Params.memory | markdownify }}</h1>
-    {{ with .Params.images }}
-        <figure class="title-image">
-            <img src="{{ index . 0 }}" alt="">
-        </figure>
-    {{ end }}
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active bg-primary" style="height: 24rem;">
+        <img class="first-slide" src="{{ .Params.image }}" alt="First slide">
+        <div class="overlay-div"></div>
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1 class="text-white">{{ .Params.memory }}</h1>
+            <p>{{ .Params.intro }}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+<div class="container justify-content-center">
+    <div class="container justify-content-center col-lg-10 mt-5 mb-5">
     <article>
         <div class="columns is-centered">
             <div class="column max-1000px">
@@ -13,5 +21,6 @@
             </div>
         </div>
     </article>
+</div>
 </div>
 {{ end }}

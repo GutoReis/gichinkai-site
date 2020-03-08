@@ -3,7 +3,8 @@ title: "Memorial"
 date: 2019-12-23T15:15:42-03:00
 draft: true
 memory: Em memória de Sensei Nakaema
-images: ["https://source.unsplash.com/SBK40fdKbAg/1100x400"]
+image: "https://source.unsplash.com/SBK40fdKbAg/1600x700"
+intro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit consequat quam ac pretium. Nam a ante eget dui maximus placerat convallis nec felis."
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit consequat quam ac pretium. Nam a ante eget dui maximus placerat convallis nec felis. Aliquam enim nibh, consectetur at nisl vel, molestie mollis justo. Phasellus sed dolor eget dui bibendum pretium at a orci. Cras euismod, ipsum non dictum luctus, lacus est pellentesque est, non pulvinar urna sem at velit. Ut finibus nec ex sit amet faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras dignissim vel nibh at scelerisque. Maecenas quis faucibus massa. Fusce tempor dui accumsan ex pellentesque, quis congue turpis pretium. Morbi in velit massa. Vivamus lacinia lorem eget erat dapibus fermentum. Donec arcu nisi, porta nec posuere non, mollis ut urna.
