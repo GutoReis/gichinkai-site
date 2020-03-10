@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active bg-primary" style="height: 24rem;">
+        <img class="" src="{{ .Params.image }}" alt="First slide">
+        <div class="overlay-div"></div>
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1 class="text-white">{{ .Params.nossa_historia }}</h1>
+            <p>{{ .Params.intro }}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+<div class="container justify-content-center">
+    <div class="container justify-content-center col-lg-10 mt-5 mb-5">
+    <article>
+        <div class="columns is-centered">
+            <div class="column max-1000px">
+                {{ .Content }}
+            </div>
+        </div>
+    </article>
+</div>
+</div>
+{{ end }}

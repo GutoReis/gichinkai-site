@@ -19,6 +19,12 @@
                 "weight": -180
             },
             {
+                "identifier": "our_history",
+                "name": "Nossa historia",
+                "url": "/nossa_historia",
+                "weight": -150
+            },
+            {
                 "identifier": "blog",
                 "name": "Blog",
                 "title": "blog section",
