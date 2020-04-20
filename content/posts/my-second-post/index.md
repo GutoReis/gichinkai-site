@@ -5,16 +5,10 @@
    "description": "My new page",
    "title": "My Second Post",
    "subTitle": "My new page subTitle",
-   "resources": [{
-        "name": "featuredImage",
-        "src": "images/wayne-bishop-7YUW7fvIYoQ-unsplash.jpg"
-    }],
-     "categories": [
-        "bike"
-    ],
-    "date": "2019-09-01T11:48:38-03:00",
-    "lastmod": "2019-09-01T11:48:38-03:00",
-    "tags": [
+   "coverImage": {"name": "featuredImage",
+                  "src": "images/wayne-bishop-7YUW7fvIYoQ-unsplash.jpg"},
+   "categories": ["bike"],
+   "tags": [
         "bike",
         "engine",
         "red"
