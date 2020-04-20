@@ -1,42 +1,61 @@
-
 {{ define "main" }}
-
-<!-- template: layouts/default/single.html -->
 <section id="main">
-  <h1 id="title">{{ .Title }}</h1>
-  <div>
-        <article id="content">
-           {{ .Content }}
-        </article>
-  </div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active bg-primary" style="height: 24rem;">
+                <img class="" src="{{ .Params.coverImage.src }}" alt="{{ .Params.coverImage.name }}">
+                <div class="overlay-div"></div>
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1 class="text-white">{{ .Params.title }}</h1>
+                        <p>{{ .Params.subTitle }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container justify-content-center">
+        <div class="container justify-content-center col-lg-10 mt-5 mb-5">
+            <article id="content">
+                <div class="columns is-centered">
+                    <div class="column max-1000px">
+                        {{ .Content }}
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
 </section>
 <aside id="meta">
     <div>
-    <section>
-      <h4 id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
-      <h5 id="wordcount"> {{ .WordCount }} Words </h5>
-    </section>
-    {{ with .Params.topics }}
-    <ul id="topics">
-      {{ range . }}
-        <li><a href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-    {{ with .Params.tags }}
-    <ul id="tags">
-      {{ range . }}
-        <li> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
-      {{ end }}
-    </ul>
-    {{ end }}
+        <section>
+            <h4 id="date">{{ .Date.Format "Mon Jan 2, 2006" }}</h4>
+            <h5 id="wordcount">{{ .WordCount}} Palavras</h5>
+        </section>
+        
+        {{ with .Params.topics }}
+        <ul id="topics">
+            {{ range . }}
+            <li><a href="{{ "topics" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+            {{ end }}
+        </ul>
+        {{ end }}
+
+        {{ with .Params.tags }}
+        <ul id="tags">
+            {{ range . }}
+                <li><a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+            {{ end }}
+        </ul>
+        {{ end }}
     </div>
+
     <div>
         {{ with .PrevInSection }}
-          <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
+            <a class="previous" href="{{ .Permalink }}">{{ .Title }}</a>
         {{ end }}
         {{ with .NextInSection }}
-          <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
+            <a class="next" href="{{ .Permalink }}">{{ .Title }}</a>
         {{ end }}
     </div>
 </aside>
