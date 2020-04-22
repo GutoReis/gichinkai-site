@@ -3,7 +3,7 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active bg-primary" style="height: 24rem;">
-                <img class="" src="{{ .Params.coverImage.src }}" alt="{{ .Params.coverImage.name }}">
+                <img class="post-banner" src="{{ .Params.coverImage.src }}" alt="{{ .Params.coverImage.name }}">
                 <div class="overlay-div"></div>
                 <div class="container">
                     <div class="carousel-caption text-left">
@@ -15,7 +15,28 @@
         </div>
     </div>
     <div class="container justify-content-center">
-        <div class="container justify-content-center col-lg-10 mt-5 mb-5">
+        <div class="container justify-content-center col-lg-10 mb-5">
+            <div class="mb-3" style="font-size: small;">
+                <section>
+                    <p id="date">{{ .Date.Format "Mon Jan 2, 2006" }} | {{ .WordCount}} Palavras</p>
+                </section>
+                
+                {{ with .Params.topics }}
+                <ul class="list-group list-group-horizontal" id="topics">
+                    {{ range . }}
+                    <li class="list-group-item"><a href="{{ "topics" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+        
+                {{ with .Params.tags }}
+                <ul id="tags">
+                    {{ range . }}
+                        <li><a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </div>
             <article id="content">
                 <div class="columns is-centered">
                     <div class="column max-1000px">
@@ -27,29 +48,6 @@
     </div>
 </section>
 <aside id="meta">
-    <div>
-        <section>
-            <h4 id="date">{{ .Date.Format "Mon Jan 2, 2006" }}</h4>
-            <h5 id="wordcount">{{ .WordCount}} Palavras</h5>
-        </section>
-        
-        {{ with .Params.topics }}
-        <ul id="topics">
-            {{ range . }}
-            <li><a href="{{ "topics" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
-            {{ end }}
-        </ul>
-        {{ end }}
-
-        {{ with .Params.tags }}
-        <ul id="tags">
-            {{ range . }}
-                <li><a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
-            {{ end }}
-        </ul>
-        {{ end }}
-    </div>
-
     <div>
         {{ with .PrevInSection }}
             <a class="previous" href="{{ .Permalink }}">{{ .Title }}</a>
