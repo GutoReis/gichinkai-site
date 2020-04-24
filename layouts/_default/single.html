@@ -1,6 +1,6 @@
 {{ define "main" }}
 <section id="main">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide mb-4" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active bg-primary" style="height: 24rem;">
                 <img class="post-banner" src="{{ .Params.coverImage.src }}" alt="{{ .Params.coverImage.name }}">
@@ -18,21 +18,12 @@
         <div class="container justify-content-center col-lg-10 mb-5">
             <div class="mb-3" style="font-size: small;">
                 <section>
-                    <p id="date">{{ .Date.Format "Mon Jan 2, 2006" }} | {{ .WordCount}} Palavras</p>
-                </section>
-                
-                {{ with .Params.topics }}
-                <ul class="list-group list-group-horizontal" id="topics">
-                    {{ range . }}
-                    <li class="list-group-item"><a href="{{ "topics" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
-                    {{ end }}
-                </ul>
-                {{ end }}
-        
+                    <p class="mb-1" id="date">{{ .Date.Format "Mon Jan 2, 2006" }} | {{ .WordCount}} Palavras</p>
+                </section>        
                 {{ with .Params.tags }}
-                <ul id="tags">
+                <ul class="list-inline" id="tags">
                     {{ range . }}
-                        <li><a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+                        <li class="list-inline-item"><i class="material-icons" style="font-size:15px;color: var(--primary);">local_offer</i> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
                     {{ end }}
                 </ul>
                 {{ end }}
@@ -48,11 +39,14 @@
     </div>
 </section>
 <aside id="meta">
-    <div>
+    <div class="container justify-content-center text-center">
         {{ with .PrevInSection }}
             <a class="previous" href="{{ .Permalink }}">{{ .Title }}</a>
+            <i class="material-icons" style="font-size:15px;color: var(--primary);">chevron_left</i>
         {{ end }}
+        <i class="material-icons" style="font-size:13px;color: var(--primary);">fiber_manual_record</i>
         {{ with .NextInSection }}
+        <i class="material-icons" style="font-size:15px;color: var(--primary);">chevron_right</i>
             <a class="next" href="{{ .Permalink }}">{{ .Title }}</a>
         {{ end }}
     </div>
