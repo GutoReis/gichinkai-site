@@ -4,8 +4,7 @@
    "lastmod": "2019-12-28T10:13:23-03:00",
    "title": "Welcome Post",
    "description": "Welcome to our blog",
-   "coverImage": {"name": "featureImage",
-                  "src": "images/thao-le-hoang-UpFy6jbnXS4-unsplash.jpg"},
+   "featuredImage": "images/thao-le-hoang-UpFy6jbnXS4-unsplash.jpg",
    "categories": ["karate shotokan"],
     "tags": [
         "karate",
