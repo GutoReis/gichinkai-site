@@ -2,12 +2,13 @@
    "date": "{{ .Date }}",
    "draft": true,
    "lastmod": "{{ .Date }}",
-   "description": "My new page",
    "title": "{{ replace .Name "-" " " | title }}",
-   "subTitle": "My new page subTitle",
-   "featuredImage": "images/page-banner.jpg"
+   "description": "My new page",
+   "featuredImage": "images/page-banner.jpg",
+   "categories": [],
+   "tags": []
 }
 
-**Insert Lead paragraph here.****
+**Insert Lead paragraph here.**
 
 ## New Cool Content
