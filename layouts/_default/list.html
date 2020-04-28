@@ -10,10 +10,11 @@
     <div class="row mb-5 pb-5">
         <div class="col">
             <div class="card-columns">
-                {{ range (.Paginate ( first 10 .Pages.ByWeight )).Pages }}
+                
+                {{ range (.Paginate (.Pages.ByDate.Reverse )).Pages -}}
                     {{ block "newscard" . }}
                         {{ partial "_newscard" . }}
-                    {{end}}
+                    {{ end }}
                 {{ end }}
             </div>
         </div>
