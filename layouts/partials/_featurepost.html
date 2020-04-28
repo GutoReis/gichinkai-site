@@ -1,0 +1,20 @@
+<div id="myCarousel" class="carousel slide mb-5" data-ride="carousel">
+    <div class="carousel-inner">
+        {{ $postImg := .Resources.GetMatch .Params.featuredImage }}
+        <div class="carousel-item active bg-primary" style="height: 24rem;">
+            {{ if $postImg }}
+                <img class="post-banner" src="{{ $postImg.RelPermalink }}" alt="Cover Image">
+            {{ else }}
+                <img class="post-banner" src="" alt="Not Yet">
+            {{ end }}
+            <div class="overlay-div"></div>
+            <div class="container">
+                <div class="carousel-caption text-left">
+                    <h1 class="text-white">{{ .Params.title }}</h1>
+                    <p>{{ .Params.description }}</p>
+                    <p><a class="btn btn-primary btn-lg" href="{{ .Permalink }}" role="button">Saiba mais &raquo;</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

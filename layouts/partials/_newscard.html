@@ -1,9 +1,9 @@
 <div class="card">
-    {{ $original := .Resources.GetMatch "featuredImage" }}
+    {{ $original := .Resources.GetMatch .Params.featuredImage }}
     {{ if $original }}
-    {{ .Scratch.Set "image_card" ($original.Fill "400x300 Center") }}
-    {{ $image_card := .Scratch.Get "image_card" }}
-    <img src="{{ $image_card.RelPermalink }}" class="card-img-top" alt="{{ .Title }}">
+        {{ .Scratch.Set "image_card" ($original.Fill "400x300 Center") }}
+        {{ $image_card := .Scratch.Get "image_card" }}
+        <img src="{{ $image_card.RelPermalink }}" class="card-img-top" alt="{{ .Title }}">
     {{ end }}
     <div class="card-body">
         <h6 class="font-weight-bold">in<span class="text-uppercase text-muted ml-2">
