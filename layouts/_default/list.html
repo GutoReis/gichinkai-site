@@ -1,6 +1,6 @@
 {{ define "main" }}
 <!-- Main jumbotron for a primary marketing message or call to action -->
-{{ range first 1 .Pages }}
+{{ range first 1 .Pages.ByDate.Reverse }}
     {{ block "featurepost" .}}
         {{ partial "_featurepost" . }}
     {{ end }}
