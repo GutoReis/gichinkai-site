@@ -4,7 +4,7 @@
    "lastmod": "2019-12-28T10:13:33-03:00",
    "title": "My Second Post",
    "description": "My new page",
-   "featuredImage": "images/wayne-bishop-7YUW7fvIYoQ-unsplash.jpg",
+   "featuredImage": "images/featured_image.jpg",
    "categories": ["bike"],
    "tags": [
         "bike",

@@ -4,7 +4,7 @@
    "lastmod": "2020-04-28T08:46:15-03:00",
    "title": "My Fourth Post",
    "description": "This is a long description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris faucibus aliquet mauris, ac semper augue cursus et. Morbi id cursus tellus.",
-   "featuredImage": "images/thao-le-hoang-uGlJHMEifB4-unsplash.jpg",
+   "featuredImage": "images/featured_image.jpg",
    "categories": ["japan"],
    "tags": ["samurai", "budo"]
 }

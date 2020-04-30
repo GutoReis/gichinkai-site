@@ -4,7 +4,7 @@
    "lastmod": "2020-04-24T08:49:56-03:00",
    "title": "My Third Post",
    "description": "The third post sample",
-   "featuredImage": "images/wayne-bishop-7YUW7fvIYoQ-unsplash.jpg",
+   "featuredImage": "images/featured_image.jpg",
    "categories": ["karate shotokan"],
    "tags": ["budo"]
 }
