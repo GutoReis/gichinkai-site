@@ -1,5 +1,5 @@
 <div class="card">
-    {{ $original := .Resources.GetMatch .Params.featuredImage }}
+    {{ $original := .Resources.GetMatch "images/*" }}
     {{ if $original }}
         {{ .Scratch.Set "image_card" ($original.Fill "400x300 Center") }}
         {{ $image_card := .Scratch.Get "image_card" }}

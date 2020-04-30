@@ -1,6 +1,6 @@
 <div id="myCarousel" class="carousel slide mb-5" data-ride="carousel">
     <div class="carousel-inner">
-        {{ $postImg := .Resources.GetMatch .Params.featuredImage }}
+        {{ $postImg := .Resources.GetMatch "images/*" }}
         <div class="carousel-item active bg-primary" style="height: 24rem;">
             {{ if $postImg }}
                 <img class="post-banner" src="{{ $postImg.RelPermalink }}" alt="Cover Image">
