@@ -4,7 +4,7 @@
    "lastmod": "{{ .Date }}",
    "title": "{{ replace .Name "-" " " | title }}",
    "description": "My new page",
-   "featuredImage": "images/page-banner.jpg",
+   "featuredImage": "images/featured_image.jpg",
    "categories": [],
    "tags": []
 }

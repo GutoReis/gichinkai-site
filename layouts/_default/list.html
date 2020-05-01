@@ -7,17 +7,20 @@
 {{ end }}
 
 <div class="container">
-    <div class="row mb-5 pb-5">
+    <div class="row mb-3 pb-3">
         <div class="col">
             <div class="card-columns">
-                
-                {{ range (.Paginate (.Pages.ByDate.Reverse )).Pages -}}
+                {{ $paginator := .Paginate (.Pages.ByDate.Reverse) 10}}
+                {{ range $paginator.Pages }}
                     {{ block "newscard" . }}
                         {{ partial "_newscard" . }}
                     {{ end }}
                 {{ end }}
             </div>
         </div>
+    </div>
+    <div class="row justify-content-center mb-3">
+        {{ template "_internal/pagination.html" .}}
     </div>
 </div>
 
