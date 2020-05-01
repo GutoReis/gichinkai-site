@@ -1,5 +1,4 @@
 {{ define "main" }}
-<!-- Main jumbotron for a primary marketing message or call to action -->
 {{ range first 1 .Pages.ByDate.Reverse }}
     {{ block "featurepost" .}}
         {{ partial "_featurepost" . }}
@@ -7,17 +6,15 @@
 {{ end }}
 
 <div class="container">
-    <div class="row mb-3 pb-3">
-        <div class="col">
-            <div class="card-columns">
-                {{ $paginator := .Paginate (.Pages.ByDate.Reverse) 10}}
-                {{ range $paginator.Pages }}
-                    {{ block "newscard" . }}
-                        {{ partial "_newscard" . }}
-                    {{ end }}
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 mb-3">
+        {{ $paginator := .Paginate (.Pages.ByDate.Reverse) 10}}
+        {{ range $paginator.Pages }}
+            <div class="col mb-4">
+                {{ block "newscard_new" . }}
+                    {{ partial "_newscard" . }}
                 {{ end }}
             </div>
-        </div>
+        {{ end }}
     </div>
     <div class="row justify-content-center mb-3">
         {{ template "_internal/pagination.html" .}}
