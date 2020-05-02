@@ -6,7 +6,7 @@
 {{ end }}
 
 <div class="container">
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 mb-3">
+    <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 mb-3">
         {{ $paginator := .Paginate (.Pages.ByDate.Reverse) 10}}
         {{ range $paginator.Pages }}
             <div class="col mb-4">
