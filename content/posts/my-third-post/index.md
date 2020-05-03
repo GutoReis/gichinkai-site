@@ -2,11 +2,11 @@
    "date": "2020-04-24T08:49:56-03:00",
    "draft": true,
    "lastmod": "2020-04-24T08:49:56-03:00",
-   "title": "My Third Post",
-   "description": "The third post sample",
+   "title": "The Dojo",
+   "description": "Some call this place home, work, and more. But this is a place for a way, no matter where it is, what matter is what it is.",
    "featuredImage": "images/featured_image.jpg",
-   "categories": ["karate shotokan"],
-   "tags": ["budo"]
+   "categories": ["karate"],
+   "tags": ["budo", "shotokan"]
 }
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris faucibus aliquet mauris, ac semper augue cursus et. Morbi id cursus tellus. Nulla vitae lacus hendrerit, mattis nisl eu, faucibus diam. Morbi sed scelerisque mauris, id ultrices quam. Donec nisl eros, consequat ac posuere id, gravida dapibus orci. Fusce porta mauris ac nisl placerat eleifend. Mauris sed mauris pretium urna molestie ornare. In ligula felis, sollicitudin nec tortor id, facilisis accumsan odio. Phasellus ultricies tincidunt tempus. Phasellus ut vulputate quam. Ut quis sapien molestie, feugiat arcu et, interdum libero.

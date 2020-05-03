@@ -2,15 +2,11 @@
    "date": "2019-12-28T10:13:33-03:00",
    "draft": true,
    "lastmod": "2019-12-28T10:13:33-03:00",
-   "title": "My Second Post",
-   "description": "My new page",
+   "title": "Cherry Blossom Season",
+   "description": "It's now time for a new fresh air, with the beautiful Cherry Bossom Season!",
    "featuredImage": "images/featured_image.jpg",
-   "categories": ["bike"],
-   "tags": [
-        "bike",
-        "engine",
-        "red"
-    ]
+   "categories": ["japan"],
+   "tags": ["land", "flowers"]
 }
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et luctus lorem. Morbi vel diam gravida, facilisis nulla eget, vestibulum erat. Phasellus sit amet magna magna. Vestibulum mollis convallis dui id eleifend. Mauris commodo bibendum ante id dignissim. Donec ligula dui, condimentum at accumsan a, blandit elementum ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla cursus nec lorem ac accumsan. Nam ultricies placerat eros ac iaculis. Morbi posuere eget purus sed laoreet. Curabitur diam lacus, facilisis posuere odio a, consequat fermentum risus. Vestibulum eu augue vitae felis facilisis aliquet.
