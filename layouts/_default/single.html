@@ -8,6 +8,10 @@
         dummy.select();
         document.execCommand("copy");
         document.body.removeChild(dummy);
+    };
+
+    function goBack() {
+        window.history.back();
     }
 </script>
 {{ end }}
@@ -30,6 +34,7 @@
     </div>
     <div class="container justify-content-center">
         <div class="container justify-content-center col-lg-10 mb-3">
+            <i class="material-icons" style="font-size:15px;color: var(--primary);">chevron_left</i> <a href="javascript:goBack()">Voltar</a>
             <div class="mb-3" style="font-size: small;">
                 <section>
                     <p class="mb-1" id="date">{{ .Date.Format "Mon Jan 2, 2006" }} | {{ .WordCount}} Palavras</p>
@@ -37,7 +42,7 @@
                 {{ with .Params.tags }}
                 <ul class="list-inline" id="tags">
                     {{ range . }}
-                        <li class="list-inline-item"><i class="material-icons" style="font-size:15px;color: var(--primary);">local_offer</i> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+                    <li class="list-inline-item"><i class="material-icons" style="font-size:15px;color: var(--primary);">local_offer</i> <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}">{{ . }}</a></li>
                     {{ end }}
                 </ul>
                 {{ end }}
