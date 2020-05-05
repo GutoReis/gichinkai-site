@@ -1,7 +1,7 @@
 ---
 title: "Nossa Historia"
 date: 2020-03-10T09:22:42-03:00
-draft: true
+draft: false
 nossa_historia: Gichinkai
 image: "https://source.unsplash.com/hwLAI5lRhdM/2500x700"
 intro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit consequat quam ac pretium. Nam a ante eget dui maximus placerat convallis nec felis."

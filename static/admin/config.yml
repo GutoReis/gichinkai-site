@@ -1,0 +1,58 @@
+backend:
+    name: git-gateway
+    # branch: master
+    branch: adjustment/design
+media_folder: static/images
+public_folder: /images
+site_url: "https://gichinkai.netlify.com/"
+custom_logo: "https://gichinkai.netlify.app/images/logo.png"
+locale: 'pt'
+collections:
+    - name: "blog"
+      label: "Blog"
+      folder: "content/posts"
+      create: true
+      delete: false
+      extension: "markdown"
+      slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+      editor:
+        preview: true
+      fields:
+        - { label: "Titulo", name: "title", widget: "string" }
+        - { label: "Data criação", name: "date", widget: "hidden", default: "datetime"}
+        - { label: "Data atualização", name: "date", widget: "hidden", default: "datetime"}
+        - { label: "Rascunho", name: "draft", wdiget: "boolean", default: true}
+        - { label: "Decrição", name: "description", widget: "text" }
+        - { label: "Banner", name: "featuredImage", widget: "image", hint: "A imagem deve ter LxA" }
+        - { label: "Categoria", name: "categories", widget: "list" }
+        - { label: "Tags", name: "tags", widget: "list" }
+        - { label: "Conteúdo", name: "body", widget: "markdown" }
+    
+    - name: "pages"
+      label: "Paginas"
+      delete: false
+      editor:
+        preview: true
+      files:
+        - name: "nossa_historia"
+          label: "Nossa Historia"
+          file: "content/nossa_historia/_index.md"
+          fields:
+            - { label: "Pagina", name: "title", widget: "hidden"}
+            - { label: "Data criação", name: "date", widget: "hidden"}
+            - { label: "Titulo", name: "nossa_historia", widget: "string"}
+            - { label: "Rascunho", name: "draft", wdiget: "boolean", default: true}
+            - { label: "Banner", name: "image", widget: "image", hint: "A imagem deve ter LxA"}
+            - { label: "Introdução", name: "intro", widget: "text"}
+            - { label: "Conteúdo", name: "body", widget: "markdown"}
+        - name: "memorial"
+          label: "Memorial"
+          file: "content/memorial/_index.md"
+          fields:
+            - { label: "Pagina", name: "title", widget: "hidden"}
+            - { label: "Data criação", name: "date", widget: "hidden"}
+            - { label: "Titulo", name: "memory", widget: "string"}
+            - { label: "Rascunho", name: "draft", wdiget: "boolean", default: true}
+            - { label: "Banner", name: "image", widget: "iamge", hint: "A imagem deve ter LxA"}
+            - { label: "Introdução", name: "intro", widget: "text"}
+            - { label: "Conteúdo", name: "body", widget: "markdown"}
