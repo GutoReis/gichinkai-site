@@ -4,8 +4,8 @@ backend:
     branch: adjustment/design
 media_folder: static/images
 public_folder: /images
-site_url: "https://gichinkai.netlify.com/"
-custom_logo: "https://gichinkai.netlify.app/images/logo.png"
+site_url: "https://homolog-gichinkai.netlify.com/"
+custom_logo: "https://homolog-gichinkai.netlify.app/images/logo.png"
 locale: 'pt'
 collections:
     - name: "blog"
@@ -41,7 +41,7 @@ collections:
             - { label: "Pagina", name: "title", widget: "hidden"}
             - { label: "Data criação", name: "date", widget: "hidden"}
             - { label: "Titulo", name: "nossa_historia", widget: "string"}
-            - { label: "Rascunho", name: "draft", wdiget: "boolean", default: true}
+            - { label: "Rascunho", name: "draft", widget: "boolean", default: true}
             - { label: "Banner", name: "image", widget: "image", hint: "A imagem deve ter LxA"}
             - { label: "Introdução", name: "intro", widget: "text"}
             - { label: "Conteúdo", name: "body", widget: "markdown"}
@@ -52,7 +52,7 @@ collections:
             - { label: "Pagina", name: "title", widget: "hidden"}
             - { label: "Data criação", name: "date", widget: "hidden"}
             - { label: "Titulo", name: "memory", widget: "string"}
-            - { label: "Rascunho", name: "draft", wdiget: "boolean", default: true}
-            - { label: "Banner", name: "image", widget: "iamge", hint: "A imagem deve ter LxA"}
+            - { label: "Rascunho", name: "draft", widget: "boolean", default: true}
+            - { label: "Banner", name: "image", widget: "image", hint: "A imagem deve ter LxA"}
             - { label: "Introdução", name: "intro", widget: "text"}
             - { label: "Conteúdo", name: "body", widget: "markdown"}
