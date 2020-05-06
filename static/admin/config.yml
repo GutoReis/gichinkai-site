@@ -9,8 +9,11 @@ custom_logo: "https://homolog-gichinkai.netlify.app/images/logo.png"
 locale: 'pt'
 collections:
     - name: "blog"
-      label: "Blog"
+      label: "Posts"
       folder: "content/posts"
+      path: "{{slug}}/index"
+      media_folder: "images"
+      public_folder: "images"
       create: true
       delete: false
       extension: "markdown"
