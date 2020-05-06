@@ -22,8 +22,8 @@ collections:
         preview: true
       fields:
         - { label: "Titulo", name: "title", widget: "string" }
-        - { label: "Data criação", name: "date", widget: "hidden"}
-        - { label: "Data atualização", name: "lastmod", widget: "hidden"}
+        - { label: "Data criação", name: "date", widget: "hidden", default: "{{year}}-{{month}}-{{day}}T{{hour}}:{{minute}}:{{second}}-03:00"}
+        - { label: "Data atualização", name: "lastmod", widget: "hidden", default: "{{year}}-{{month}}-{{day}}T{{hour}}:{{minute}}:{{second}}-03:00"}
         - { label: "Rascunho", name: "draft", widget: "boolean", default: true}
         - { label: "Decrição", name: "description", widget: "text" }
         - { label: "Banner", name: "featuredImage", widget: "image", hint: "A imagem deve ter LxA e deve ser nomeada como 'featured_image.jpg'" }
