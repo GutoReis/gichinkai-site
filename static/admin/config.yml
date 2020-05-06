@@ -16,19 +16,19 @@ collections:
       public_folder: "images"
       create: true
       delete: false
-      extension: "markdown"
+      extension: "md"
       slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
       editor:
         preview: true
       fields:
         - { label: "Titulo", name: "title", widget: "string" }
-        - { label: "Data criação", name: "date", widget: "hidden", default: "datetime"}
-        - { label: "Data atualização", name: "date", widget: "hidden", default: "datetime"}
-        - { label: "Rascunho", name: "draft", wdiget: "boolean", default: true}
+        - { label: "Data criação", name: "date", widget: "hidden"}
+        - { label: "Data atualização", name: "lastmod", widget: "hidden"}
+        - { label: "Rascunho", name: "draft", widget: "boolean", default: true}
         - { label: "Decrição", name: "description", widget: "text" }
-        - { label: "Banner", name: "featuredImage", widget: "image", hint: "A imagem deve ter LxA" }
-        - { label: "Categoria", name: "categories", widget: "list" }
-        - { label: "Tags", name: "tags", widget: "list" }
+        - { label: "Banner", name: "featuredImage", widget: "image", hint: "A imagem deve ter LxA e deve ser nomeada como 'featured_image.jpg'" }
+        - { label: "Categoria", name: "categories", widget: "list", hint: "Separe as categorias por , (virgula)"}
+        - { label: "Tags", name: "tags", widget: "list", hint: "Separe as tags por , (virgula)"}
         - { label: "Conteúdo", name: "body", widget: "markdown" }
     
     - name: "pages"
