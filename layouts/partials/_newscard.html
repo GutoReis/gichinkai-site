@@ -13,8 +13,7 @@
             </span> </h6>
         <h6 class="text-uppercase"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML  }}</a></h6>
         <p class="text-muted"><small>{{ .Date.Format "Jan 2, 2006" }} - {{ .FuzzyWordCount }} Words</small></p>
-        <p class="font-weight-normal" style="line-height: 120%;">{{ .Params.subTitle | safeHTML }}</p>
-        <p class="font-weight-light" style="line-height: 120%;">{{ .Summary }}</p>
+        <p class="font-weight-normal" style="line-height: 120%;">{{ .Params.description | safeHTML }}</p>
 
     </div>
     <div class="card-footer bg-white border-0">
