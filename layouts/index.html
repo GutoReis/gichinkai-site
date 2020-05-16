@@ -10,67 +10,80 @@
 
 {{ define "page_js"}}
 <script>
-  // Initialize and add the map
-  console.log("Teste initMap");
-  function initMap() {
-    // The location of Dojo's
-    var augusta = {lat: -23.5615359, lng: -46.6635528};
-    var contentStringAugusta = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<h3 id="firstHeading" class="firstHeading">Aikido Nova Era</h3>'+
-        '<a href="https://www.google.com/maps/dir//-23.5615359,-46.6635528/@-23.561536,-46.663553,16z?hl=en" target="_blank">'+
-        '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
-        '</a>'+
-        '</div>';
-    var infowindowAugusta = new google.maps.InfoWindow({content: contentStringAugusta});
+  // scroll
+  var topBtn = document.getElementById("scroll");
+  window.onscroll = function() {scrollFunction()};
 
-    var tatuape = {lat: -23.5431694, lng: -46.5674751};
-    var contentStringTatuape = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<h3 id="firstHeading" class="firstHeading">Tatuape</h3>'+
-        '<a href="https://www.google.com/maps/dir//-23.5431743,-46.5652864/@-23.543174,-46.565286,16z?hl=en" target="_blank">'+
-        '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
-        '</a>';
-        '</div>';
-    var infowindowTatuape = new google.maps.InfoWindow({content: contentStringTatuape});
-
-    var ciaAthletica = {lat: -23.5620661, lng: -46.5619989};
-    var contentStringCiaAthletica = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<h3 id="firstHeading" class="firstHeading">Cia Athletica Analia Franco</h3>'+
-        '<a href="https://www.google.com/maps/dir//-23.562071,-46.5598102/@-23.562071,-46.55981,16z?hl=en" target="_blank">'+
-        '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
-        '</a>';
-        '</div>';
-    var infowindowCiaAthletica = new google.maps.InfoWindow({content: contentStringCiaAthletica});
-
-    // The map, centered at dojo
-    var map = new google.maps.Map(document.getElementById("map"), {zoom: 13, center: {lat: -23.5552111, lng: -46.6187217}});
-
-    // The marker, positioned at augusta
-    var markerAugusta = new google.maps.Marker({position: augusta, map: map, title: 'Aikido Nova Era'});
-    markerAugusta.addListener('click', function(){
-      infowindowAugusta.open(map, markerAugusta);
-    });
-    var markerTatuape = new google.maps.Marker({position: tatuape, map: map});
-    markerTatuape.addListener('click', function() {
-      infowindowTatuape.open(map, markerTatuape);
-    });
-    var markerCiaAthletica = new google.maps.Marker({position: ciaAthletica, map:map});
-    markerCiaAthletica.addListener('click', function() {
-      infowindowCiaAthletica.open(map, markerCiaAthletica);
-    });
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
   }
+
+  // Initialize and add the map
+  // function initMap() {
+  //   // The location of Dojo's
+  //   var augusta = {lat: -23.5615359, lng: -46.6635528};
+  //   var contentStringAugusta = '<div id="content">'+
+  //       '<div id="siteNotice">'+
+  //       '</div>'+
+  //       '<h3 id="firstHeading" class="firstHeading">Aikido Nova Era</h3>'+
+  //       '<a href="https://www.google.com/maps/dir//-23.5615359,-46.6635528/@-23.561536,-46.663553,16z?hl=en" target="_blank">'+
+  //       '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
+  //       '</a>'+
+  //       '</div>';
+  //   var infowindowAugusta = new google.maps.InfoWindow({content: contentStringAugusta});
+
+  //   var tatuape = {lat: -23.5431694, lng: -46.5674751};
+  //   var contentStringTatuape = '<div id="content">'+
+  //       '<div id="siteNotice">'+
+  //       '</div>'+
+  //       '<h3 id="firstHeading" class="firstHeading">Tatuape</h3>'+
+  //       '<a href="https://www.google.com/maps/dir//-23.5431743,-46.5652864/@-23.543174,-46.565286,16z?hl=en" target="_blank">'+
+  //       '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
+  //       '</a>';
+  //       '</div>';
+  //   var infowindowTatuape = new google.maps.InfoWindow({content: contentStringTatuape});
+
+  //   var ciaAthletica = {lat: -23.5620661, lng: -46.5619989};
+  //   var contentStringCiaAthletica = '<div id="content">'+
+  //       '<div id="siteNotice">'+
+  //       '</div>'+
+  //       '<h3 id="firstHeading" class="firstHeading">Cia Athletica Analia Franco</h3>'+
+  //       '<a href="https://www.google.com/maps/dir//-23.562071,-46.5598102/@-23.562071,-46.55981,16z?hl=en" target="_blank">'+
+  //       '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
+  //       '</a>';
+  //       '</div>';
+  //   var infowindowCiaAthletica = new google.maps.InfoWindow({content: contentStringCiaAthletica});
+
+  //   // The map, centered at dojo
+  //   var map = new google.maps.Map(document.getElementById("map"), {zoom: 13, center: {lat: -23.5552111, lng: -46.6187217}});
+
+  //   // The marker, positioned at augusta
+  //   var markerAugusta = new google.maps.Marker({position: augusta, map: map, title: 'Aikido Nova Era'});
+  //   markerAugusta.addListener('click', function(){
+  //     infowindowAugusta.open(map, markerAugusta);
+  //   });
+  //   var markerTatuape = new google.maps.Marker({position: tatuape, map: map});
+  //   markerTatuape.addListener('click', function() {
+  //     infowindowTatuape.open(map, markerTatuape);
+  //   });
+  //   var markerCiaAthletica = new google.maps.Marker({position: ciaAthletica, map:map});
+  //   markerCiaAthletica.addListener('click', function() {
+  //     infowindowCiaAthletica.open(map, markerCiaAthletica);
+  //   });
+  // }
 </script>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbUik7BI-m72iILlFRt3Hi9Rt6MUW0_2k&callback=initMap">
-</script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbUik7BI-m72iILlFRt3Hi9Rt6MUW0_2k&callback=initMap">
+</script> -->
 {{ end }}
 
 {{ define "main"}}
+<a href="#" id="scroll" style="display: none;"><span></span></a>
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -241,7 +254,7 @@
         <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="https://source.unsplash.com/c_xS7ngiWhQ/400x400" alt="Generic placeholder image">
       </picture>
     </div>
-    <div class="col-md-3 order-md-4 mt-3 mb-3 text-center text-md-left">
+    <div class="col-md-3 order-md-4 mt-3 mb-2 text-center text-md-left">
       <h2 class="featurette-heading">Alunos especiais</h2>
       <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
         semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
@@ -253,24 +266,52 @@
 
 <!-- Locais de treino -->
 <div class="container marketing">
-  <hr class="featurette-divider">
+  <hr class="featurette-divider mb-5 mt-5">
 
   <div class="container about-karate">
     <div class="row">
-      <h2 class="mx-auto">Locais de Treino</h2>
-      <div id="map"></div>
+      <div class="mx-auto text-center">
+        <h2 class="mb-3">Dojo em Casa</h2>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </div>
+    <div class="row">
+      <img class="rounded img-fluid" src="https://source.unsplash.com/Md449nTVCXk/1080x500" alt="Karate em casa">
     </div>
     <!-- Contact area -->
-    <div class="row">
-      <div class="mx-auto text-center">
-        <h2>Contato</h2>
+    <!-- <div class="row">
+      <div class="mx-auto text-center mt-2">
+        <h2>Mídias Sociais</h2>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <i class="material-icons" style="font-size:20px;color: var(--red);">email</i>gichinkai@gmail.com
+          </div>
+          <div class="col-lg-4">
+            <i class="material-icons" style="font-size:20px;color: var(--red);">phone</i>(11) 98525-5207
+          </div>
+          <div class="col-lg-4"> -->
+            <!-- <i class="material-icons" style="font-size:20px;color: var(--red);"></i>Facebook -->
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
+            </svg>
+          </div>
+          <div class="col-lg-4">
+            <i class="material-icons" style="font-size:20px;color: var(--red);"></i>YouTube
+          </div>
+          <div class="col-lg-4">
+            <i class="material-icons" style="font-size:20px;color: var(--red);"></i>Instagram
+          </div>
+        </div>
+
+
         <i class="material-icons-outlined" style="font-size:20px;color: var(--red);">gmail</i>
         gichinkai@gmail.com
         <i class="material-icons-outlined" style="font-size:20px;color: var(--red);">phone</i>
         (11) 98525-5207
       </div>
-    </div>
-    <form>
+    </div> -->
+    <!-- <form>
       <div class="form-row  justify-content-center">
         <div class="col-sm-4 mr-1 mb-3">
           <label for="inputName" class="sr-only" for="inputName">Nome</label>
@@ -296,7 +337,7 @@
           <button type="submit" class="btn btn-primary mb-2">Enviar</button>
         </div>
       </div>
-    </form>
+    </form> -->
   </div>
 </div>
 {{ end }}
