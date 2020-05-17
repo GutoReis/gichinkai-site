@@ -115,6 +115,53 @@
                 </div>
             </a>
         </div>
+        <div class="container justify-content-center col-lg-10 mb-5">
+            {{ with .Params.categories }}
+                <ul class="list-inline" id="tags">
+                    <li class="list-inline-item"><b>Categorias</b> </li>
+                    {{ range . }}
+                    <li class="list-inline-item">| <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize | lower }}">{{ . }}</a></li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+        </div>
+
+        <div class="container justify-content-center col-lg-10 mb-3">
+            <hr class="w-50 mb-4 mt-4 ml-0">
+            {{- range .Params.authors }}
+                {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+                {{ $original := .Resources.GetMatch "profile.jpg" }}
+                {{ .Scratch.Set "author_image" ($original.Fill "110x110 Center") }}
+                {{ $image_author := .Scratch.Get "author_image"}}
+                    <div class="row justify-content-center justify-content-md-start">
+                        <div class="order-md-1 mb-2">
+                            <img class="rounded-circle shadow mb-3 img-fluid mx-auto d-block" src="{{ $image_author.RelPermalink }}" alt="" />    
+                        </div>
+                        <div class="col-md-6 col-sm-3 order-md-2 text-center text-md-left">
+                            <a href="{{ .Permalink }}">{{ .Params.name }}</a>
+                            <p>{{ .Content }}</p>
+                        </div>
+                    </div>
+                {{ end }}
+            {{ end }}
+            <hr class="w-50 mb-5 mt-2 ml-0">
+        </div>
+
+        <div class="container justify-content-center col-lg-10 mb-5">
+            {{ $related := (where (.Site.RegularPages.Related .) "Type" "posts") | first 3 }}
+            {{ if $related }}
+            <div class="content mb-3">
+                <h2>Conteúdo relacionado</h2>
+            </div>
+            {{ end }}
+            <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4">
+                {{ range $related }}
+                    <div class="col mb-4">
+                        {{ partial "_newscard" .}}
+                    </div>
+                {{ end }}
+            </div>
+        </div>
     </div>
 </section>
 <aside id="meta">
