@@ -1,12 +1,27 @@
-<h1>{{ .Params.name }}</h1>
-<img src="{{ .Params.photo }}" alt="" />
+{{ define "main" }}
+<div class="container mb-2">
+    <div class="container col-lg-10">
+        <h1>{{ .Params.name }}</h1>
+        {{ $original := .Resources.GetMatch "profile.jpg" }}
+        {{ .Scratch.Set "author_image_desktop" ($original.Fill "400x400 Center")}}
+        {{ $image_author_desktop := .Scratch.Get "author_image_desktop" }}
+        {{ .Scratch.Set "author_image_mobile" ($original.Fill "140x140 Center")}}
+        {{ $image_author_mobile := .Scratch.Get "author_image_mobile" }}
+        <div class="row justify-content-center justify-content-md-start">
+            <picture>
+                <source media="(max-width: 768px)" srcset="{{ $image_author_mobile.RelPermalink }}">
+                <img class="rounded-circle shadow mb-3" src="{{ $image_author_desktop.RelPermalink }}" alt="" />
+            </picture>
+        </div>
+        <h2>Bio</h2>
+        {{ .Content }}
 
-<h2>Bio</h2>
-{{ .Content }}
-
-<h2>Artigos</h2>
-<ul>
-    {{ range .Data.Pages }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-    {{ end }}
-</ul>
+        <h2>Artigos</h2>
+        <ul>
+            {{ range .Data.Pages }}
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ end }}
