@@ -127,8 +127,8 @@
         </div>
 
         <div class="container justify-content-center col-lg-10 mb-3">
-            <hr class="w-50 mb-4 mt-4 ml-0">
             {{- range .Params.authors }}
+                <hr class="w-50 mb-4 mt-4 ml-0">
                 {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
                 {{ $original := .Resources.GetMatch "profile.jpg" }}
                 {{ .Scratch.Set "author_image" ($original.Fill "110x110 Center") }}
@@ -143,8 +143,8 @@
                         </div>
                     </div>
                 {{ end }}
+                <hr class="w-50 mb-5 mt-2 ml-0">
             {{ end }}
-            <hr class="w-50 mb-5 mt-2 ml-0">
         </div>
 
         <div class="container justify-content-center col-lg-10 mb-5">
