@@ -1,23 +1,46 @@
+{{ define "page_js"}}
+<script>
+  // scroll
+  var topBtn = document.getElementById("scroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+{{ end }}
+
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
-    <div class="container">
-      <a class="navbar-brand ml-3" href="/">
-        <img class="nav-logo" src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        <span class="d-none d-md-inline-block text-primary" style="font-family: 'Kaushan Script';">{{ .Site.Title }}</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto">
-          {{- $currentPage := . -}}
-          {{ range .Site.Menus.navbar }}
+  <div class="container">
+    <a class="navbar-brand ml-3" href="/">
+      <img class="nav-logo" src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      <span class="d-none d-md-inline-block text-primary" style="font-family: 'Kaushan Script';">{{ .Site.Title }}</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        {{- $currentPage := . -}}
+        {{ range .Site.Menus.navbar }}
           {{ $menuURL := .URL | absLangURL }}
           <a class="nav-link{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}"
             href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-          {{ end }}
-        </div>
+        {{ end }}
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
+
+<button onclick="topFunction()" id="scroll" title="Go to top"><span></span></button>
 

@@ -1,12 +1,22 @@
 {{ define "body_classes" }}category-list{{ end }}
 {{ define "page_js" }}
 <script>
-    $(document).ready(function () {
-        var el = "#{{ .Title | lower }}";
-        el = el.split(" ").join("-");
-        console.log(el);
-        $(el).addClass("btn-primary").removeClass("btn-secondary");
-    })
+    // scroll
+    var topBtn = document.getElementById("scroll");
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topBtn.style.display = "block";
+        } else {
+          topBtn.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
 </script>
 {{ end }}
 
