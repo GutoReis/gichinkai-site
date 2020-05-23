@@ -13,6 +13,8 @@ tags:
   - tree
   - japan
   - zen
+authors:
+  - Gustavo Reis
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam turpis leo, efficitur at leo vel, molestie ultricies justo. Integer in libero maximus, ultrices lacus nec, euismod justo. Praesent ullamcorper orci et ligula ornare, ac elementum massa laoreet. Suspendisse potenti. Nam felis nisi, scelerisque sed pretium sed, efficitur eget arcu. Donec interdum mi id ex volutpat, et porta leo egestas. Etiam id rhoncus enim, congue vulputate purus. Fusce nibh risus, tincidunt sed pulvinar ac, maximus ut tellus. Etiam tristique mi eu enim porttitor porta. Vestibulum blandit neque tortor, vitae elementum ipsum iaculis eu.
 

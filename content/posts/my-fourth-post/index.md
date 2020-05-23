@@ -6,7 +6,8 @@
    "description": "Some might see the samurai warrior class as violent, others see as wise. But deep, they're both. Let's check out their honor code, the all know Bushido code.",
    "featuredImage": "images/featured_image.jpg",
    "categories": ["japan"],
-   "tags": ["samurai", "budo", "bushido"]
+   "tags": ["samurai", "budo", "bushido"],
+   "authors": ["Gustavo Reis", "Jane Doe"]
 }
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris faucibus aliquet mauris, ac semper augue cursus et. Morbi id cursus tellus. Nulla vitae lacus hendrerit, mattis nisl eu, faucibus diam. Morbi sed scelerisque mauris, id ultrices quam. Donec nisl eros, consequat ac posuere id, gravida dapibus orci. Fusce porta mauris ac nisl placerat eleifend. Mauris sed mauris pretium urna molestie ornare. In ligula felis, sollicitudin nec tortor id, facilisis accumsan odio. Phasellus ultricies tincidunt tempus. Phasellus ut vulputate quam. Ut quis sapien molestie, feugiat arcu et, interdum libero.
