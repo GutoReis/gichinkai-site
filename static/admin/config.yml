@@ -44,7 +44,7 @@ collections:
       editor:
         preview: true
       fields:
-        - { label: "Nome", name: "name", widget: "string" }
+        - { label: "Nome", name: "title", widget: "string" }
         - { label: "Foto", name: "photo", widget: "image", hint: "A imagem deve ser no minimo 400x400 (px)"}
         - { label: "Biografia", name: "body", widget: "markdown"}
     

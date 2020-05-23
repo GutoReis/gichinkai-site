@@ -2,7 +2,7 @@
 <h1>Autores</h1>
 <ul>
     {{ range .Data.Pages }}
-        <li><a href="{{ .Permalink }}">{{ .Params.name }}</a></li>
+        <li><a href="{{ .Permalink }}">{{ .Params.title }}</a></li>
     {{ end }}
 </ul>
 {{ end }}
