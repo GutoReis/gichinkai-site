@@ -26,10 +26,27 @@ collections:
         - { label: "Data atualização", name: "lastmod", widget: "datetime"}
         - { label: "Rascunho", name: "draft", widget: "boolean", default: true}
         - { label: "Decrição", name: "description", widget: "text" }
+        - { label: "Autor", name: "authors", widget: "list", hint: "Separece os autores por , (virgula).  !Lembando, o nome do autor deve estar como consta na lista de autores na região de autores no admin!"}
         - { label: "Banner", name: "featuredImage", widget: "image", hint: "A imagem deve ter LxA e deve ser nomeada como 'featured_image.jpg'" }
         - { label: "Categoria", name: "categories", widget: "list", hint: "Separe as categorias por , (virgula)"}
         - { label: "Tags", name: "tags", widget: "list", hint: "Separe as tags por , (virgula)"}
         - { label: "Conteúdo", name: "body", widget: "markdown" }
+    
+    - name: "authors"
+      label: "Autores"
+      folder: "content/authors"
+      path: "{{slug}}/_index"
+      media_folder: ""
+      public_folder: ""
+      create: true
+      delete: false
+      extension: "md"
+      editor:
+        preview: true
+      fields:
+        - { label: "Nome", name: "name", widget: "string" }
+        - { label: "Foto", name: "photo", widget: "image", hint: "A imagem deve ser no minimo 400x400 (px)"}
+        - { label: "Biografia", name: "body", widget: "markdown"}
     
     - name: "pages"
       label: "Paginas"
