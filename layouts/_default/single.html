@@ -127,13 +127,13 @@
         </div>
 
         <div class="container justify-content-center col-lg-10 mb-3">
+            <hr class="w-lg-50 mb-4 mt-4 ml-0">
             {{- range .Params.authors }}
-                <hr class="w-50 mb-4 mt-4 ml-0">
                 {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
                 {{ $original := .Resources.GetMatch "profile.jpg" }}
                 {{ .Scratch.Set "author_image" ($original.Fill "110x110 Center") }}
                 {{ $image_author := .Scratch.Get "author_image"}}
-                    <div class="row justify-content-center justify-content-md-start">
+                    <div class="row justify-content-center justify-content-lg-start">
                         <div class="order-md-1 mb-2">
                             <img class="rounded-circle shadow mb-3 img-fluid mx-auto d-block" src="{{ $image_author.RelPermalink }}" alt="" />    
                         </div>
@@ -143,8 +143,8 @@
                         </div>
                     </div>
                 {{ end }}
-                <hr class="w-50 mb-5 mt-2 ml-0">
             {{ end }}
+            <hr class="mb-5 mt-2 ml-0">
         </div>
 
         <div class="container justify-content-center col-lg-10 mb-5">
@@ -167,13 +167,13 @@
 <aside id="meta">
     <div class="container justify-content-center text-center">
         {{ with .PrevInSection }}
-            <i class="material-icons" style="font-size:15px;color: var(--primary);">chevron_left</i>
-            <a class="previous" href="{{ .Permalink }}">{{ .Title }}</a>
+            <i class="material-icons" style="font-size:15px;color: var(--oc-gray-9);">chevron_left</i>
+            <a class="previous seq-post" href="{{ .Permalink }}">{{ .Title }}</a>
         {{ end }}
-        <i class="material-icons" style="font-size:13px;color: var(--primary);">more_vert</i>
+        <i class="material-icons" style="font-size:13px;color: var(--oc-gray-9);">more_vert</i>
         {{ with .NextInSection }}
-            <a class="next" href="{{ .Permalink }}">{{ .Title }}</a>
-            <i class="material-icons" style="font-size:15px;color: var(--primary);">chevron_right</i>
+            <a class="next seq-post" href="{{ .Permalink }}">{{ .Title }}</a>
+            <i class="material-icons" style="font-size:15px;color: var(--oc-gray-9);">chevron_right</i>
         {{ end }}
     </div>
 </aside>
