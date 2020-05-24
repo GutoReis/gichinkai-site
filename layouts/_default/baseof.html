@@ -12,11 +12,30 @@
 <body>
     {{ partial "nav.html" . }}
     <main>
+        <button onclick="topFunction()" id="scroll" title="Go to top"><span></span></button>
         {{ block "main" . -}}{{- end }}
     
     {{ partial "footer.html" . }}
 </main>
     <script src="{{ "js/bundle.js" | absURL }}"></script>
+    <script>
+        // scroll
+        var topBtn = document.getElementById("scroll");
+        window.onscroll = function() {scrollFunction()};
+      
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            topBtn.style.display = "block";
+          } else {
+            topBtn.style.display = "none";
+          }
+        }
+      
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+      </script>
     {{ block "page_js" . }}{{ end }}
 </body>
 

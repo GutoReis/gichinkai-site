@@ -1,23 +1,4 @@
-{{ define "page_js"}}
-<script>
-  // scroll
-  var topBtn = document.getElementById("scroll");
-  window.onscroll = function() {scrollFunction()};
 
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      topBtn.style.display = "block";
-    } else {
-      topBtn.style.display = "none";
-    }
-  }
-
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-</script>
-{{ end }}
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
   <div class="container">
@@ -41,6 +22,4 @@
     </div>
   </div>
 </nav>
-
-<button onclick="topFunction()" id="scroll" title="Go to top"><span></span></button>
 
