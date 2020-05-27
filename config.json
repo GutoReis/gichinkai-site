@@ -1,7 +1,7 @@
 {
     "baseurl": "https://homolog-gichinkai.netlify.com/",
     "languageCode": "en-us",
-    "title": "Associação Gichinkai de Karate-do",
+    "title": "Associação Gichinkai de Karatê-Dô",
     "paginate": 5,
     "enableRobotsTXT": true,
     "disableKinds": ["taxonomyTerm"],
@@ -35,8 +35,8 @@
         ]
     },
     "params": {
-        "author": "Your Name",
-        "description": "A simple Hugo with Webpack based on the Bootstrap v4.",
+        "author": "Gustavo Reis",
+        "description": "Site da Associação Gichinkai de Karatê-Dô",
         "date_format": "Mon Jan 02, 2006"
     },
     "related": {
