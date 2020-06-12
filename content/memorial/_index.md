@@ -4,13 +4,29 @@ date: 2019-12-23T15:15:42-03:00
 draft: false
 memory: Em memória de Sensei Nakaema
 image: "https://source.unsplash.com/SBK40fdKbAg/2500x700"
-intro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit consequat quam ac pretium. Nam a ante eget dui maximus placerat convallis nec felis."
+intro: "Saiba quem foi Sensei Nakaema, principal personagem que fez reformular a didática da
+Gichinkai, a linha didática da Gichinkai veio dele. Levou a Gichinkai para as raízes okinawanas,
+por ser descendente direto de karatekas."
 ---
+###### por Sensei João Batista – fundador da Associação Gichinkai
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit consequat quam ac pretium. Nam a ante eget dui maximus placerat convallis nec felis. Aliquam enim nibh, consectetur at nisl vel, molestie mollis justo. Phasellus sed dolor eget dui bibendum pretium at a orci. Cras euismod, ipsum non dictum luctus, lacus est pellentesque est, non pulvinar urna sem at velit. Ut finibus nec ex sit amet faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras dignissim vel nibh at scelerisque. Maecenas quis faucibus massa. Fusce tempor dui accumsan ex pellentesque, quis congue turpis pretium. Morbi in velit massa. Vivamus lacinia lorem eget erat dapibus fermentum. Donec arcu nisi, porta nec posuere non, mollis ut urna.
+Moritoshi Nakaema - mais conhecido como Paulo Nakaema Sensei - nasceu em 18 de agosto de 1938 em
+Itanhaém, litoral de SP. Depois de viver alguns anos em Itariri, cidade próxima a Peruíbe, a família
+Nakaema decidiu se mudar para São Paulo.
 
-Sed quis purus hendrerit, accumsan turpis eget, posuere ante. Aliquam vel mollis dolor, imperdiet pharetra turpis. Praesent eget scelerisque mauris. Integer nec lorem lacus. Pellentesque id turpis nisl. Phasellus arcu ex, convallis a ornare vitae, sollicitudin ut mauris. Proin fringilla egestas pharetra. Nam convallis quam sed felis varius, in vestibulum eros lacinia. Cras gravida magna eu felis posuere fermentum. Vivamus placerat arcu est. Praesent in ipsum sit amet nulla facilisis vehicula. Aenean vel metus vel tellus pulvinar pretium. Ut a laoreet lacus, tempus feugiat felis. Integer consequat tellus est. Sed luctus lectus blandit purus pretium feugiat. Donec ultricies eleifend lobortis.
+Em 1959, Sensei Nakaema conheceu um dos primeiros professores de karatê no Brasil, o mestre Seichi
+Yoshitaka Akamine, e passou a ser seu aluno. Nessa época, o judô já era uma modalidade em expansão,
+mas a palavra karatê ainda não existia no dia a dia e tampouco nos dicionários da língua portuguesa.
+Nakaema foi um dos primeiros faixas pretas do Brasil, e foi também um dos primeiros instrutores da
+ABK, a Associação Brasileira de Karatê.
 
-Nam aliquam, nulla in pulvinar accumsan, nisl nisl gravida neque, sit amet sodales eros ante eget ante. Ut convallis, tortor quis posuere interdum, enim dolor efficitur diam, at mollis felis nibh id urna. Fusce eu vulputate lacus. Maecenas ut urna porttitor ex laoreet lacinia. Sed sit amet sapien vel sem rutrum mattis. Nunc eget ex tempor, molestie dui in, convallis mauris. Curabitur in mattis ipsum, at convallis diam. Phasellus a ex vitae lacus cursus molestie. Proin nec ipsum neque. Sed nec eros sapien. Duis risus lorem, facilisis ac felis vel, congue vehicula justo. Etiam et sagittis ex.
+Sensei Nakaema se destacava por seus conhecimentos culturais e técnicos e por ser um aplicado
+autodidata. Era calígrafo, genealogista e tornou-se um profundo conhecedor de inglês, espanhol, japonês e
+utchinanguti (língua nativa das ilhas de Okinawa). Nas artes do karatê, Nakaema Sensei era um prolífico
+investigador dos estilos e linhagens mais tradicionais do karatê, e grande conhecedor de técnicas antigas
+de kata e de suas interpretações (bunkai). Como professor, era generoso e extremamente atencioso com
+todos os alunos, e nem a sua profunda humildade (traço fundamental de seu caráter) conseguia esconder a
+excelência, o refinamento e a sofisticação de sua arte.
 
-Aenean iaculis consectetur interdum. Cras rutrum cursus tortor eget convallis. Maecenas nec finibus massa, eget vestibulum massa. Nullam quis sagittis odio. Ut vitae magna sagittis, commodo felis ut, venenatis justo. Donec vitae posuere risus. Pellentesque ultricies pulvinar enim, et consequat orci finibus ut.
+Sensei Nakaema foi um grande mestre, um grande professor e um grande homem, e a metodologia
+pedagógica da Gichinkai é fortemente influenciada pelo seu karatê e por sua personalidade.

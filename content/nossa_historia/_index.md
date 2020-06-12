@@ -4,12 +4,45 @@ date: 2020-03-10T12:22:42.000Z
 nossa_historia: Gichinkai
 draft: false
 image: https://source.unsplash.com/hwLAI5lRhdM/2500x700
-intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit
-  consequat quam ac pretium. Nam a ante eget dui maximus placerat convallis nec
-  felis.
+intro: Reunindo praticantes do karatê tradicional desde 1982
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit consequat quam ac pretium. Nam a ante eget dui maximus placerat convallis nec felis. Aliquam enim nibh, consectetur at nisl vel, molestie mollis justo. Phasellus sed dolor eget dui bibendum pretium at a orci. Cras euismod, ipsum non dictum luctus, lacus est pellentesque est, non pulvinar urna sem at velit. Ut finibus nec ex sit amet faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras dignissim vel nibh at scelerisque. Maecenas quis faucibus massa. Fusce tempor dui accumsan ex pellentesque, quis congue turpis pretium. Morbi in velit massa. Vivamus lacinia lorem eget erat dapibus fermentum. Donec arcu nisi, porta nec posuere non, mollis ut urna.
+Há 36 anos atrás ainda não tínhamos a internet, e nossas fontes de pesquisas eram muito lentas e escassas.
+Foi apenas no final dos anos 70 que descobri que o karatê não era uma arte genuinamente japonesa, mas
+sim uma técnica importada de Okinawa, um arquipélago localizado nos mares do sul do Japão.
 
-Sed quis purus hendrerit, accumsan turpis eget, posuere ante. Aliquam vel mollis dolor, imperdiet pharetra turpis. Praesent eget scelerisque mauris. Integer nec lorem lacus. Pellentesque id turpis nisl. Phasellus arcu ex, convallis a ornare vitae, sollicitudin ut mauris. Proin fringilla egestas pharetra. Nam convallis quam sed felis varius, in vestibulum eros lacinia. Cras gravida magna eu felis posuere fermentum. Vivamus placerat arcu est. Praesent in ipsum sit amet nulla facilisis vehicula. Aenean vel metus vel tellus pulvinar pretium. Ut a laoreet lacus, tempus feugiat felis. Integer consequat tellus est. Sed luctus lectus blandit purus pretium feugiat. Donec ultricies eleifend lobortis.
+A partir daí passei a me interessar pela história e pela cultura de Okinawa. Descobri que a cidade de São
+Paulo abrigava a maior colônia de okinawanos do planeta, e pude conhecer um pouco da riqueza das
+tradições desse país - além das circunstâncias culturais que deram origem ao karatê-dô, de seus diversos
+estilos e de seus curiosos personagens.
 
-Nam aliquam, nulla in pulvinar accumsan, nisl nisl gravida neque, sit amet sodales eros ante eget ante. Ut convallis, tortor quis posuere interdum, enim dolor efficitur diam, at mollis felis nibh id urna. Fusce eu vulputate lacus. Maecenas ut urna porttitor ex laoreet lacinia. Sed sit amet sapien vel sem rutrum mattis. Nunc eget ex tempor, molestie dui in, convallis mauris. Curabitur in mattis ipsum, at convallis diam. Phasellus a ex vitae lacus cursus molestie. Proin nec ipsum neque. Sed nec eros sapien. Duis risus lorem, facilisis ac felis vel, congue vehicula justo. Etiam et sagittis ex.
+Para se ter uma identidade representativa nos eventos e campeonatos de karatê, era necessário pertencer à
+Federação ou ter uma associação própria. Em meados de 1980, já filiado à Federação, vi pela primeira vez
+a bandeira oficial okinawana numa visita à Associação Okinawa Central do Brasil, no bairro da
+Liberdade. Essa bandeira inspirou a criação do símbolo de nossa associação, que recebeu o nome de
+Gichinkai em homenagem ao grande mestre Funakoshi Gichin – criador do estilo Shotokan.
+
+**Gichin**: *Nome do mestre Funakoshi*  
+**Kai**: *Associação*
+
+Nossa linhagem tem suas raízes no sistema de prática da Shotokan Karate International (SKI), fundada
+pelo Mestre Kanazawa Hirokazu e com grande representação no Brasil e em todo o mundo. A partir da
+metade dos anos 90, tivemos a honra de ter como conselheiro técnico um dos pioneiros do Karatê no
+Brasil, o mestre Paulo Moritoshi Nakaema. Dessa união em diante a Gichinkai uniu os fundamentos
+muito bem estruturados da escola Shotokan à Sankakuitiryu, metodologia de pesquisas e didática de
+Sensei Nakaema.
+
+###### MISSÃO
+Ensinar e divulgar o karatê-dô, formar karatecas de excelência e unir praticantes que perpetuem essa arte.
+
+###### VISÃO
+Ser referência em karatê tradicional no País.
+
+###### VALORES
+Respeito  
+Integridade  
+Humildade  
+Responsabilidade  
+Comprometimento com a tradição  
+Senso de comunidade  
+Iniciativa e participação social  
+Kaizen (foco na mudança para melhor)

@@ -11,7 +11,7 @@
 
 
 {{ define "main"}}
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="15000">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -25,7 +25,8 @@
       <div class="container">
         <div class="carousel-caption text-left">
           <h1 class="text-white">Associação Gichinkai De Karatê-Dô</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum.</p>
+          <p>Reunindo praticantes do karatê tradicional desde 1982</p>
+          <p><a class="btn btn-lg btn-primary" href="/nossa_historia" role="button">Saiba Mais</a></p>
         </div>
       </div>
     </div>
@@ -37,8 +38,7 @@
       <div class="container">
         <div class="carousel-caption">
           <h1 class="text-white">Memorial</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-            metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <p>Sensei Paulo Moritoshi Nakaema, nosso grande mestre e conselheiro da Gichinkai</p>
           <p><a class="btn btn-lg btn-primary" href="/memorial" role="button">Saiba Mais</a></p>
         </div>
       </div>
@@ -51,8 +51,6 @@
       <div class="container">
         <div class="carousel-caption text-right">
           <h1 class="text-white">Karatê Blog</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-            metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
           <p><a class="btn btn-lg btn-primary" href="/posts" role="button">Leia mais</a></p>
         </div>
       </div>
@@ -75,10 +73,9 @@
     <div class="col-lg-10">
       <h1 class="text-center">Karatê</h1>
       <h2 class="text-center">Um modo de vida</h2>
-      <p class="text-center">Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut lorem urna, dignissim at scelerisque sit amet, 
-        malesuada at quam. Morbi ac vehicula dolor, sit amet condimentum urna. Cras finibus dolor in nisi hendrerit 
-        facilisis. Mauris laoreet dictum velit id imperdiet. Proin et urna risus. Etiam consequat lacus eu urna tristique, 
-        in sagittis tellus rutrum. Praesent ut arcu urna. Fusce vehicula pulvinar porttitor.</p>
+      <p class="text-center">O Karatê é uma arte marcial completa, que tem como objetivo o aprimoramento integral do ser humano.
+        Mais do que um sistema de combate, é uma disciplina funcional que desenvolve as dimensões física,
+        mental e espiritual de seus praticantes.</p>
     </div>
   </div>
 </div>
@@ -90,19 +87,21 @@
   <div class="row">
     <div class="col-lg-4">
       <img class="rounded-circle shadow mb-3"
-        src="https://source.unsplash.com/igLzPKOvZNw/140x140"
-        alt="Generic placeholder image" width="140" height="140">
-      <h2>Mente</h2>
-      <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula
-        ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-    </div>
-    <div class="col-lg-4">
-      <img class="rounded-circle shadow mb-3"
         src="https://source.unsplash.com/J1BwEL2n530/140x140"
         alt="Generic placeholder image" width="140" height="140">
       <h2>Corpo</h2>
-      <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis
-        consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+      <p>A prática do karatê aumenta a força, a resistência física, o equilíbrio e a flexibilidade, organiza a postura,
+        desenvolve a coordenação motora, promove agilidade e rapidez, desenvolve a consciência corporal e
+        melhora o condicionamento físico global.</p>
+    </div>
+    <div class="col-lg-4">
+      <img class="rounded-circle shadow mb-3"
+        src="https://source.unsplash.com/igLzPKOvZNw/140x140"
+        alt="Generic placeholder image" width="140" height="140">
+      <h2>Mente</h2>
+      <p>O karatê-dô aumenta o controle emocional, ajudando a lidar com a agressividade e a ansiedade;
+        desenvolve a concentração, a atenção e o pensamento estratégico, estimula a criatividade, a inteligência e
+        fortalece a autoestima.
       </p>
     </div>
     <div class="col-lg-4">
@@ -110,9 +109,9 @@
         src="https://source.unsplash.com/uGlJHMEifB4/140x140"
         alt="Generic placeholder image" width="140" height="140">
       <h2>Espírito</h2>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta
-        felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-        massa justo sit amet risus.</p>
+      <p>O karatê-dô lapida o caráter de seus praticantes, desenvolvendo disciplina e respeito, transforma as
+        práticas cotidianas em meditação ativa, amplia a consciência, desenvolve a intuição, possibilita a
+        percepção da energia (ki) e ensina a utilizá-la.</p>
     </div>
   </div>
 </div>
@@ -125,10 +124,10 @@
     <div class="row justify-content-center">
       <div class="col-lg-10">
         <h2 class="text-center">Quem pode treinar</h2>
-        <p class="text-center">Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut lorem urna, dignissim at scelerisque sit amet, 
-          malesuada at quam. Morbi ac vehicula dolor, sit amet condimentum urna. Cras finibus dolor in nisi hendrerit 
-          facilisis. Mauris laoreet dictum velit id imperdiet. Proin et urna risus. Etiam consequat lacus eu urna tristique, 
-          in sagittis tellus rutrum. Praesent ut arcu urna. Fusce vehicula pulvinar porttitor.</p>
+        <p class="text-center">Todos podem treinar karatê! E para começar, não é necessário conhecer e nem ter praticado outra
+          modalidade de esporte ou de arte marcial. Todas as aulas da Gichinkai começam com as técnicas mais
+          simples e básicas do karatê, como se todos estivessem praticando essa arte pela primeira vez. Assim, um
+          principiante sempre vai se sentir parte de um grupo de pessoas como ele.</p>
       </div>
     </div>
   </div>
@@ -144,9 +143,9 @@
     </div>
     <div class="col-md-3 order-md-2 mt-3 mb-3 text-center text-md-left">
       <h2 class="featurette-heading">Crianças</h2>
-      <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-        commodo.</p>
+      <p>O karatê ensina a criança desde cedo a usar bem o corpo, desenvolvendo a coordenação motora e a
+        consciência corporal. Além disso, prepara a criança para lidar com o outro e ensina o autocontrole, a
+        tolerância à frustração, o respeito à hierarquia e aos limites, a coragem, a benevolência e a lealdade.</p>
     </div>
     <div class="col-md-3 order-md-3 mb-2">
       <picture>
@@ -156,9 +155,10 @@
     </div>
     <div class="col-md-3 order-md-4 mt-3 mb-3 text-center text-md-left">
       <h2 class="featurette-heading">Adultos</h2>
-      <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-        commodo.</p>
+      <p>Além dos benefícios da prática de uma atividade física, o karatê ensina a defesa pessoal, diminui a
+        ansiedade, aumenta a energia e a motivação, promove a socialização com base em valores saudáveis,
+        ensina a lidar com a agressividade e a desenvolver a assertividade, e promove um bem estar geral nos
+        seus praticantes.</p>
     </div>
   </div>
 
@@ -171,9 +171,10 @@
     </div>
     <div class="col-md-3 order-md-2 mt-3 mb-3 text-center text-md-left">
       <h2 class="featurette-heading">A melhor idade</h2>
-      <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-        commodo.</p>
+      <p>Além de todos os outros benefícios citados, a prática do karatê-dô na terceira idade melhora drasticamente
+        a qualidade de vida, porque aumenta o bem-estar, diminui as perdas físicas e cognitivas comuns na
+        terceira idade, e, por meio do budô, estimula a alegria natural do seu praticante, promovendo a paz de
+        espírito e a consciência da beleza e do sentido da vida.</p>
     </div>
     <div class="col-md-3 order-md-3 mb-2">
       <picture>
@@ -183,9 +184,10 @@
     </div>
     <div class="col-md-3 order-md-4 mt-3 mb-2 text-center text-md-left">
       <h2 class="featurette-heading">Alunos especiais</h2>
-      <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-        commodo.</p>
+      <p>O karatê é um grande aliado no desenvolvimento global de pessoas com deficiência física, intelectual ou
+        sensorial, ou com transtornos do desenvolvimento. Além disso, auxilia na cura e/ou na qualidade de vida
+        de pessoas com doenças incapacitantes. Cada aluno é trabalhado de forma interdisciplinar, em diálogo
+        contínuo com os outros profissionais envolvidos no caso.</p>
     </div>
   </div>
 </div>
@@ -199,7 +201,8 @@
     <div class="row">
       <div class="mx-auto text-center">
         <h2 class="mb-3">Dojo em Casa</h2>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        <p>Devido à pandemia de covid-19, em 2020 as aulas e treinos só estão sendo realizados à distância. Entre
+          em contato para mais informações.</p>
       </div>
     </div>
     <div class="row">
@@ -208,65 +211,12 @@
       </a>
     </div>
     <!-- Contact area -->
-    <!-- <div class="row">
+    <div class="row">
       <div class="mx-auto text-center mt-2">
-        <h2>Mídias Sociais</h2>
-
-        <div class="row">
-          <div class="col-lg-4">
-            <i class="material-icons" style="font-size:20px;color: var(--red);">email</i>gichinkai@gmail.com
-          </div>
-          <div class="col-lg-4">
-            <i class="material-icons" style="font-size:20px;color: var(--red);">phone</i>(11) 98525-5207
-          </div>
-          <div class="col-lg-4"> -->
-            <!-- <i class="material-icons" style="font-size:20px;color: var(--red);"></i>Facebook -->
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
-            </svg>
-          </div>
-          <div class="col-lg-4">
-            <i class="material-icons" style="font-size:20px;color: var(--red);"></i>YouTube
-          </div>
-          <div class="col-lg-4">
-            <i class="material-icons" style="font-size:20px;color: var(--red);"></i>Instagram
-          </div>
-        </div>
-
-
-        <i class="material-icons-outlined" style="font-size:20px;color: var(--red);">gmail</i>
-        gichinkai@gmail.com
-        <i class="material-icons-outlined" style="font-size:20px;color: var(--red);">phone</i>
-        (11) 98525-5207
+        <p>Entre em contato para mais informações sobre nossas aulas e agendar uma aula experimental</p>
+        <a class="btn btn-md btn-primary" href="https://wa.me/5513996736941?text=Olá,%20gostaria%20de%20agendar%20uma%20aula%20experimental%20online!" role="button">Agendar aula</a>
       </div>
-    </div> -->
-    <!-- <form>
-      <div class="form-row  justify-content-center">
-        <div class="col-sm-4 mr-1 mb-3">
-          <label for="inputName" class="sr-only" for="inputName">Nome</label>
-          <input type="text" class="form-control form-control-sm" id="inputName" placeholder="Nome">
-        </div>
-        <div class="col-sm-4 mr-1 mb-3">
-          <label for="inputEmail" class="sr-only" for="inputEmail">Email</label>
-          <input type="email" class="form-control form-control-sm" id="inputEmail" placeholder="Email">
-        </div>
-        <div class="col-sm-4 mr-1 mb-3">
-          <label for="inputPhone" class="sr-only" for="inputPhone">Telefone</label>
-          <input type="tel" class="form-control form-control-sm" id="inputPhone" placeholder="Telefone">
-        </div>
-        <div class="col-sm-4 mr-1 mb-3">
-          <label for="inputSub" class="sr-only" for="inputSub">Assunto</label>
-          <input type="text" class="form-control form-control-sm" id="inputSub" placeholder="Assunto">
-        </div>
-        <div class="col-md-8 mb-3">
-          <label for="inputMsg" class="sr-only" for="inputMsg">Mensagem</label>
-          <textarea class="form-control" id="inputMsg" rows="4" placeholder="Mensagem"></textarea>
-        </div>
-        <div class="col-md-8 text-right">
-          <button type="submit" class="btn btn-primary mb-2">Enviar</button>
-        </div>
-      </div>
-    </form> -->
+    </div>
   </div>
 </div>
 {{ end }}
