@@ -1,15 +1,3 @@
-{{ define "page_css"}}
-<style>
-  /* Set the size of the div element that contains the map */
-  #map {
-    height: 400px;  /* The height is 500 pixels */
-    width: 100%;  /* The width is the width of the web page */
-  }
-</style>
-{{ end }}
-
-
-
 {{ define "main"}}
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="15000">
   <ol class="carousel-indicators">
@@ -19,9 +7,19 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active bg-primary">
-      <img class="first-slide" src="https://source.unsplash.com/Xl-ilWBKJNk/2500x700"
-        alt="First slide">
+      {{ $orig_welcome := .Resources.GetMatch "welcome.jpg" }}
+      {{ .Scratch.Set "welcome_large" ($orig_welcome.Fill "2545x512 Center")}}
+      {{ $welcome_large := .Scratch.Get "welcome_large" }}
+      {{ .Scratch.Set "welcome_desktop" ($orig_welcome.Fill "1695x512 Center")}}
+      {{ $welcome_desktop := .Scratch.Get "welcome_desktop" }}
+      {{ .Scratch.Set "welcome_mobile" ($orig_welcome.Fill "500x512 Left")}}
+      {{ $welcome_mobile := .Scratch.Get "welcome_mobile" }}
       <div class="overlay-div"></div>
+      <picture>
+        <source media="(max-width: 500px)" srcset="{{ $welcome_mobile.RelPermalink }}">
+        <source media="(min-width: 1696px)" srcset="{{ $welcome_large.RelPermalink }}">
+        <img class="first-slide" src="{{ $welcome_desktop.RelPermalink }}" alt="First Slide"/>
+      </picture>
       <div class="container">
         <div class="carousel-caption text-left">
           <h1 class="text-white">Associação Gichinkai De Karatê-Dô</h1>
@@ -32,9 +30,19 @@
     </div>
 
     <div class="carousel-item bg-primary">
-      <img class="second-slide" src="https://source.unsplash.com/SBK40fdKbAg/2500x700"
-        alt="Second slide">
-        <div class="overlay-div"></div>
+      {{ $orig_memorial := .Resources.GetMatch "memorial.jpg" }}
+      {{ .Scratch.Set "memorial_large" ($orig_memorial.Fill "2545x512 Top") }}
+      {{ $memorial_large := .Scratch.Get "memorial_large" }}
+      {{ .Scratch.Set "memorial_desktop" ($orig_memorial.Fill "1695x512 Top") }}
+      {{ $memorial_desktop := .Scratch.Get "memorial_desktop" }}
+      {{ .Scratch.Set "memorial_mobile" ($orig_memorial.Fill "500x512 Center") }}
+      {{ $memorial_mobile := .Scratch.Get "memorial_mobile" }}
+      <div class="overlay-div"></div>
+      <picture>
+        <source media="(max-width: 500px)" srcset="{{ $memorial_mobile.RelPermalink }}">
+        <source media="(min-width: 1696px)" srcset="{{ $memorial_large.RelPermalink }}">
+        <img class="second-slide" src="{{ $memorial_desktop.RelPermalink }}" alt="Second Slide" />
+      </picture>
       <div class="container">
         <div class="carousel-caption">
           <h1 class="text-white">Memorial</h1>
@@ -86,8 +94,11 @@
   <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-lg-4">
+      {{ $orig_corpo := .Resources.GetMatch "corpo.jpg" }}
+      {{ .Scratch.Set "corpo_img" ($orig_corpo.Fill "140x140 Top") }}
+      {{ $corpo_img := .Scratch.Get "corpo_img" }}
       <img class="rounded-circle shadow mb-3"
-        src="https://source.unsplash.com/J1BwEL2n530/140x140"
+        src="{{ $corpo_img.RelPermalink }}"
         alt="Generic placeholder image" width="140" height="140">
       <h2>Corpo</h2>
       <p>A prática do karatê aumenta a força, a resistência física, o equilíbrio e a flexibilidade, organiza a postura,
@@ -95,8 +106,11 @@
         melhora o condicionamento físico global.</p>
     </div>
     <div class="col-lg-4">
+      {{ $orig_mente := .Resources.GetMatch "mente.jpg" }}
+      {{ .Scratch.Set "mente_img" ($orig_mente.Fill "140x140 Top") }}
+      {{ $mente_img := .Scratch.Get "mente_img" }}
       <img class="rounded-circle shadow mb-3"
-        src="https://source.unsplash.com/igLzPKOvZNw/140x140"
+        src="{{ $mente_img.RelPermalink }}"
         alt="Generic placeholder image" width="140" height="140">
       <h2>Mente</h2>
       <p>O karatê-dô aumenta o controle emocional, ajudando a lidar com a agressividade e a ansiedade;
@@ -105,8 +119,11 @@
       </p>
     </div>
     <div class="col-lg-4">
+      {{ $orig_espirito := .Resources.GetMatch "espirito.jpg" }}
+      {{ .Scratch.Set "espirito_img" ($orig_espirito.Fill "140x140 Center") }}
+      {{ $espirito_img := .Scratch.Get "espirito_img" }}
       <img class="rounded-circle shadow mb-3"
-        src="https://source.unsplash.com/uGlJHMEifB4/140x140"
+        src="{{ $espirito_img.RelPermalink }}"
         alt="Generic placeholder image" width="140" height="140">
       <h2>Espírito</h2>
       <p>O karatê-dô lapida o caráter de seus praticantes, desenvolvendo disciplina e respeito, transforma as
@@ -136,9 +153,14 @@
 
   <div class="row featurette justify-content-center">
     <div class="col-md-3 order-md-1 mb-2">
+      {{ $orig_criancas := .Resources.GetMatch "criancas.jpg" }}
+      {{ .Scratch.Set "criancas_mobile" ($orig_criancas.Fill "140x140 Center") }}
+      {{ $criancas_mobile := .Scratch.Get "criancas_mobile" }}
+      {{ .Scratch.Set "criancas_desktop" ($orig_criancas.Fill "400x400 Center") }}
+      {{ $criancas_desktop := .Scratch.Get "criancas_desktop" }}
       <picture>
-        <source media="(max-width: 768px)" srcset="https://source.unsplash.com/ryOMte-FerE/140x140">
-        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="https://source.unsplash.com/ryOMte-FerE/400x400" alt="Generic placeholder image">
+        <source media="(max-width: 768px)" srcset="{{ $criancas_mobile.RelPermalink }}">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $criancas_desktop.RelPermalink }}" alt="Generic placeholder image">
       </picture>
     </div>
     <div class="col-md-3 order-md-2 mt-3 mb-3 text-center text-md-left">
@@ -148,9 +170,14 @@
         tolerância à frustração, o respeito à hierarquia e aos limites, a coragem, a benevolência e a lealdade.</p>
     </div>
     <div class="col-md-3 order-md-3 mb-2">
+      {{ $orig_adultos := .Resources.GetMatch "adultos.jpg" }}
+      {{ .Scratch.Set "adultos_mobile" ($orig_adultos.Fill "140x140 Center") }}
+      {{ $adultos_mobile := .Scratch.Get "adultos_mobile" }}
+      {{ .Scratch.Set "adultos_desktop" ($orig_adultos.Fill "400x400 Center") }}
+      {{ $adultos_desktop := .Scratch.Get "adultos_desktop" }}
       <picture>
-        <source media="(max-width: 768px)" srcset="https://source.unsplash.com/8yMXitiya4w/140x140">
-        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="https://source.unsplash.com/8yMXitiya4w/400x400" alt="Generic placeholder image">
+        <source media="(max-width: 768px)" srcset="{{ $adultos_mobile.RelPermalink }}">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $adultos_desktop.RelPermalink }}" alt="Generic placeholder image">
       </picture>
     </div>
     <div class="col-md-3 order-md-4 mt-3 mb-3 text-center text-md-left">
@@ -164,9 +191,14 @@
 
   <div class="row featurette justify-content-center mt-5">
     <div class="col-md-3 order-md-1 mb-2">
+      {{ $orig_melhor_idade := .Resources.GetMatch "melhor_idade.jpg" }}
+      {{ .Scratch.Set "melhor_idade_mobile" ($orig_melhor_idade.Fill "140x140 Center") }}
+      {{ $melhor_idade_mobile := .Scratch.Get "melhor_idade_mobile" }}
+      {{ .Scratch.Set "melhor_idade_desktop" ($orig_melhor_idade.Fill "400x400 Center") }}
+      {{ $melhor_idade_desktop := .Scratch.Get "melhor_idade_desktop" }}
       <picture>
-        <source media="(max-width: 768px)" srcset="https://source.unsplash.com/A8dbWpVbfZ0/140x140">
-        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="https://source.unsplash.com/A8dbWpVbfZ0/400x400" alt="Generic placeholder image">
+        <source media="(max-width: 768px)" srcset="{{ $melhor_idade_mobile.RelPermalink }}">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $melhor_idade_desktop.RelPermalink }}" alt="Generic placeholder image">
       </picture>
     </div>
     <div class="col-md-3 order-md-2 mt-3 mb-3 text-center text-md-left">
@@ -177,9 +209,14 @@
         espírito e a consciência da beleza e do sentido da vida.</p>
     </div>
     <div class="col-md-3 order-md-3 mb-2">
+      {{ $orig_especiais := .Resources.GetMatch "especiais.jpg" }}
+      {{ .Scratch.Set "especiais_mobile" ($orig_especiais.Fill "140x140 Top") }}
+      {{ $especiais_mobile := .Scratch.Get "especiais_mobile" }}
+      {{ .Scratch.Set "especiais_desktop" ($orig_especiais.Fill "400x400 Top") }}
+      {{ $especiais_desktop := .Scratch.Get "especiais_desktop" }}
       <picture>
-        <source media="(max-width: 768px)" srcset="https://source.unsplash.com/c_xS7ngiWhQ/140x140">
-        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="https://source.unsplash.com/c_xS7ngiWhQ/400x400" alt="Generic placeholder image">
+        <source media="(max-width: 768px)" srcset="{{ $especiais_mobile.RelPermalink }}">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $especiais_desktop.RelPermalink }}" alt="Generic placeholder image">
       </picture>
     </div>
     <div class="col-md-3 order-md-4 mt-3 mb-2 text-center text-md-left">

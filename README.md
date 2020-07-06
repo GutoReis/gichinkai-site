@@ -1,4 +1,4 @@
-<img src="logo.png" height="150">
+<img src="logo_github.png" height="150">
 
 # Gichinkai Karate-Do Association
 
