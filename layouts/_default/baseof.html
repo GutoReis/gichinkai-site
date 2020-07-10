@@ -16,7 +16,7 @@
         {{ block "main" . -}}{{- end }}
     
     {{ partial "footer.html" . }}
-</main>
+  </main>
     <script src="{{ "js/bundle.js" | absURL }}"></script>
     <script>
         // scroll
@@ -24,6 +24,7 @@
         var logoLg = document.getElementById("logo-large")
         var logoSm = document.getElementById("logo-small")
         var collapsedNabvar = document.getElementById("collapsed-navbar")
+        var navbar_separator = document.getElementById("navbar-separator")
         window.onscroll = function() {scrollFunction()};
       
         function scrollFunction() {
@@ -32,11 +33,13 @@
             logoLg.style.display = "none";
             logoSm.style.display = "block";
             collapsedNabvar.classList.add("w-50")
+            navbar_separator.style.height = "70px";
           } else {
             topBtn.style.display = "none";
             logoLg.style.display = "block";
             logoSm.style.display = "none";
             collapsedNabvar.classList.remove("w-50")
+            navbar_separator.style.height = "150px";
           }
         }
       
@@ -46,6 +49,6 @@
         }
       </script>
     {{ block "page_js" . }}{{ end }}
-</body>
+  </body>
 
 </html>
