@@ -1,12 +1,18 @@
 <div id="myCarousel" class="carousel slide mb-4" data-ride="carousel">
     <div class="carousel-inner">
         {{ $postImg := .Resources.GetMatch "images/featured_image.*" }}
-        <div class="carousel-item active bg-primary" style="height: 24rem;">
-            {{ if $postImg }}
-                <img class="post-banner" src="{{ $postImg.RelPermalink }}" alt="Cover Image">
-            {{ else }}
-                <img class="post-banner" src="" alt="Not Yet">
-            {{ end }}
+        {{ .Scratch.Set "post_img_large" ($postImg.Fill "2545x512 Center") }}
+        {{ $post_img_large := .Scratch.Get "post_img_large" }}
+        {{ .Scratch.Set "post_img_desktop" ($postImg.Fill "1695x512 Center") }}
+        {{ $post_img_desktop := .Scratch.Get "post_img_desktop" }}
+        {{ .Scratch.Set "post_img_mobile" ($postImg.Fill "500x512 Center") }}
+        {{ $post_img_mobile := .Scratch.Get "post_img_mobile" }}
+        <div class="carousel-item active bg-primary">
+            <picture>
+                <source media="(max-width: 500px)" srcset="{{ $post_img_mobile.RelPermalink }}">
+                <source media="(min-width: 1695px)" srcset="{{ $post_img_large.RelPermalink }}">
+                <img class="first-slide" src="{{ $post_img_desktop.RelPermalink }}">
+            </picture>
             <div class="overlay-div"></div>
             <div class="container">
                 <div class="carousel-caption text-left">

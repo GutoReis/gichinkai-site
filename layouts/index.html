@@ -53,15 +53,13 @@
     </div>
 
     <div class="carousel-item bg-primary">
-      <img class="third-slide" src="https://source.unsplash.com/DgMotiPocGU/2500x700"
-        alt="Third slide">
-      <div class="overlay-div"></div>
-      <div class="container">
-        <div class="carousel-caption text-right">
-          <h1 class="text-white">Karatê Blog</h1>
-          <p><a class="btn btn-lg btn-primary" href="/posts" role="button">Leia mais</a></p>
-        </div>
-      </div>
+      {{ with .Site.GetPage "/posts" }}
+        {{ range first 1 .Pages.ByDate.Reverse }}
+          {{ block "featurepost_home" .}}
+            {{ partial "_featurepost_home" .}}
+          {{ end }}
+        {{ end }}
+      {{ end }}
     </div>
   </div>
   <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
