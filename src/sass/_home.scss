@@ -330,3 +330,23 @@ ul.social-network li {
 .memorial h6 {
   margin-bottom: 1.5em;
 }
+
+.center-logo {
+  div {
+    margin-right: 1rem;
+  }
+  a {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+  .center-logo {
+    div {
+      margin-right: 0rem;
+    }
+    a {
+      margin-right: 0rem;
+      text-align: center;
+    }
+  }
+}

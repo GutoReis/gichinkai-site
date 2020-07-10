@@ -21,13 +21,22 @@
     <script>
         // scroll
         var topBtn = document.getElementById("scroll");
+        var logoLg = document.getElementById("logo-large")
+        var logoSm = document.getElementById("logo-small")
+        var collapsedNabvar = document.getElementById("collapsed-navbar")
         window.onscroll = function() {scrollFunction()};
       
         function scrollFunction() {
           if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             topBtn.style.display = "block";
+            logoLg.style.display = "none";
+            logoSm.style.display = "block";
+            collapsedNabvar.classList.add("w-50")
           } else {
             topBtn.style.display = "none";
+            logoLg.style.display = "block";
+            logoSm.style.display = "none";
+            collapsedNabvar.classList.remove("w-50")
           }
         }
       
