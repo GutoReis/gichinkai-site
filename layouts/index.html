@@ -30,19 +30,21 @@
     </div>
 
     <div class="carousel-item bg-primary">
-      {{ $orig_memorial := .Resources.GetMatch "memorial.jpg" }}
-      {{ .Scratch.Set "memorial_large" ($orig_memorial.Fill "2545x512 Top") }}
-      {{ $memorial_large := .Scratch.Get "memorial_large" }}
-      {{ .Scratch.Set "memorial_desktop" ($orig_memorial.Fill "1695x512 Top") }}
-      {{ $memorial_desktop := .Scratch.Get "memorial_desktop" }}
-      {{ .Scratch.Set "memorial_mobile" ($orig_memorial.Fill "500x512 Center") }}
-      {{ $memorial_mobile := .Scratch.Get "memorial_mobile" }}
-      <div class="overlay-div"></div>
-      <picture>
-        <source media="(max-width: 500px)" srcset="{{ $memorial_mobile.RelPermalink }}">
-        <source media="(min-width: 1696px)" srcset="{{ $memorial_large.RelPermalink }}">
-        <img class="second-slide" src="{{ $memorial_desktop.RelPermalink }}" alt="Second Slide" />
-      </picture>
+      {{ with .Site.GetPage "/memorial" }}
+        {{ $orig_memorial := .Resources.GetMatch "memorial.jpg" }}
+        {{ .Scratch.Set "memorial_large" ($orig_memorial.Fill "2545x512 Top") }}
+        {{ $memorial_large := .Scratch.Get "memorial_large" }}
+        {{ .Scratch.Set "memorial_desktop" ($orig_memorial.Fill "1695x512 Top") }}
+        {{ $memorial_desktop := .Scratch.Get "memorial_desktop" }}
+        {{ .Scratch.Set "memorial_mobile" ($orig_memorial.Fill "500x512 Center") }}
+        {{ $memorial_mobile := .Scratch.Get "memorial_mobile" }}
+        <div class="overlay-div"></div>
+        <picture>
+          <source media="(max-width: 500px)" srcset="{{ $memorial_mobile.RelPermalink }}">
+          <source media="(min-width: 1696px)" srcset="{{ $memorial_large.RelPermalink }}">
+          <img class="second-slide" src="{{ $memorial_desktop.RelPermalink }}" alt="Second Slide" />
+        </picture>
+      {{ end }}
       <div class="container">
         <div class="carousel-caption">
           <h1 class="text-white">Memorial</h1>
