@@ -1,15 +1,24 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
-    <div id="logo-large" class="my-2 order-0 w-md-100 w-75 container mr-lg-5 center-logo">
-      <a class="navbar-brand w-100" href="/">
-        <img class="nav-logo align-top" src="/images/logo.png" width="100" height="150" alt="">
-      </a>
-    </div>
-    <div id="logo-small" class="container w-50 my-2" style="display: none;">
-      <a class="navbar-brand ml-3" href="/">
-        <img class="nav-logo d-inline-block align-top" src="/images/icon.png" width="30" height="30" alt="">
-        <span class="d-none d-md-inline-block text-primary" style="font-family: 'Kaushan Script';">{{ .Site.Title }}</span>
-      </a>
-    </div>
+    {{ if .IsHome }}
+      <div id="logo-large" class="my-2 order-0 w-md-100 w-75 container mr-lg-5 center-logo">
+        <a class="navbar-brand w-100" href="/">
+          <img class="nav-logo align-top" src="/images/logo.png" width="100" height="150" alt="">
+        </a>
+      </div>
+      <div id="logo-small" class="container w-50 my-2" style="display: none;">
+        <a class="navbar-brand ml-3" href="/">
+          <img class="nav-logo d-inline-block align-top" src="/images/icon.png" width="30" height="30" alt="">
+          <span class="d-none d-md-inline-block text-primary" style="font-family: 'Kaushan Script';">{{ .Site.Title }}</span>
+        </a>
+      </div>
+    {{ else }}
+      <div id="logo-small" class="container w-50 my-2">
+        <a class="navbar-brand ml-3" href="/">
+          <img class="nav-logo d-inline-block align-top" src="/images/icon.png" width="30" height="30" alt="">
+          <span class="d-none d-md-inline-block text-primary" style="font-family: 'Kaushan Script';">{{ .Site.Title }}</span>
+        </a>
+      </div>
+    {{ end }}
     <div id="collapsed-navbar" class="mb-2 container justify-content-end d-lg-none">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,4 +37,8 @@
     </div>
 </nav>
 
-<div id="navbar-separator" style="height: 150px;"></div>
+{{ if .IsHome }}
+  <div id="navbar-separator" style="height: 150px;"></div>
+{{ else }}
+  <div id="navbar-separator" style="height: 20px;"></div>
+{{ end }}
