@@ -1,9 +1,20 @@
 {{ define "main" }}
+{{ $orig_historia := .Resources.GetMatch .Params.image }}
+{{ .Scratch.Set "historia_large" ($orig_historia.Fill "2545x512 Center") }}
+{{ $historia_large := .Scratch.Get "historia_large" }}
+{{ .Scratch.Set "historia_desktop" ($orig_historia.Fill "1695x512 Center") }}
+{{ $historia_desktop := .Scratch.Get "historia_desktop" }}
+{{ .Scratch.Set "historia_mobile" ($orig_historia.Fill "500x512 Center") }}
+{{ $historia_mobile := .Scratch.Get "historia_mobile" }}
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active bg-primary" style="height: 24rem;">
-      <img class="post-banner" src="{{ .Params.image }}" alt="First slide">
       <div class="overlay-div"></div>
+      <picture>
+        <source media="(max-width: 500px)" srcset="{{ $historia_mobile.RelPermalink }}">
+        <source media="(min-width: 1695px)" srcset="{{ $historia_large.RelPermalink }}">
+        <img class="second-slide" src="{{ $historia_desktop.RelPermalink }}" alt="Nossa Historia">
+      </picture>
       <div class="container">
         <div class="carousel-caption text-left">
           <h1 class="text-white">{{ .Params.nossa_historia }}</h1>
@@ -17,7 +28,7 @@
   <div class="container justify-content-center col-lg-10 mt-5 mb-5">
     <article>
       <div class="columns is-centered">
-        <div class="column max-1000px">
+        <div class="column max-1000px history-center">
           {{ .Content }}
         </div>
       </div>

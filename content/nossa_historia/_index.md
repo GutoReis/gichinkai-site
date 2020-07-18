@@ -3,7 +3,7 @@ title: Nossa Historia
 date: 2020-03-10T12:22:42.000Z
 nossa_historia: Gichinkai
 draft: false
-image: https://source.unsplash.com/hwLAI5lRhdM/2500x700
+image: nossa_historia.jpg
 intro: Reunindo praticantes do karatê tradicional desde 1982
 ---
 Há 36 anos atrás ainda não tínhamos a internet, e nossas fontes de pesquisas eram muito lentas e escassas.
@@ -46,3 +46,5 @@ Comprometimento com a tradição
 Senso de comunidade  
 Iniciativa e participação social  
 Kaizen (foco na mudança para melhor)
+
+![gichinkai logo](/nossa_historia/logo.png)

@@ -242,8 +242,6 @@
           em contato para mais informações.</p>
       </div>
     </div>
-    <!-- DESKTOP: 1080x500 -->
-    <!-- MOBILE: 690x320 -->
     {{ $orig_dojo_casa := .Resources.GetMatch "dojo_em_casa.png" }}
     {{ .Scratch.Set "dojo_casa_mobile" ($orig_dojo_casa.Fill "690x320 Center")}}
     {{ $dojo_casa_mobile := .Scratch.Get "dojo_casa_mobile" }}
