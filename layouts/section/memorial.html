@@ -30,6 +30,15 @@
       <div class="columns is-centered">
         <div class="column max-1000px memorial">
           {{ .Content }}
+          {{ $orig_close := .Resources.GetMatch .Params.closeimg}}
+          {{ .Scratch.Set "close_desktop" ($orig_close.Fill "1080x500 Top") }}
+          {{ $close_desktop := .Scratch.Get "close_desktop" }}
+          {{ .Scratch.Set "close_mobile" ($orig_close.Fill "690x320 Top") }}
+          {{ $close_mobile := .Scratch.Get "close_mobile" }}
+          <picture>
+            <source media="(max-width: 768px)" srcset="{{ $close_mobile.RelPermalink }}">
+            <img class="rounded img-fluid" src="{{ $close_desktop.RelPermalink }}" alt="Bonenkai">
+          </picture>
         </div>
       </div>
     </article>

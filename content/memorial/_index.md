@@ -7,6 +7,7 @@ image: "memorial.jpg"
 intro: "Saiba quem foi Sensei Nakaema, principal personagem que fez reformular a didática da
 Gichinkai, a linha didática da Gichinkai veio dele. Levou a Gichinkai para as raízes okinawanas,
 por ser descendente direto de karatekas."
+closeimg: "bonenkai.jpg"
 ---
 ###### por Sensei João Batista – fundador da Associação Gichinkai
 
