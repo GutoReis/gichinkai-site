@@ -19,7 +19,11 @@
         </a>
       </div>
     {{ end }}
-    <div id="collapsed-navbar" class="mb-2 container justify-content-end d-lg-none">
+    {{ if .IsHome }}
+    <div id="collapsed-navbar" class="mb-2 container justify-content-end d-lg-none w-50">
+    {{ else }}
+    <div id="collapsed-navbar" class="mb-2 container justify-content-end d-lg-none w-50">
+    {{ end }}
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
