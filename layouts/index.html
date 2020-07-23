@@ -18,7 +18,7 @@
       <picture>
         <source media="(max-width: 500px)" srcset="{{ $welcome_mobile.RelPermalink }}">
         <source media="(min-width: 1696px)" srcset="{{ $welcome_large.RelPermalink }}">
-        <img class="first-slide" src="{{ $welcome_desktop.RelPermalink }}" alt="First Slide"/>
+        <img class="first-slide" src="{{ $welcome_desktop.RelPermalink }}" alt="Seja bem vindo"/>
       </picture>
       <div class="container">
         <div class="carousel-caption text-left">
@@ -42,7 +42,7 @@
         <picture>
           <source media="(max-width: 500px)" srcset="{{ $memorial_mobile.RelPermalink }}">
           <source media="(min-width: 1696px)" srcset="{{ $memorial_large.RelPermalink }}">
-          <img class="second-slide" src="{{ $memorial_desktop.RelPermalink }}" alt="Second Slide" />
+          <img class="second-slide" src="{{ $memorial_desktop.RelPermalink }}" alt="Memorial" />
         </picture>
       {{ end }}
       <div class="container">
@@ -55,13 +55,25 @@
     </div>
 
     <div class="carousel-item bg-primary">
-      {{ with .Site.GetPage "/posts" }}
-        {{ range first 1 .Pages.ByDate.Reverse }}
-          {{ block "featurepost_home" .}}
-            {{ partial "_featurepost_home" .}}
-          {{ end }}
-        {{ end }}
-      {{ end }}
+      {{ $orig_soon := .Resources.GetMatch "em_breve.jpg" }}
+      {{ .Scratch.Set "soon_large" ($orig_soon.Fill "2545x512 Center")}}
+      {{ $soon_large := .Scratch.Get "soon_large" }}
+      {{ .Scratch.Set "soon_desktop" ($orig_soon.Fill "1695x512 Center")}}
+      {{ $soon_desktop := .Scratch.Get "soon_desktop" }}
+      {{ .Scratch.Set "soon_mobile" ($orig_soon.Fill "500x512 Left")}}
+      {{ $soon_mobile := .Scratch.Get "soon_mobile" }}
+      <div class="overlay-div"></div>
+      <picture>
+        <source media="(max-width: 500px)" srcset="{{ $soon_mobile.RelPermalink }}">
+        <source media="(min-width: 1696px)" srcset="{{ $soon_large.RelPermalink }}">
+        <img class="third-slide" src="{{ $soon_desktop.RelPermalink }}" alt="www.hthaostudio.com"/>
+      </picture>
+      <div class="container">
+        <div class="carousel-caption text-right">
+          <h1 class="text-white">Blog Karatê-Dô</h1>
+          <p><a class="btn btn-lg btn-primary" role="button">Em Breve</a></p>
+        </div>
+      </div>
     </div>
   </div>
   <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">

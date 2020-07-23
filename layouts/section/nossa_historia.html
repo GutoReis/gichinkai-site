@@ -30,6 +30,26 @@
       <div class="columns is-centered">
         <div class="column max-1000px history-center">
           {{ .Content }}
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <h6>MISSÃO</h6>
+              <p>{{ .Params.missao }}</p>
+              <h6>VISÃO</h6>
+              <p>{{ .Params.visao }}</p>
+              <h6>VALORES</h6>
+              {{ with .Params.valores }}
+                <ul style="list-style: none; padding: 0;">
+                  {{ range . }}
+                    <li>{{ . }}</li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+            </div>
+            <div class="col-md-6 my-auto">
+              <img src="{{ .Params.logo }}" alt="Gichinkai Logo">
+            </div>
+          </div>
         </div>
       </div>
     </article>

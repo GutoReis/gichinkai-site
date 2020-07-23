@@ -5,6 +5,18 @@ nossa_historia: Gichinkai
 draft: false
 image: nossa_historia.jpg
 intro: Reunindo praticantes do karatê tradicional desde 1982
+missao: Ensinar e divulgar o karatê-dô, formar karatecas de excelência e unir praticantes que perpetuem essa arte.
+visao: Ser referência em karatê tradicional no País.
+valores:
+    - Respeito  
+    - Integridade  
+    - Humildade  
+    - Responsabilidade  
+    - Comprometimento com a tradição  
+    - Senso de comunidade  
+    - Iniciativa e participação social  
+    - Kaizen (foco na mudança para melhor)
+logo: logo.png
 ---
 Há 36 anos atrás ainda não tínhamos a internet, e nossas fontes de pesquisas eram muito lentas e escassas.
 Foi apenas no final dos anos 70 que descobri que o karatê não era uma arte genuinamente japonesa, mas
@@ -30,21 +42,3 @@ metade dos anos 90, tivemos a honra de ter como conselheiro técnico um dos pion
 Brasil, o mestre Paulo Moritoshi Nakaema. Dessa união em diante a Gichinkai uniu os fundamentos
 muito bem estruturados da escola Shotokan à Sankakuitiryu, metodologia de pesquisas e didática de
 Sensei Nakaema.
-
-###### MISSÃO
-Ensinar e divulgar o karatê-dô, formar karatecas de excelência e unir praticantes que perpetuem essa arte.
-
-###### VISÃO
-Ser referência em karatê tradicional no País.
-
-###### VALORES
-Respeito  
-Integridade  
-Humildade  
-Responsabilidade  
-Comprometimento com a tradição  
-Senso de comunidade  
-Iniciativa e participação social  
-Kaizen (foco na mudança para melhor)
-
-![gichinkai logo](/nossa_historia/logo.png)
