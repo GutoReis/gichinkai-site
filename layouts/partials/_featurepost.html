@@ -11,7 +11,7 @@
             <picture>
                 <source media="(max-width: 500px)" srcset="{{ $post_img_mobile.RelPermalink }}">
                 <source media="(min-width: 1695px)" srcset="{{ $post_img_large.RelPermalink }}">
-                <img class="first-slide" src="{{ $post_img_desktop.RelPermalink }}">
+                <img class="first-slide" src="{{ $post_img_desktop.RelPermalink }}" alt="{{ .Params.title }}">
             </picture>
             <div class="overlay-div"></div>
             <div class="container">

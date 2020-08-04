@@ -1,9 +1,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="icon" href="/imgages/favicon.ico">
+<link rel="icon" href="/images/favicon.ico">
 {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
 
 {{ .Hugo.Generator }}
 <title>{{ .Title }}{{ if not .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
 {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>

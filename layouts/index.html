@@ -18,7 +18,7 @@
       <picture>
         <source media="(max-width: 500px)" srcset="{{ $welcome_mobile.RelPermalink }}">
         <source media="(min-width: 1696px)" srcset="{{ $welcome_large.RelPermalink }}">
-        <img class="first-slide" src="{{ $welcome_desktop.RelPermalink }}" alt="Seja bem vindo"/>
+        <img class="first-slide" src="{{ $welcome_desktop.RelPermalink }}" alt="Karatekas fazendo a reverencia antes do inicio de um treino em um dojo."/>
       </picture>
       <div class="container">
         <div class="carousel-caption text-left">
@@ -42,7 +42,7 @@
         <picture>
           <source media="(max-width: 500px)" srcset="{{ $memorial_mobile.RelPermalink }}">
           <source media="(min-width: 1696px)" srcset="{{ $memorial_large.RelPermalink }}">
-          <img class="second-slide" src="{{ $memorial_desktop.RelPermalink }}" alt="Memorial" />
+          <img class="second-slide" src="{{ $memorial_desktop.RelPermalink }}" alt="Homenagem a Sensei Nakaema, sentado com o kimono branco, braços cruzados, um sorriso e um olhar sereno" />
         </picture>
       {{ end }}
       <div class="container">
@@ -111,7 +111,7 @@
       {{ $corpo_img := .Scratch.Get "corpo_img" }}
       <img class="rounded-circle shadow mb-3"
         src="{{ $corpo_img.RelPermalink }}"
-        alt="Generic placeholder image" width="140" height="140">
+        alt="Karateka executando um movimento usando uma tonfa" width="140" height="140">
       <h2>Corpo</h2>
       <p>A prática do karatê aumenta a força, a resistência física, o equilíbrio e a flexibilidade, organiza a postura,
         desenvolve a coordenação motora, promove agilidade e rapidez, desenvolve a consciência corporal e
@@ -123,7 +123,7 @@
       {{ $mente_img := .Scratch.Get "mente_img" }}
       <img class="rounded-circle shadow mb-3"
         src="{{ $mente_img.RelPermalink }}"
-        alt="Generic placeholder image" width="140" height="140">
+        alt="Karateka praticando em uma praia deserta." width="140" height="140">
       <h2>Mente</h2>
       <p>O karatê-dô aumenta o controle emocional, ajudando a lidar com a agressividade e a ansiedade;
         desenvolve a concentração, a atenção e o pensamento estratégico, estimula a criatividade, a inteligência e
@@ -136,7 +136,7 @@
       {{ $espirito_img := .Scratch.Get "espirito_img" }}
       <img class="rounded-circle shadow mb-3"
         src="{{ $espirito_img.RelPermalink }}"
-        alt="Generic placeholder image" width="140" height="140">
+        alt="Kararteka ajoelhado fazendo uma reverencia." width="140" height="140">
       <h2>Espírito</h2>
       <p>O karatê-dô lapida o caráter de seus praticantes, desenvolvendo disciplina e respeito, transforma as
         práticas cotidianas em meditação ativa, amplia a consciência, desenvolve a intuição, possibilita a
@@ -168,11 +168,11 @@
       {{ $orig_criancas := .Resources.GetMatch "criancas.jpg" }}
       {{ .Scratch.Set "criancas_mobile" ($orig_criancas.Fill "140x140 Center") }}
       {{ $criancas_mobile := .Scratch.Get "criancas_mobile" }}
-      {{ .Scratch.Set "criancas_desktop" ($orig_criancas.Fill "400x400 Center") }}
+      {{ .Scratch.Set "criancas_desktop" ($orig_criancas.Fill "255x255 Center") }}
       {{ $criancas_desktop := .Scratch.Get "criancas_desktop" }}
       <picture>
         <source media="(max-width: 768px)" srcset="{{ $criancas_mobile.RelPermalink }}">
-        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $criancas_desktop.RelPermalink }}" alt="Generic placeholder image">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $criancas_desktop.RelPermalink }}" alt="Crianças praticando combate de karate com equipamentos de proteção.">
       </picture>
     </div>
     <div class="col-md-3 order-md-2 mt-3 mb-3 text-center text-md-left">
@@ -185,11 +185,11 @@
       {{ $orig_adultos := .Resources.GetMatch "adultos.jpg" }}
       {{ .Scratch.Set "adultos_mobile" ($orig_adultos.Fill "140x140 Center") }}
       {{ $adultos_mobile := .Scratch.Get "adultos_mobile" }}
-      {{ .Scratch.Set "adultos_desktop" ($orig_adultos.Fill "400x400 Center") }}
+      {{ .Scratch.Set "adultos_desktop" ($orig_adultos.Fill "255x255 Center") }}
       {{ $adultos_desktop := .Scratch.Get "adultos_desktop" }}
       <picture>
         <source media="(max-width: 768px)" srcset="{{ $adultos_mobile.RelPermalink }}">
-        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $adultos_desktop.RelPermalink }}" alt="Generic placeholder image">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $adultos_desktop.RelPermalink }}" alt="Karateka adulto praticando um movimento de defesa">
       </picture>
     </div>
     <div class="col-md-3 order-md-4 mt-3 mb-3 text-center text-md-left">
@@ -206,11 +206,11 @@
       {{ $orig_melhor_idade := .Resources.GetMatch "melhor_idade.jpg" }}
       {{ .Scratch.Set "melhor_idade_mobile" ($orig_melhor_idade.Fill "140x140 Center") }}
       {{ $melhor_idade_mobile := .Scratch.Get "melhor_idade_mobile" }}
-      {{ .Scratch.Set "melhor_idade_desktop" ($orig_melhor_idade.Fill "400x400 Center") }}
+      {{ .Scratch.Set "melhor_idade_desktop" ($orig_melhor_idade.Fill "255x255 Center") }}
       {{ $melhor_idade_desktop := .Scratch.Get "melhor_idade_desktop" }}
       <picture>
         <source media="(max-width: 768px)" srcset="{{ $melhor_idade_mobile.RelPermalink }}">
-        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $melhor_idade_desktop.RelPermalink }}" alt="Generic placeholder image">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $melhor_idade_desktop.RelPermalink }}" alt="Homem de mais idade, segurando uma espada e usando um kimono branco.">
       </picture>
     </div>
     <div class="col-md-3 order-md-2 mt-3 mb-3 text-center text-md-left">
@@ -224,11 +224,11 @@
       {{ $orig_especiais := .Resources.GetMatch "especiais.jpg" }}
       {{ .Scratch.Set "especiais_mobile" ($orig_especiais.Fill "140x140 Top") }}
       {{ $especiais_mobile := .Scratch.Get "especiais_mobile" }}
-      {{ .Scratch.Set "especiais_desktop" ($orig_especiais.Fill "400x400 Top") }}
+      {{ .Scratch.Set "especiais_desktop" ($orig_especiais.Fill "255x255 Top") }}
       {{ $especiais_desktop := .Scratch.Get "especiais_desktop" }}
       <picture>
         <source media="(max-width: 768px)" srcset="{{ $especiais_mobile.RelPermalink }}">
-        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $especiais_desktop.RelPermalink }}" alt="Generic placeholder image">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $especiais_desktop.RelPermalink }}" alt="Karateka com faixa vermelha e kimono branco fazendo um movimento de defesa.">
       </picture>
     </div>
     <div class="col-md-3 order-md-4 mt-3 mb-2 text-center text-md-left">
@@ -263,7 +263,7 @@
       <a href="https://youtu.be/w9ZmTydVfOU" target="blank">
         <picture>
           <source media="(max-width768px)" srcset="{{ $dojo_casa_mobile.RelPermalink }}">
-          <img class="rounded img-fluid" src="{{ $dojo_casa_desktop.RelPermalink }}" alt="Dojo em casa">
+          <img class="rounded img-fluid" src="{{ $dojo_casa_desktop.RelPermalink }}" alt="Sensei Li transmitindo uma aula de seu dojo em casa.">
         </picture>
       </a>
     </div>
