@@ -97,3 +97,19 @@
 <!-- SEARCH ENGINE CRAWLERS -->
 <meta name="robots" content="index, follow" />
 <meta name="googlebot" content="index, follow" />
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org/",
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Antonio Ambuba, 32, Campo Limpo",
+      "addressLocality": "São Paulo",
+      "addressRegion": "São Paulo",
+      "postalCode": "05782-370"
+    },
+    "telephone": "+55 (11) 98525-5207"
+  }
+</script>
