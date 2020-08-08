@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "en" }}">
 
-<head>
+<head itemscope itemtype="{{ .Site.BaseURL }}">
     {{ partial "head.html" . }}
     <link rel="stylesheet" type="text/css" href="{{ "css/main.css" | absURL }}">
     <link

@@ -4,7 +4,7 @@ date: 2019-12-23T15:15:42-03:00
 draft: false
 memory: Em memória de Sensei Nakaema
 image: "memorial.jpg"
-intro: "Saiba quem foi Sensei Nakaema, principal personagem que fez reformular a didática da
+description: "Saiba quem foi Sensei Nakaema, principal personagem que fez reformular a didática da
 Gichinkai, a linha didática da Gichinkai veio dele. Levou a Gichinkai para as raízes okinawanas,
 por ser descendente direto de karatekas."
 closeimg: "bonenkai.jpg"

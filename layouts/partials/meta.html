@@ -1,0 +1,99 @@
+<!-- TITLE TAGS -->
+<title itemprop="name">{{ .Title }} | {{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
+<meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}" />
+<meta itemprop="name" content="{{ .Title }} | {{ .Site.Title }}" />
+<meta name="application-name" content="{{ .Title }} | {{ .Site.Title }}" />
+
+<!-- DESCRIPTION TAGS -->
+<meta name="description" content="{{ .Params.description }}" />
+<meta itemprop="description" content="{{ .Params.description }}" />
+<meta property="og:description" content="{{ .Params.description }}" />
+<meta name="twitter:description" content="{{ .Params.description }}" />
+
+<!-- LINK TAGS -->
+<base href="{{ .Permalink }}" >
+<link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
+<meta name="url" content="{{ .Permalink }}" />
+<meta name="twitter:url" content="{{ .Permalink }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+
+<!-- LANGUAGE TAGS -->
+<meta property="og:locale" content="{{ .Language.Lang }}">
+<meta name="language" content="{{ .Language.LanguageName }}">
+
+{{ with .Params.image }}
+    <meta itemprop="image" content="{{ . | absURL }}" />
+    <meta property="og:image" content="{{ . | absURL }}" />
+    <meta name="twitter:image" content="{{ . | absURL }}" />
+    <meta name="twitter:image:src" content="{{ . | absURL }}" />
+{{ else }}
+    <meta itemprop="image" content="{{ .Site.Params.image | absURL }}" />
+    <meta property="og:image" content="{{ .Site.Params.image | absURL }}" />
+    <meta name="twitter:image" content="{{ .Site.Params.image | absURL }}" />
+    <meta name="twitter:image:src" content="{{ .Site.Params.image | absURL }}" />
+{{ end }}
+
+<!-- BLOG TAGS ONLY - ARTICLE -->
+{{ if eq .Section "blog" }}
+    <!-- Paginatio meta tags for list pages only -->
+    {{ $paginator := .Paginate (where .Pages "Section" "blog")}}
+    {{ if $paginator }}
+        <link rel="first" href="{{ $paginator.First.URL }}">
+        <link rel="last" href="{{ $paginator.Last.URL }}">
+        {{ if $paginator.HasPrev }}
+            <link rel="prev" href="{{ $paginator.Prev.URL }}">
+        {{ end }}
+        {{ if $paginator.HasNext }}
+            <link rel="next" hreef="{{ $paginator.Next.URL }}">
+        {{ end}}
+    {{ end }}
+    <meta property="og:type" content="article" />
+    <meta property="article:publisher" content="{{ .Site.Params.facebook }}" />
+    <meta property="og:article:published_time" content={{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
+    <meta property="article:published_time" content={{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
+
+    {{ with .Params.author }}
+        <meta property="og:article:author" content="{{ humanize . }}" />
+        <meta property="article:author" content="{{ humanize . }}" />
+        <meta name="author" content="{{ humanize .}}" />
+    {{ end }}
+
+    {{ with .Params.category }}
+        <meta name="news_keywords" content="{{ index . 0 }}" />
+        <meta property="article:section" content="{{ index . 0 }}" />
+    {{ end }}
+
+    <script defer type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Article",
+            "headline": {{ .Title }},
+            "author": {
+                "@type": "Person",
+                "name": "{{ .Site.Params.sitename }}"
+            },
+            "datePublished": "{{ .Dat.Format "2006-01-02" }}",
+            "description": {{ .Description }},
+            "wordCount": {{ .WordCount }},
+            "mainEntityOfPage": "True",
+            "image": {
+                "@type": "imageObject",
+                "url": "{{ with .Params.image }}{{ .Permalink }}{{end }}"
+            },
+            "publihser": {
+                "@type": "Organization",
+                "name": "{{ .Site.Title }}",
+                "logo": {
+                    "@type": "imageObject",
+                    "url": "{{ .Site.BaseURL }}/images/favicon.png"
+                }
+            }
+        }
+    </script>
+
+{{ end }}
+
+<!-- SEARCH ENGINE CRAWLERS -->
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />

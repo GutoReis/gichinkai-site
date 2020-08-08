@@ -1,7 +1,8 @@
 {
     "baseurl": "https://homolog-gichinkai.netlify.com/",
-    "languageCode": "en-us",
     "title": "Associação Gichinkai de Karatê-Dô",
+    "languageCode": "en-us",
+    "defaultContentLanguage": "pt",
     "paginate": 5,
     "enableRobotsTXT": true,
     "disableKinds": ["taxonomyTerm"],
@@ -37,7 +38,18 @@
     "params": {
         "author": "Gustavo Reis",
         "description": "Associação Gichinkai de Karatê-Dô tradicional - Reunindo praticantes do karatê tradicional desde 1982",
-        "date_format": "Mon Jan 02, 2006"
+        "date_format": "Mon Jan 02, 2006",
+        "facebook": "https://www.facebook.com/KaratedoAssociacaoGichinkaiSP/",
+        "youtube": "https://www.youtube.com/channel/UCcRbhFsSvcDcLbGA9cbaOjQ",
+        "instagram": "https://www.instagram.com/gichinkai/",
+        "sitename": "Associação Gichinkai de Karatê-Dô"
+    },
+    "languages": {
+        "pt": {
+            "languageName": "Portuguese",
+            "languageCode": "pt-br",
+            "weight": 1
+        }
     },
     "related": {
         "threshold": 0,

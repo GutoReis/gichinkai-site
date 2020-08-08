@@ -4,7 +4,7 @@ date: 2020-03-10T12:22:42.000Z
 nossa_historia: Gichinkai
 draft: false
 image: nossa_historia.jpg
-intro: Reunindo praticantes do karatê tradicional desde 1982
+description: Reunindo praticantes do karatê tradicional desde 1982
 missao: Ensinar e divulgar o karatê-dô, formar karatecas de excelência e unir praticantes que perpetuem essa arte.
 visao: Ser referência em karatê tradicional no País.
 valores:
