@@ -145,7 +145,7 @@
   </div>
 </div>
 
-<!-- Quem pode treinar featurette-** -->
+<!-- Quem pode treinar section -->
 <div class="container marketing">
   <hr class="featurette-divider">
 
@@ -240,9 +240,9 @@
     </div>
   </div>
 </div>
-<!-- /END THE FEATURETTES -->
+<!-- /END SECTION -->
 
-<!-- Locais de treino -->
+<!-- DOJO EM CASA SECTION -->
 <div class="container marketing">
   <hr class="featurette-divider mb-5 mt-5">
 
@@ -252,9 +252,20 @@
         <h2 class="mb-3">Dojo em Casa</h2>
         <p>Devido à pandemia de covid-19, em 2020 as aulas e treinos só estão sendo realizados à distância. Entre
           em contato para mais informações.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada nunc varius magna venenatis, at semper lectus imperdiet. Integer bibendum velit consectetur elementum rutrum. Curabitur tempus odio nulla, eget consectetur massa vestibulum luctus. Pellentesque ultricies, tellus eu blandit mattis, tellus ligula aliquam eros, a dictum libero velit ac sapien. Praesent felis justo, lacinia in mollis nec, ornare sit amet nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam aliquet felis neque, eu semper nisl vestibulum quis. Duis consectetur sodales sapien, quis lacinia diam facilisis nec. </p>
       </div>
     </div>
-    {{ $orig_dojo_casa := .Resources.GetMatch "dojo_em_casa.png" }}
+    <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 mb-3">  <!-- Add | shuffle after "testmonials" to randomize it-->
+      {{ $paginator := .Paginate (where .Pages "Type" "testimonial")}}
+      {{ range $paginator.Pages }}
+        <div class="col mb-4">
+          {{ block "testimonials_card" . }}
+            {{ partial "_testimonial" . }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+    <!-- {{ $orig_dojo_casa := .Resources.GetMatch "dojo_em_casa.png" }}
     {{ .Scratch.Set "dojo_casa_mobile" ($orig_dojo_casa.Fill "690x320 Center")}}
     {{ $dojo_casa_mobile := .Scratch.Get "dojo_casa_mobile" }}
     {{ .Scratch.Set "dojo_casa_desktop" ($orig_dojo_casa.Fill "1080x500 Center")}}
@@ -266,7 +277,7 @@
           <img class="rounded img-fluid" src="{{ $dojo_casa_desktop.RelPermalink }}" alt="Sensei Li transmitindo uma aula de seu dojo em casa.">
         </picture>
       </a>
-    </div>
+    </div> -->
     <!-- Contact area -->
     <div class="row">
       <div class="mx-auto text-center mt-2">
@@ -275,5 +286,6 @@
       </div>
     </div>
   </div>
+  <!-- END SECTION -->
 </div>
 {{ end }}
