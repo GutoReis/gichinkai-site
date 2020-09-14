@@ -255,16 +255,18 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada nunc varius magna venenatis, at semper lectus imperdiet. Integer bibendum velit consectetur elementum rutrum. Curabitur tempus odio nulla, eget consectetur massa vestibulum luctus. Pellentesque ultricies, tellus eu blandit mattis, tellus ligula aliquam eros, a dictum libero velit ac sapien. Praesent felis justo, lacinia in mollis nec, ornare sit amet nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam aliquet felis neque, eu semper nisl vestibulum quis. Duis consectetur sodales sapien, quis lacinia diam facilisis nec. </p>
       </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 mb-3">  <!-- Add | shuffle after "testmonials" to randomize it-->
-      {{ $paginator := .Paginate (where .Pages "Type" "testimonial")}}
-      {{ range $paginator.Pages }}
-        <div class="col mb-4">
-          {{ block "testimonials_card" . }}
-            {{ partial "_testimonial" . }}
-          {{ end }}
-        </div>
-      {{ end }}
-    </div>
+    {{ with .Site.GetPage "testimonial" }}
+      <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 mb-3">  <!-- Add | shuffle after "testmonials" to randomize it-->
+        {{ $paginator := .Paginate (where .Pages "Type" "testimonial")}}
+        {{ range $paginator.Pages }}
+          <div class="col mb-4">
+            {{ block "testimonials_card" . }}
+              {{ partial "_testimonial" . }}
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
     <!-- {{ $orig_dojo_casa := .Resources.GetMatch "dojo_em_casa.png" }}
     {{ .Scratch.Set "dojo_casa_mobile" ($orig_dojo_casa.Fill "690x320 Center")}}
     {{ $dojo_casa_mobile := .Scratch.Get "dojo_casa_mobile" }}
