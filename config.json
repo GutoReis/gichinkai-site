@@ -3,7 +3,7 @@
     "title": "Associação Gichinkai de Karatê-Dô",
     "languageCode": "en-us",
     "defaultContentLanguage": "pt",
-    "paginate": 5,
+    
     "enableRobotsTXT": true,
     "disableKinds": ["taxonomyTerm"],
     "menu": {
