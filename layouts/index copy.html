@@ -281,19 +281,64 @@
           em contato para mais informações.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada nunc varius magna venenatis, at semper lectus imperdiet. Integer bibendum velit consectetur elementum rutrum. Curabitur tempus odio nulla, eget consectetur massa vestibulum luctus. Pellentesque ultricies, tellus eu blandit mattis, tellus ligula aliquam eros, a dictum libero velit ac sapien. Praesent felis justo, lacinia in mollis nec, ornare sit amet nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam aliquet felis neque, eu semper nisl vestibulum quis. Duis consectetur sodales sapien, quis lacinia diam facilisis nec. </p>
       </div>
-    </div>    
-    <div id="owl-testimonial" class="owl-carousel owl-theme">
+    </div>
+    <!-- <div id="testimonialCarousel" class="carousel slide mb-3" data-ride="carousel" data-interval="15000"> -->
+      <div class="owl-carousel owl-theme">
+        <div class="item"><h4>1</h4></div>
+        <div class="item"><h4>2</h4></div>
+        <div class="item"><h4>3</h4></div>
+        <div class="item"><h4>4</h4></div>
+        <div class="item"><h4>5</h4></div>
+        <div class="item"><h4>6</h4></div>
+        <div class="item"><h4>7</h4></div>
+        <div class="item"><h4>8</h4></div>
+        <div class="item"><h4>9</h4></div>
+        <div class="item"><h4>10</h4></div>
+        <div class="item"><h4>11</h4></div>
+        <div class="item"><h4>12</h4></div>
+    </div>
+    
+      <div id="owl-testimonial" class="owl-carousel owl-theme">
       {{ with .Site.GetPage "testimonial" }}
         {{ $paginator := .Paginate (where .Pages "Type" "testimonial")}}
-        {{ range $index, $value := $paginator.Pages }}
-          <div class="item">
-            {{ block "testimonials_card" . }}
-              {{ partial "_testimonial" . }}
-            {{ end }}
-          </div>
-        {{ end }}
+        <!-- <div class="carousel-inner"> -->
+          {{ range $index, $value := $paginator.Pages }}
+            <!-- <div class="carousel-item {{if (eq $index 0)}}active{{end}} h-auto"> -->
+            <div class="item">
+              <!-- <div class="row mb-0"> -->
+                <!-- <div class="col"> -->
+                  {{ block "testimonials_card" . }}
+                    {{ partial "_testimonial" . }}
+                  {{ end }}
+                <!-- </div> -->
+              <!-- </div> -->
+            </div>
+          {{ end }}
+        <!-- </div> -->
       {{ end }}
+      <div class="controls-top text-center">
+        <a class="btn-floating" href="#testimonialCarousel" data-slide="prev">
+          <i class="material-icons" style="font-size:30px;color: var(--oc-gray-9);">chevron_left</i>
+        </a>
+        <a class="btn-floating" href="#testimonialCarousel" data-slide="next">
+          <i class="material-icons" style="font-size:30px;color: var(--oc-gray-9);">chevron_right</i>
+        </a>
+      </div>
     </div>
+    
+    <!-- {{ $orig_dojo_casa := .Resources.GetMatch "dojo_em_casa.png" }}
+    {{ .Scratch.Set "dojo_casa_mobile" ($orig_dojo_casa.Fill "690x320 Center")}}
+    {{ $dojo_casa_mobile := .Scratch.Get "dojo_casa_mobile" }}
+    {{ .Scratch.Set "dojo_casa_desktop" ($orig_dojo_casa.Fill "1080x500 Center")}}
+    {{ $dojo_casa_desktop := .Scratch.Get "dojo_casa_desktop" }}
+    <div class="row justify-content-center">
+      <a href="https://youtu.be/w9ZmTydVfOU" target="blank">
+        <picture>
+          <source media="(max-width768px)" srcset="{{ $dojo_casa_mobile.RelPermalink }}">
+          <img class="rounded img-fluid" src="{{ $dojo_casa_desktop.RelPermalink }}" alt="Sensei Li transmitindo uma aula de seu dojo em casa.">
+        </picture>
+      </a>
+    </div> -->
     <!-- Contact area -->
     <div class="row">
       <div class="mx-auto text-center">
