@@ -286,7 +286,7 @@
       {{ with .Site.GetPage "testimonial" }}
         {{ $paginator := .Paginate (where .Pages "Type" "testimonial")}}
         {{ range $index, $value := $paginator.Pages }}
-          <div class="item">
+          <div class="item mr-3 ml-3">
             {{ block "testimonials_card" . }}
               {{ partial "_testimonial" . }}
             {{ end }}
@@ -295,7 +295,7 @@
       {{ end }}
     </div>
     <!-- Contact area -->
-    <div class="row">
+    <div class="row mt-4">
       <div class="mx-auto text-center">
         <p>Entre em contato para mais informações sobre nossas aulas e agendar uma aula experimental</p>
         <a class="btn btn-md btn-primary" href="https://wa.me/5511985255207?text=Olá,%20gostaria%20de%20agendar%20uma%20aula%20experimental%20online!" role="button">Agendar aula</a>

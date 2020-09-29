@@ -1,20 +1,14 @@
-<div class="card" style="border: none;">
-    <div class="card-body">
+<div class="row justify-content-center justify-content-lg-start mb-0">
+    {{ $original := .Resources.GetMatch "profile.*" }}
+    {{ .Scratch.Set "image_card" ($original.Fill "140x140 Center") }}
+    {{ $image_card := .Scratch.Get "image_card" }}
+    <div class="order-md-1">
+        <img class="rounded-circle img-fluid mx-auto d-block" src="{{ $image_card.RelPermalink }}" alt="{{ .Title }}" />
+    </div>
+    <div class="col-md-8 order-md-2 text-center text-md-left my-md-auto ml-md-5 mt-3">
         <blockquote class="blockquote mb-0">
-            <div class="row">
-                <div class="col-md-1 mr-5">
-                    {{ $original := .Resources.GetMatch "profile.*" }}
-                    {{ if $original }}
-                        {{ .Scratch.Set "image_card" ($original.Fill "140x140 Center") }}
-                        {{ $image_card := .Scratch.Get "image_card" }}
-                        <img src="{{ $image_card.RelPermalink }}" class="rounded-circle m-2" alt="{{ .Title }}">
-                    {{ end }}
-                </div>
-                <div class="col-md-8 ml-5 my-auto">
-                    <p class="font-weight-normal" style="line-height: 120%; font-size: 1.05rem;">{{ .Params.short | safeHTML }}</p>
-                    <footer class="blockquote-footer"><cite title="{{ .Title }}">{{ .Title }}</cite> - {{ .Params.extra }}</footer>
-                </div>
-            </div>
+            <p class="font-weight-normal" style="line-height: 120%; font-size: 1.05rem;">{{ .Params.short | safeHTML }}</p>
+            <footer class="blockquote-footer"><cite title="{{ .Title }}">{{ .Title }}</cite> - {{ .Params.extra }}</footer>
         </blockquote>
     </div>
 </div>
