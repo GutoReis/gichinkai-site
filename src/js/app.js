@@ -6,7 +6,9 @@ import hello from './hello';
 hello();
 
 $(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
+    var owl = $('.owl-carousel');
+    // $(".owl-carousel").owlCarousel({
+    owl.owlCarousel({
         loop:true,
         margin:10,
         nav:true,
@@ -20,6 +22,17 @@ $(document).ready(function(){
             1000:{
                 items:1
             }
-        }
+        },
+        onInitialize : function(element){
+            owl.children().sort(function(){
+                return Math.round(Math.random()) - 0.5;
+            }).each(function(){
+                $(this).appendTo(owl);
+            });
+        },
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        animateOut: 'fadeOut'
     });
 });
