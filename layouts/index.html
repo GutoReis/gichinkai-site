@@ -249,16 +249,31 @@
   <div class="container about-karate">
     <div class="row">
       <div class="mx-auto text-center">
-        <h2 class="mb-3">Dojo em Casa</h2>
-        <p>Devido à pandemia de COVID-19, em 2020 as aulas e treinos só estão sendo realizados à distância, com aulas online 
-          transmitidas ao vivo pelo YouTube em dois horários, e disponibilizadas após os treinos para revisão de técnicas. 
-          Contamos também com um grupo no Whatsapp dedicado aos treinos online, para esclarecimento de duvidas, compartilhamento 
-          dos treinos ao vivo e demais eventos!.<br>
-          Horários dos treinos ao vivo:</p>
-        <ul>
-          <li>Segunda à Sexta: 9h</li>
-          <li>Segunda, Quarta e Sexta: 20h</li>
-        </ul>
+        <h2 class="mb-5">Dojo em Casa</h2>
+        {{ $orig_dojo_em_casa := .Resources.GetMatch "dojo_em_casa.png" }}
+        {{ .Scratch.Set "dojo_em_casa_mobile" ($orig_dojo_em_casa.Fill "690x320 Center") }}
+        {{ $dojo_em_casa_mobile := .Scratch.Get "dojo_em_casa_mobile" }}
+        {{ .Scratch.Set "dojo_em_casa_desktop" ($orig_dojo_em_casa.Fill "1080x500 Center") }}
+        {{ $dojo_em_casa_desktop := .Scratch.Get "dojo_em_casa_desktop" }}
+        <div class="container row mb-3">
+          <div class="col-md-6 order-md-1">
+            <picture>
+              <source media="(max-width: 768px)" srcset="{{ $dojo_em_casa_mobile.RelPermalink }}">
+              <img class="rounded img-fluid" src="{{ $dojo_em_casa_desktop.RelPermalink }}" alt="Sensei demonstrando tecnica em aula online">
+            </picture>
+          </div>
+          <div class="col-md-6 order-md-2 text-md-left">
+            <p>Devido à pandemia de COVID-19, em 2020 as aulas e treinos só estão sendo realizados à distância, com aulas online 
+              transmitidas ao vivo pelo YouTube em dois horários, e disponibilizadas após os treinos para revisão de técnicas. 
+              Contamos também com um grupo no Whatsapp dedicado aos treinos online, para esclarecimento de duvidas, compartilhamento 
+              dos treinos ao vivo e demais eventos!.<br>
+              Horários dos treinos ao vivo:</p>
+            <ul>
+              <li>Segunda à Sexta: 9h</li>
+              <li>Segunda, Quarta e Sexta: 20h</li>
+            </ul>
+          </div>
+        </div>
         <!-- Contact area -->
         <div class="row mt-4">
           <div class="mx-auto text-center">
