@@ -284,7 +284,10 @@
         <!-- <p>Entre em contato para mais informações.</p> -->
         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada nunc varius magna venenatis, at semper lectus imperdiet. Integer bibendum velit consectetur elementum rutrum. Curabitur tempus odio nulla, eget consectetur massa vestibulum luctus. Pellentesque ultricies, tellus eu blandit mattis, tellus ligula aliquam eros, a dictum libero velit ac sapien. Praesent felis justo, lacinia in mollis nec, ornare sit amet nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam aliquet felis neque, eu semper nisl vestibulum quis. Duis consectetur sodales sapien, quis lacinia diam facilisis nec. </p> -->
       </div>
-    </div>    
+    </div> 
+    <div class="mx-auto text-center">
+      <h2 class="mb-5">O que nossos alunos estão dizendo</h2> 
+    </div>  
     <div id="owl-testimonial" class="owl-carousel owl-theme">
       {{ with .Site.GetPage "testimonial" }}
         {{ $paginator := .Paginate (where .Pages "Type" "testimonial")}}
