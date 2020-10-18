@@ -1,7 +1,7 @@
 {
-    "title": "nome",
+    "title": "Felix José Batista",
     "photo": "profile.jpg",
-    "extra": "faixa Kyu, tempo ano",
-    "short": "depoimento curto",
-    "long": "depoimento longo"
+    "extra": "Faixa Amarela, 2 anos",
+    "short": "O Sensei Li tem uma tranquilidade rara e uma paixão pela cultura japonesa e o karatê incomparável. Essa natureza distinta é talvez o que torna a prática do Karatê na Gichinkai uma experiência além do combate.",
+    "long": "O Sensei Li tem uma tranquilidade rara e uma paixão pela cultura japonesa e o karatê incomparável. Essa natureza distinta é talvez o que torna a prática do Karatê na Gichinkai uma experiência além do combate."
 }

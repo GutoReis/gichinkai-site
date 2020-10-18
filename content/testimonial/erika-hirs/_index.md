@@ -1,7 +1,7 @@
 {
-    "title": "nome",
+    "title": "Erika Hirs",
     "photo": "profile.jpg",
-    "extra": "faixa Kyu, tempo ano",
+    "extra": "Faixa Amarela, 2 anos",
     "short": "depoimento curto",
     "long": "depoimento longo"
 }
