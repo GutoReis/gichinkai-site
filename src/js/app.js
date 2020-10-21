@@ -34,6 +34,7 @@ $(document).ready(function(){
         autoplay: true,
         autoplayTimeout: 5000,
         autoplayHoverPause: true,
-        animateOut: 'fadeOut'
+        animateOut: 'fadeOut',
+        autoHeight: true
     });
 });
