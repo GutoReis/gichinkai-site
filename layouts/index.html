@@ -147,7 +147,7 @@
 
 <!-- Quem pode treinar section -->
 <div class="container marketing">
-  <hr class="featurette-divider">
+  <hr class="featurette-divider mb-5 mt-4">
 
   <div class="container about-karate">
     <div class="row justify-content-center">
@@ -201,7 +201,7 @@
     </div>
   </div>
 
-  <div class="row featurette justify-content-center mt-5">
+  <div class="row featurette justify-content-center mt-md-5">
     <div class="col-md-3 order-md-1 mb-2">
       {{ $orig_melhor_idade := .Resources.GetMatch "melhor_idade.jpg" }}
       {{ .Scratch.Set "melhor_idade_mobile" ($orig_melhor_idade.Fill "140x140 Center") }}
@@ -256,13 +256,13 @@
         {{ .Scratch.Set "dojo_em_casa_desktop" ($orig_dojo_em_casa.Fill "1080x500 Center") }}
         {{ $dojo_em_casa_desktop := .Scratch.Get "dojo_em_casa_desktop" }}
         <div class="container row mb-3">
-          <div class="col-md-6 order-md-1">
+          <div class="col-md-6 order-md-1 pr-0 mb-3">
             <picture>
               <source media="(max-width: 768px)" srcset="{{ $dojo_em_casa_mobile.RelPermalink }}">
               <img class="rounded img-fluid" src="{{ $dojo_em_casa_desktop.RelPermalink }}" alt="Sensei demonstrando tecnica em aula online">
             </picture>
           </div>
-          <div class="col-md-6 order-md-2 text-md-left">
+          <div class="col-md-6 order-md-2 text-md-left pr-0">
             <p>Devido à pandemia de COVID-19, em 2020 as aulas e treinos só estão sendo realizados à distância, com aulas online 
               transmitidas ao vivo pelo YouTube em dois horários, e disponibilizadas após os treinos para revisão de técnicas. 
               Contamos também com um grupo no Whatsapp dedicado aos treinos online, para esclarecimento de duvidas, compartilhamento 
@@ -276,7 +276,7 @@
         </div>
         <!-- Contact area -->
         <div class="row mt-4">
-          <div class="mx-auto text-center">
+          <div class="mx-auto text-center pl-2 pr-2">
             <p>Entre em contato para mais informações sobre nossas aulas e agendar uma aula experimental</p>
             <a class="btn btn-md btn-primary" href="https://wa.me/5511985255207?text=Olá,%20gostaria%20de%20agendar%20uma%20aula%20experimental%20online!" role="button">Agendar aula</a>
           </div>
@@ -286,7 +286,7 @@
       </div>
     </div> 
     <div class="mx-auto text-center">
-      <h2 class="mb-5">O que nossos alunos estão dizendo</h2> 
+      <h2 class="mb-3">O que nossos alunos estão dizendo</h2> 
     </div>  
     <div id="owl-testimonial" class="owl-carousel owl-theme">
       {{ with .Site.GetPage "testimonial" }}
