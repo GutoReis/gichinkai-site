@@ -290,7 +290,7 @@
     </div>  
     <div id="owl-testimonial" class="owl-carousel owl-theme">
       {{ with .Site.GetPage "testimonial" }}
-        {{ $paginator := .Paginate (where .Pages "Type" "testimonial") 50}}
+        {{ $paginator := .Paginate (where .Pages "Type" "testimonial") 5}}
         {{ range $index, $value := $paginator.Pages }}
           <div class="item mr-3 ml-3">
             {{ block "testimonials_card" . }}
