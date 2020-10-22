@@ -1,5 +1,6 @@
 {
     "title": "Brunno Vinicyus Perente",
+    "slug": "brunno-vinicyus",
     "photo": "profile.jpg",
     "extra": "Faixa Marrom, 11 anos",
     "short": "Treinar karate-do na AGK sempre foi fantástico para mim. Em poucas palavras eu diria que o período de treino na AGK me proporcionou disposição física, positividade, coragem, tolerância, força e muitas amizades!",

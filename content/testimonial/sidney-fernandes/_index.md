@@ -1,5 +1,6 @@
 {
     "title": "Sidney Fernandes da Luz",
+    "slug": "sidney-fernandes",
     "photo": "profile.jpg",
     "extra": "Faixa Preta 3º Dan, 17 anos",
     "short": "Sensei Li possui uma excelente didática, um vasto conhecimento sobre a arte do Karatê-Do e um prazer imenso em estar ensinando. Neste ano de confinamento, Sensei Li aplicou o modelo de aulas online, que  são formidáveis e tem me ajudado a avançar tecnicamente e fortalecer mente, corpo e espírito neste momento.",

@@ -1,5 +1,6 @@
 {
     "title": "Gerson Blandino",
+    "slug": "gerson-blandino",
     "photo": "profile.jpg",
     "extra": "Faixa Amarela, 7 anos",
     "short": "Os ensinamentos do Sensei são excelentes, está me ajudando muito na parte física e mental, inclusive a superar esta crise de quarentena.",

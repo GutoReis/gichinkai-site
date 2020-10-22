@@ -1,5 +1,6 @@
 {
     "title": "Marcos",
+    "slug": "marcos",
     "photo": "profile.jpg",
     "extra": "Faixa Vermelha, 5 meses",
     "short": "As aulas online do Sensei Li foram perfeitas para eu conseguir fazer o meu treino ideal no espaço que tenho em casa, mesmo sendo online as aulas continuam bem dinâmicas.",

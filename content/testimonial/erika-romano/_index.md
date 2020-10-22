@@ -1,5 +1,6 @@
 {
     "title": "Erika Romano",
+    "slug": "erika-romano",
     "photo": "profile.jpg",
     "extra": "Faixa Verde, 10 anos",
     "short": "Uma aula que envolve conhecimento, cultura, força e amizade. Uma aula que faz com que os alunos sejam uma família, e que possam usar seus aprendizados para várias ações na rotina e no dia a dia. Por isso sempre agradecemos a presença do Sensei e da arte do Karate-do nas nossas vidas; tornando-nos mais conscientes, fortes e serenos para viver a cada dia com sabedoria",

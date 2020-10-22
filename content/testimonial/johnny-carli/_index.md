@@ -1,5 +1,6 @@
 {
     "title": "Johnny De' Carli",
+    "slug": "johnny-carli",
     "photo": "profile.jpg",
     "extra": "Faixa Marrom, 11 anos",
     "short": "No ano de 2009, trabalhando em São Paulo, tive a grande sorte de conhecer o Sensei Li, da Associação Gichinkai, que conseguiu reacender a chama do Karatê no meu coração (kokorô). Sinto-me profundamente feliz e honrado por ter reencontrado o verdadeiro Karatê Shotokan de Okinawa - Japão.",

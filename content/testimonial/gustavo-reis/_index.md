@@ -1,5 +1,6 @@
 {
     "title": "João Gustavo Reis de Lima",
+    "slug": "gustavo-reis",
     "photo": "profile.jpg",
     "extra": "Faixa Amarela, 2 anos",
     "short": "Logo na primeira aula o Sensei havia me surpreendido na riqueza dos detalhes de cada movimento, mas também na historia do Karatê-Dô. Quando a quarentena começou, fiquei honrado eu auxiliar o Sensei em preparar um esquema para podermos continuarmos com nossos treinos usando a transmissão ao Vivo pelo YouTube. Hoje vejo um horizonte de possibilidades com a forma de treino online que o Sensei montou, tudo graças ao seu amor por essa arte, o seu conhecimento e sua didática para transmitir tanto conhecimento de Karatê-Dô.",

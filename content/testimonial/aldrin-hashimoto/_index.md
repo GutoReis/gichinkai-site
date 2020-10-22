@@ -1,5 +1,6 @@
 {
     "title": "Aldrin Hashimoto",
+    "slug": "aldrin-hashimoto",
     "photo": "profile.jpg",
     "extra": "Faixa Preta 2º Dan, 2 anos",
     "short": "Os treinos na AGK são dotados de uma grande riqueza de detalhes, o que não é muito comum em outros DOJO. Treinar karatê com sensei Li é uma oportunidade única.",

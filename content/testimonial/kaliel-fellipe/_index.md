@@ -1,5 +1,6 @@
 {
     "title": "Kaliel Fellipe Medrado dos Santos",
+    "slug": "kaliel-fellipe",
     "photo": "profile.jpg",
     "extra": "Faixa Vermelha, 2 anos",
     "short": "Nosso Sensei é um exemplo de muito amor e uma vida dedicada ao Karate-do. É uma satisfaçao imensa participar dessa familia.",
