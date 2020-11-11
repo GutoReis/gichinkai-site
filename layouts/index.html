@@ -32,9 +32,9 @@
     <div class="carousel-item bg-primary">
       {{ with .Site.GetPage "/memorial" }}
         {{ $orig_memorial := .Resources.GetMatch "memorial.jpg" }}
-        {{ .Scratch.Set "memorial_large" ($orig_memorial.Fill "2545x512 Top") }}
+        {{ .Scratch.Set "memorial_large" ($orig_memorial.Fill "2545x512 Center") }}
         {{ $memorial_large := .Scratch.Get "memorial_large" }}
-        {{ .Scratch.Set "memorial_desktop" ($orig_memorial.Fill "1695x512 Top") }}
+        {{ .Scratch.Set "memorial_desktop" ($orig_memorial.Fill "1695x512 Center") }}
         {{ $memorial_desktop := .Scratch.Get "memorial_desktop" }}
         {{ .Scratch.Set "memorial_mobile" ($orig_memorial.Fill "500x512 Center") }}
         {{ $memorial_mobile := .Scratch.Get "memorial_mobile" }}
@@ -60,7 +60,7 @@
       {{ $soon_large := .Scratch.Get "soon_large" }}
       {{ .Scratch.Set "soon_desktop" ($orig_soon.Fill "1695x512 Center")}}
       {{ $soon_desktop := .Scratch.Get "soon_desktop" }}
-      {{ .Scratch.Set "soon_mobile" ($orig_soon.Fill "500x512 Left")}}
+      {{ .Scratch.Set "soon_mobile" ($orig_soon.Fill "500x512 Center")}}
       {{ $soon_mobile := .Scratch.Get "soon_mobile" }}
       <div class="overlay-div"></div>
       <picture>
@@ -214,7 +214,7 @@
       </picture>
     </div>
     <div class="col-md-3 order-md-2 mt-3 mb-3 text-center text-md-left">
-      <h2 class="featurette-heading">A melhor idade</h2>
+      <h2 class="featurette-heading">Terceira idade</h2>
       <p>Além de todos os outros benefícios citados, a prática do karatê-dô na terceira idade melhora drasticamente
         a qualidade de vida, porque aumenta o bem-estar, diminui as perdas físicas e cognitivas comuns na
         terceira idade, e, por meio do budô, estimula a alegria natural do seu praticante, promovendo a paz de

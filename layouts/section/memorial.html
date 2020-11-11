@@ -1,10 +1,10 @@
 {{ define "main" }}
   {{ $orig_memorial := .Resources.GetMatch .Params.image}}
-  {{ .Scratch.Set "memorial_large" ($orig_memorial.Fill "2545x512 Top") }}
+  {{ .Scratch.Set "memorial_large" ($orig_memorial.Fill "2545x512 Center") }}
   {{ $memorial_large := .Scratch.Get "memorial_large" }}
-  {{ .Scratch.Set "memorial_desktop" ($orig_memorial.Fill "1695x512 Top") }}
+  {{ .Scratch.Set "memorial_desktop" ($orig_memorial.Fill "1695x512 Center") }}
   {{ $memorial_desktop := .Scratch.Get "memorial_desktop" }}
-  {{ .Scratch.Set "memorial_mobile" ($orig_memorial.Fill "500x512 Top") }}
+  {{ .Scratch.Set "memorial_mobile" ($orig_memorial.Fill "500x512 Center") }}
   {{ $memorial_mobile := .Scratch.Get "memorial_mobile" }}
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
