@@ -221,7 +221,7 @@
         espírito e a consciência da beleza e do sentido da vida.</p>
     </div>
     <div class="col-md-3 order-md-3 mb-2">
-      {{ $orig_especiais := .Resources.GetMatch "especiais.jpg" }}
+      {{ $orig_especiais := .Resources.GetMatch "especiais_2.jpg" }}
       {{ .Scratch.Set "especiais_mobile" ($orig_especiais.Fill "140x140 Top") }}
       {{ $especiais_mobile := .Scratch.Get "especiais_mobile" }}
       {{ .Scratch.Set "especiais_desktop" ($orig_especiais.Fill "255x255 Top") }}
