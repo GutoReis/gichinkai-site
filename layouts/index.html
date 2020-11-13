@@ -18,7 +18,7 @@
       <picture>
         <source media="(max-width: 500px)" srcset="{{ $welcome_mobile.RelPermalink }}">
         <source media="(min-width: 1696px)" srcset="{{ $welcome_large.RelPermalink }}">
-        <img class="first-slide" src="{{ $welcome_desktop.RelPermalink }}" alt="Karatekas fazendo a reverencia antes do inicio de um treino em um dojo."/>
+        <img class="first-slide" src="{{ $welcome_desktop.RelPermalink }}" alt="Grupo de karatekas em fila."/>
       </picture>
       <div class="container">
         <div class="carousel-caption text-left">
@@ -32,9 +32,9 @@
     <div class="carousel-item bg-primary">
       {{ with .Site.GetPage "/memorial" }}
         {{ $orig_memorial := .Resources.GetMatch "memorial.jpg" }}
-        {{ .Scratch.Set "memorial_large" ($orig_memorial.Fill "2545x512 Center") }}
+        {{ .Scratch.Set "memorial_large" ($orig_memorial.Fill "2545x512 Top") }}
         {{ $memorial_large := .Scratch.Get "memorial_large" }}
-        {{ .Scratch.Set "memorial_desktop" ($orig_memorial.Fill "1695x512 Center") }}
+        {{ .Scratch.Set "memorial_desktop" ($orig_memorial.Fill "1695x512 Top") }}
         {{ $memorial_desktop := .Scratch.Get "memorial_desktop" }}
         {{ .Scratch.Set "memorial_mobile" ($orig_memorial.Fill "500x512 Center") }}
         {{ $memorial_mobile := .Scratch.Get "memorial_mobile" }}
@@ -66,7 +66,7 @@
       <picture>
         <source media="(max-width: 500px)" srcset="{{ $soon_mobile.RelPermalink }}">
         <source media="(min-width: 1696px)" srcset="{{ $soon_large.RelPermalink }}">
-        <img class="third-slide" src="{{ $soon_desktop.RelPermalink }}" alt="www.hthaostudio.com"/>
+        <img class="third-slide" src="{{ $soon_desktop.RelPermalink }}" alt="Kimono dobrado com uma faixa vermelha segurando e um certificado abaixo"/>
       </picture>
       <div class="container">
         <div class="carousel-caption text-right">
@@ -111,7 +111,7 @@
       {{ $corpo_img := .Scratch.Get "corpo_img" }}
       <img class="rounded-circle shadow mb-3"
         src="{{ $corpo_img.RelPermalink }}"
-        alt="Karateka executando um movimento usando uma tonfa" width="140" height="140">
+        alt="Karateka faixa vermelha recebendo graduação para a faixa verde" width="140" height="140">
       <h2>Corpo</h2>
       <p>A prática do karatê aumenta a força, a resistência física, o equilíbrio e a flexibilidade, organiza a postura,
         desenvolve a coordenação motora, promove agilidade e rapidez, desenvolve a consciência corporal e
@@ -123,7 +123,7 @@
       {{ $mente_img := .Scratch.Get "mente_img" }}
       <img class="rounded-circle shadow mb-3"
         src="{{ $mente_img.RelPermalink }}"
-        alt="Karateka praticando em uma praia deserta." width="140" height="140">
+        alt="Pessoa escrevendo" width="140" height="140">
       <h2>Mente</h2>
       <p>O karatê-dô aumenta o controle emocional, ajudando a lidar com a agressividade e a ansiedade;
         desenvolve a concentração, a atenção e o pensamento estratégico, estimula a criatividade, a inteligência e
@@ -136,7 +136,7 @@
       {{ $espirito_img := .Scratch.Get "espirito_img" }}
       <img class="rounded-circle shadow mb-3"
         src="{{ $espirito_img.RelPermalink }}"
-        alt="Kararteka ajoelhado fazendo uma reverencia." width="140" height="140">
+        alt="Karatekas ajoelhados praticando meditação." width="140" height="140">
       <h2>Espírito</h2>
       <p>O karatê-dô lapida o caráter de seus praticantes, desenvolvendo disciplina e respeito, transforma as
         práticas cotidianas em meditação ativa, amplia a consciência, desenvolve a intuição, possibilita a
@@ -172,7 +172,7 @@
       {{ $criancas_desktop := .Scratch.Get "criancas_desktop" }}
       <picture>
         <source media="(max-width: 768px)" srcset="{{ $criancas_mobile.RelPermalink }}">
-        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $criancas_desktop.RelPermalink }}" alt="Crianças praticando combate de karate com equipamentos de proteção.">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $criancas_desktop.RelPermalink }}" alt="Pés de crianças sentadas em circulo">
       </picture>
     </div>
     <div class="col-md-3 order-md-2 mt-3 mb-3 text-center text-md-left">
@@ -189,7 +189,7 @@
       {{ $adultos_desktop := .Scratch.Get "adultos_desktop" }}
       <picture>
         <source media="(max-width: 768px)" srcset="{{ $adultos_mobile.RelPermalink }}">
-        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $adultos_desktop.RelPermalink }}" alt="Karateka adulto praticando um movimento de defesa">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $adultos_desktop.RelPermalink }}" alt="Karatekas adultos praticando karate em duplas">
       </picture>
     </div>
     <div class="col-md-3 order-md-4 mt-3 mb-3 text-center text-md-left">
@@ -210,7 +210,7 @@
       {{ $melhor_idade_desktop := .Scratch.Get "melhor_idade_desktop" }}
       <picture>
         <source media="(max-width: 768px)" srcset="{{ $melhor_idade_mobile.RelPermalink }}">
-        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $melhor_idade_desktop.RelPermalink }}" alt="Homem de mais idade, segurando uma espada e usando um kimono branco.">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $melhor_idade_desktop.RelPermalink }}" alt="Karateka de mais idade, faixa preta, segurando uma folha nas mãos">
       </picture>
     </div>
     <div class="col-md-3 order-md-2 mt-3 mb-3 text-center text-md-left">
@@ -228,7 +228,7 @@
       {{ $especiais_desktop := .Scratch.Get "especiais_desktop" }}
       <picture>
         <source media="(max-width: 768px)" srcset="{{ $especiais_mobile.RelPermalink }}">
-        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $especiais_desktop.RelPermalink }}" alt="Karateka com faixa vermelha e kimono branco fazendo um movimento de defesa.">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $especiais_desktop.RelPermalink }}" alt="Cadeira de rodas em uma praia deserta, ceu azul">
       </picture>
     </div>
     <div class="col-md-3 order-md-4 mt-3 mb-2 text-center text-md-left">
