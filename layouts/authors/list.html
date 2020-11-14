@@ -1,0 +1,50 @@
+{{ define "main" }}
+
+{{ range first 1 .Data.Pages.ByDate.Reverse }}
+    {{ block "featurepost" .}}
+        {{ partial "_featurepost" .}}
+    {{ end }}
+{{ end }}
+
+<div class="container mb-5">
+    <div class="container">
+        <div class="row mb-4 align-items-center text-center text-md-left">
+            <div class="col-md-6 order-md-1">
+                <h1>{{ .Params.title }}</h1>
+                {{ $original := .Resources.GetMatch "profile.jpg" }}
+                {{ .Scratch.Set "author_image_desktop" ($original.Fill "400x400 Center")}}
+                {{ $image_author_desktop := .Scratch.Get "author_image_desktop" }}
+                {{ .Scratch.Set "author_image_mobile" ($original.Fill "140x140 Center")}}
+                {{ $image_author_mobile := .Scratch.Get "author_image_mobile" }}
+                <div class="row justify-content-center justify-content-md-start mt-3">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="{{ $image_author_mobile.RelPermalink }}">
+                        <img class="rounded-circle shadow mb-3" src="{{ $image_author_desktop.RelPermalink }}" alt="{{ .Params.title }}" />
+                    </picture>
+                </div>
+            </div>
+            <div class="col-md-6 order-md-2 mt-3 text-center text-md-left">
+                <h2>Bio</h2>
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Artigos</h2>
+    <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 mb-3 mt-3">
+        {{ $paginator := .Paginate (.Data.Pages.ByDate.Reverse) 9}}
+        {{ range $paginator.Pages }}
+            <div class="col mb-4">
+                {{ block "newscard_new" . }}
+                    {{ partial "_newscard" . }}
+                {{ end }}
+            </div>
+        {{ end }}
+    </div>
+    <div class="row justify-content-center mb-3">
+        {{ template "_internal/pagination.html" . }}
+    </div>
+</div>
+{{ end }}

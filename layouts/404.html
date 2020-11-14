@@ -1,8 +1,32 @@
 
 {{ define "main"}}
 <main id="main">
-  <div>
-   <h1 id="title"><a href="{{ "/" | relURL }}">Go Home</a></h1>
+  <div id="myCarousel" class="carousel slide mb-4" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active bg-primary">
+        {{ with .Site.GetPage "/" }}
+          {{ $orig_404 := .Resources.GetMatch "404.jpg" }}
+          {{ .Scratch.Set "404_large" ($orig_404.Fill "2545x512 Center")}}
+          {{ $404_large := .Scratch.Get "404_large" }}
+          {{ .Scratch.Set "404_desktop" ($orig_404.Fill "1695x512 Center")}}
+          {{ $404_desktop := .Scratch.Get "404_desktop" }}
+          {{ .Scratch.Set "404_mobile" ($orig_404.Fill "500x512 Left")}}
+          {{ $404_mobile := .Scratch.Get "404_mobile" }}
+          <picture>
+            <source media="(max-width: 500px)" srcset="{{ $404_mobile.RelPermalink }}">
+            <source media="(min-width: 1695px)" srcset="{{ $404_large.RelPermalink }}">
+            <img class="first=slide" src="{{ $404_desktop.RelPermalink }}" alt="Karatekas executando um kata em equipe em uma praia de frente para o mar.">
+          </picture>
+          <div class="overlay-div"></div>
+          <div class="container">
+            <div class="carousel-caption">
+               <h1 class="text-white">Página não encontrada</h1>
+               <p><a class="btn btn-lg btn-primary" href="/" role="button">Ir para Home</a></p>
+             </div>
+          </div>
+        {{ end }}
+       </div>
+    </div>
   </div>
 </main>
 {{ end }}

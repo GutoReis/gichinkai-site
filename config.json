@@ -1,9 +1,11 @@
 {
-    "baseurl": "https://gichinkai.netlify.com/",
+    "baseurl": "https://homolog-gichinkai.netlify.com/",
+    "title": "Associação Gichinkai de Karatê-Dô",
     "languageCode": "en-us",
-    "title": "Associação Gichinkai de Karate-do",
-    "paginate": 5,
+    "defaultContentLanguage": "pt",
+    
     "enableRobotsTXT": true,
+    "disableKinds": ["taxonomyTerm"],
     "menu": {
         "navbar": [
             {
@@ -19,6 +21,12 @@
                 "weight": -180
             },
             {
+                "identifier": "our_history",
+                "name": "Nossa história",
+                "url": "/nossa_historia",
+                "weight": -150
+            },
+            {
                 "identifier": "blog",
                 "name": "Blog",
                 "title": "blog section",
@@ -28,8 +36,85 @@
         ]
     },
     "params": {
-        "author": "Your Name",
-        "description": "A simple Hugo with Webpack based on the Bootstrap v4.",
-        "date_format": "Mon Jan 02, 2006"
+        "author": "Gustavo Reis",
+        "description": "Associação Gichinkai de Karatê-Dô tradicional - Reunindo praticantes do karatê tradicional desde 1982",
+        "date_format": "Mon Jan 02, 2006",
+        "facebook": "https://www.facebook.com/KaratedoAssociacaoGichinkaiSP/",
+        "youtube": "https://www.youtube.com/channel/UCcRbhFsSvcDcLbGA9cbaOjQ",
+        "instagram": "https://www.instagram.com/gichinkai/",
+        "sitename": "Associação Gichinkai de Karatê-Dô"
+    },
+    "languages": {
+        "pt": {
+            "languageName": "Portuguese",
+            "languageCode": "pt-br",
+            "weight": 1
+        }
+    },
+    "related": {
+        "threshold": 0,
+        "includeNewer": true,
+        "toLower": false,
+        "indices": [
+            {"name": "categories",
+             "weight": 100}
+        ]
+    },
+    "taxonomies": {
+        "author": "authors",
+        "tag": "tags",
+        "category": "categories"
+    },
+    "server": {
+        "headers": [
+            {
+                "for": "/css/*",
+                "values": {
+                    "Cache-Control": "public, max-age=31536000"
+                }
+            },
+            {
+                "for": "/js/*",
+                "values": {
+                    "Cache-Control":"public, max-age=31536000"
+                }
+            },
+            {
+                "for": "/images/*",
+                "values": {
+                    "Cache-Control":"public, max-age=31536000"
+                }
+            },
+            {
+                "for": "/memorial/*",
+                "values": {
+                    "Cache-Control":"public, max-age=31536000"
+                }
+            },
+            {
+                "for": "/nossa_historia/*",
+                "values": {
+                    "Cache-Control": "public, max-age=31536000"
+                }
+            },
+            {
+                "for": "/*.html",
+                "values": {
+                    "Cache-Control":"public, max-age=31536000"
+                }
+            },
+            {
+                "for": "/*.jpg",
+                "values": {
+                    "Cache-Control":"public, max-age=31536000"
+                }
+            },
+            {
+                "for": "/*.png",
+                "values": {
+                    "Cache-Control":"public, max-age=31536000"
+                }
+            }
+        ]
     }
 }

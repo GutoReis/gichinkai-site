@@ -1,0 +1,58 @@
+{{ define "body_classes" }}category-list{{ end }}
+
+{{ define "main" }}
+
+{{ range first 1 .Pages.ByDate.Reverse }}
+    {{ block "featurepost" .}}
+        {{ partial "_featurepost" . }}
+    {{ end }}
+{{ end }}
+
+<div class="container-fluid mb-2">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-11 col-lg-11 col-xl-11">
+                <div class="d-flex flex-wrap bd-highlight mb-1">
+                    {{ range $name, $items := .Site.Taxonomies.tags }}
+                        <a id="{{ $name }}" class="btn btn-primary btn-sm mr-1 mb-1"
+                           href="{{ $.Site.BaseURL }}tags/{{ $name | urlize | lower }}"
+                           role="button">
+                           {{ $name }}
+                           <span class="badge badge-light ml-1">{{ len $items }}</span>
+                        </a>
+                    {{ end }}
+                    <a id="_all" class="btn btn-primary btn-sm mr-1 mb-1"
+                           href="{{ $.Site.BaseURL }}/posts"
+                           role="button">
+                           all
+                        </a>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-11 col-lg-11 col-xl-11">
+                <h3 class="font-weight-lighter text-uppercase" style="font-size: 1.4rem;">
+                    Itens com a Tag: <small class="text-muted text-uppercase ml-0">{{ .Title }}</small>
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 mb-3">
+        {{ $paginator := .Paginate (.Pages.ByDate.Reverse) 10}}
+        {{ range $paginator.Pages }}
+            <div class="col mb-4">
+                {{ block "newscard_new" . }}
+                    {{ partial "_newscard" . }}
+                {{ end }}
+            </div>
+        {{ end }}
+    </div>
+    <div class="row justify-content-center mb-3">
+        {{ template "_internal/pagination.html" .}}
+    </div>
+</div>
+
+{{ end }}

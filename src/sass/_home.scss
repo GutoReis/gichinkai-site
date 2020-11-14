@@ -36,6 +36,14 @@ body {
   }
 }
 
+.overlay-div {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #000;
+  opacity: .25;
+}
+
 /* ABOUT KARATE CONTENT */
 .about-karate {
   .row {
@@ -62,6 +70,10 @@ body {
     margin-right: .75rem;
     margin-left: .75rem;
   }
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Featurettes (Quem pode treinar)
@@ -94,28 +106,249 @@ body {
   }
 }
 
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
-}
-
 .max-800px {
   max-width: 800px;
 }
 
-.title-image {
-  padding-top: 2em;
-  padding-bottom: 2em;
-}
-
-.memorial-title {
-  padding-top: 1em;
-}
+// .memorial-title {
+//   padding-top: 0em;
+// }
 
 .btn-primary {
   background-image: none;
   &:hover {
     background-image: none;
   }
+}
+
+/* POSTS */
+.post-banner {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  max-height: 512px;
+  margin-bottom: 1rem;
+}
+
+.share-button a{
+  text-decoration: none;
+  color: white;
+}
+
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+  display: inline-block
+}
+
+.resp-sharing-button__link {
+  text-decoration: none;
+  color: #fff;
+  margin: 0.5em 0.5em 0.5em 0
+}
+
+.resp-sharing-button {
+  border-radius: 5px;
+  transition: 25ms ease-out;
+  padding: 0.5em 0.75em;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+}
+
+.resp-sharing-button__icon svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: top
+}
+
+.resp-sharing-button--small svg {
+  margin: 0;
+  vertical-align: middle
+}
+
+/* Non solid icons get a stroke */
+.resp-sharing-button__icon {
+  stroke: #fff;
+  fill: none
+}
+
+/* Solid icons get a fill */
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+  fill: #fff;
+  stroke: none
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.resp-sharing-button--facebook:hover,
+.resp-sharing-button--facebook:active {
+  background-color: #2d4373;
+  border-color: #2d4373;
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee;
+  border-color: #55acee;
+}
+
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+  background-color: #2795e9;
+  border-color: #2795e9;
+  text-decoration: none;
+}
+
+.resp-sharing-button--whatsapp {
+  background-color: #25D366;
+  border-color: #25D366;
+}
+
+.resp-sharing-button--whatsapp:hover,
+.resp-sharing-button--whatsapp:active {
+  background-color: #1DA851;
+  border-color: #1DA851;
+}
+
+.resp-sharing-button--telegram {
+  background-color: #54A9EB;
+}
+
+.resp-sharing-button--telegram:hover {
+  background-color: #4B97D1;}
+
+  .resp-sharing-button--copylink {
+    background-color: $oc-gray-5;
+  }
+  
+  .resp-sharing-button--copylink:hover {
+    background-color: $oc-gray-6;}
+
+
+// FOOTER
+.copy {
+  font-size: 12px;
+  padding: 10px;
+  border-top: 1px solid $oc-gray-4;
+}
+
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0;
+  padding: 0;
+}
+
+ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 28px;
+  height: 28px;
+  font-size: 15px;
+}
+
+.social-circle li i {
+  margin: 0;
+  line-height: 30px;
+  text-align: center;
+}
+
+.social-circle i {
+  color: #FFFFFF;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.social-network a {
+  background-color: $primary;
+}
+
+#scroll {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: $primary;
+  text-indent: -9999px;
+  display: none;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  border: none;
+}
+
+#scroll span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -12px;
+  height: 0;
+  width: 0;
+  border: 8px solid transparent;
+  border-bottom-color: #FFFFFF;
+}
+
+#scroll:hover {
+  background-color: $oc-red-12;
+  opacity: 1;
+  -ms-filter: "alpha(opacity=100)";
+  filter: "alpha(opacity=100)";
+}
+
+.mainfooter h4 {
+  color: $oc-gray-9;
+}
+
+.seq-post {
+  color: $oc-gray-9;
+}
+
+.memorial h6 {
+  margin-bottom: 1.5em;
+}
+
+.center-logo {
+  div {
+    margin-right: 1rem;
+  }
+  a {
+    text-align: right;
+  }
+}
+
+@media (max-width: 768px) {
+  .center-logo {
+    div {
+      margin-right: 0rem;
+    }
+    a {
+      margin-right: 0rem;
+      text-align: center;
+    }
+  }
+}
+
+.history-center img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

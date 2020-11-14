@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jane Doe on Associação Gichinkai de Karatê-Dô</title>
+    <link>https://homolog-gichinkai.netlify.com/authors/jane-doe/</link>
+    <description>Recent content in Jane Doe on Associação Gichinkai de Karatê-Dô</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    
+	<atom:link href="https://homolog-gichinkai.netlify.com/authors/jane-doe/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

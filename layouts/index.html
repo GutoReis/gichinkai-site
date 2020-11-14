@@ -1,77 +1,5 @@
-{{ define "page_css"}}
-<style>
-  /* Set the size of the div element that contains the map */
-  #map {
-    height: 400px;  /* The height is 500 pixels */
-    width: 100%;  /* The width is the width of the web page */
-  }
-</style>
-{{ end }}
-
-{{ define "page_js"}}
-<script>
-  // Initialize and add the map
-  console.log("Teste initMap");
-  function initMap() {
-    // The location of Dojo's
-    var augusta = {lat: -23.5615359, lng: -46.6635528};
-    var contentStringAugusta = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<h3 id="firstHeading" class="firstHeading">Aikido Nova Era</h3>'+
-        '<a href="https://www.google.com/maps/dir//-23.5615359,-46.6635528/@-23.561536,-46.663553,16z?hl=en" target="_blank">'+
-        '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
-        '</a>'+
-        '</div>';
-    var infowindowAugusta = new google.maps.InfoWindow({content: contentStringAugusta});
-
-    var tatuape = {lat: -23.5431694, lng: -46.5674751};
-    var contentStringTatuape = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<h3 id="firstHeading" class="firstHeading">Tatuape</h3>'+
-        '<a href="https://www.google.com/maps/dir//-23.5431743,-46.5652864/@-23.543174,-46.565286,16z?hl=en" target="_blank">'+
-        '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
-        '</a>';
-        '</div>';
-    var infowindowTatuape = new google.maps.InfoWindow({content: contentStringTatuape});
-
-    var ciaAthletica = {lat: -23.5620661, lng: -46.5619989};
-    var contentStringCiaAthletica = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<h3 id="firstHeading" class="firstHeading">Cia Athletica Analia Franco</h3>'+
-        '<a href="https://www.google.com/maps/dir//-23.562071,-46.5598102/@-23.562071,-46.55981,16z?hl=en" target="_blank">'+
-        '<img class="first-slide" src="https://source.unsplash.com/hwLAI5lRhdM/300x200">'
-        '</a>';
-        '</div>';
-    var infowindowCiaAthletica = new google.maps.InfoWindow({content: contentStringCiaAthletica});
-
-    // The map, centered at dojo
-    var map = new google.maps.Map(document.getElementById("map"), {zoom: 13, center: {lat: -23.5552111, lng: -46.6187217}});
-
-    // The marker, positioned at augusta
-    var markerAugusta = new google.maps.Marker({position: augusta, map: map, title: 'Aikido Nova Era'});
-    markerAugusta.addListener('click', function(){
-      infowindowAugusta.open(map, markerAugusta);
-    });
-    var markerTatuape = new google.maps.Marker({position: tatuape, map: map});
-    markerTatuape.addListener('click', function() {
-      infowindowTatuape.open(map, markerTatuape);
-    });
-    var markerCiaAthletica = new google.maps.Marker({position: ciaAthletica, map:map});
-    markerCiaAthletica.addListener('click', function() {
-      infowindowCiaAthletica.open(map, markerCiaAthletica);
-    });
-  }
-</script>
-
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbUik7BI-m72iILlFRt3Hi9Rt6MUW0_2k&callback=initMap">
-</script>
-{{ end }}
-
 {{ define "main"}}
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="15000">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -79,38 +7,71 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active bg-primary">
-      <img class="first-slide" src="https://source.unsplash.com/Xl-ilWBKJNk/1600x700"
-        alt="First slide">
+      {{ $orig_welcome := .Resources.GetMatch "welcome.jpg" }}
+      {{ .Scratch.Set "welcome_large" ($orig_welcome.Fill "2545x512 Center")}}
+      {{ $welcome_large := .Scratch.Get "welcome_large" }}
+      {{ .Scratch.Set "welcome_desktop" ($orig_welcome.Fill "1695x512 Center")}}
+      {{ $welcome_desktop := .Scratch.Get "welcome_desktop" }}
+      {{ .Scratch.Set "welcome_mobile" ($orig_welcome.Fill "500x512 Left")}}
+      {{ $welcome_mobile := .Scratch.Get "welcome_mobile" }}
+      <div class="overlay-div"></div>
+      <picture>
+        <source media="(max-width: 500px)" srcset="{{ $welcome_mobile.RelPermalink }}">
+        <source media="(min-width: 1696px)" srcset="{{ $welcome_large.RelPermalink }}">
+        <img class="first-slide" src="{{ $welcome_desktop.RelPermalink }}" alt="Grupo de karatekas em fila."/>
+      </picture>
       <div class="container">
         <div class="carousel-caption text-left">
-          <h1 class="text-white">Associação Gichinkai De Karate-Do</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum.</p>
+          <h1 class="text-white">Associação Gichinkai de Karatê-Dô</h1>
+          <p>Reunindo praticantes do karatê tradicional desde 1982</p>
+          <p><a class="btn btn-lg btn-primary" href="/nossa_historia" role="button">Saiba Mais</a></p>
         </div>
       </div>
     </div>
 
     <div class="carousel-item bg-primary">
-      <img class="second-slide" src="https://source.unsplash.com/SBK40fdKbAg/1600x700"
-        alt="Second slide">
+      {{ with .Site.GetPage "/memorial" }}
+        {{ $orig_memorial := .Resources.GetMatch "memorial.jpg" }}
+        {{ .Scratch.Set "memorial_large" ($orig_memorial.Fill "2545x512 Top") }}
+        {{ $memorial_large := .Scratch.Get "memorial_large" }}
+        {{ .Scratch.Set "memorial_desktop" ($orig_memorial.Fill "1695x512 Top") }}
+        {{ $memorial_desktop := .Scratch.Get "memorial_desktop" }}
+        {{ .Scratch.Set "memorial_mobile" ($orig_memorial.Fill "500x512 Center") }}
+        {{ $memorial_mobile := .Scratch.Get "memorial_mobile" }}
+        <div class="overlay-div"></div>
+        <picture>
+          <source media="(max-width: 500px)" srcset="{{ $memorial_mobile.RelPermalink }}">
+          <source media="(min-width: 1696px)" srcset="{{ $memorial_large.RelPermalink }}">
+          <img class="second-slide" src="{{ $memorial_desktop.RelPermalink }}" alt="Homenagem a Sensei Nakaema, sentado com o kimono branco, braços cruzados, um sorriso e um olhar sereno" />
+        </picture>
+      {{ end }}
       <div class="container">
         <div class="carousel-caption">
           <h1 class="text-white">Memorial</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-            metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <p>Saiba quem foi Sensei Nakaema, descendente direto de karatekas okinawanos e mestre que fez reformular a didática da Gichinkai.</p>
           <p><a class="btn btn-lg btn-primary" href="/memorial" role="button">Saiba Mais</a></p>
         </div>
       </div>
     </div>
 
     <div class="carousel-item bg-primary">
-      <img class="third-slide" src="https://source.unsplash.com/DgMotiPocGU/1600x700"
-        alt="Third slide">
+      {{ $orig_soon := .Resources.GetMatch "em_breve.jpg" }}
+      {{ .Scratch.Set "soon_large" ($orig_soon.Fill "2545x512 Center")}}
+      {{ $soon_large := .Scratch.Get "soon_large" }}
+      {{ .Scratch.Set "soon_desktop" ($orig_soon.Fill "1695x512 Center")}}
+      {{ $soon_desktop := .Scratch.Get "soon_desktop" }}
+      {{ .Scratch.Set "soon_mobile" ($orig_soon.Fill "500x512 Center")}}
+      {{ $soon_mobile := .Scratch.Get "soon_mobile" }}
+      <div class="overlay-div"></div>
+      <picture>
+        <source media="(max-width: 500px)" srcset="{{ $soon_mobile.RelPermalink }}">
+        <source media="(min-width: 1696px)" srcset="{{ $soon_large.RelPermalink }}">
+        <img class="third-slide" src="{{ $soon_desktop.RelPermalink }}" alt="Kimono dobrado com uma faixa vermelha segurando e um certificado abaixo"/>
+      </picture>
       <div class="container">
         <div class="carousel-caption text-right">
-          <h1 class="text-white">Karate Blog</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-            metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="/posts" role="button">Leia mais</a></p>
+          <h1 class="text-white">Blog Karatê-Dô</h1>
+          <p><a class="btn btn-lg btn-primary" role="button">Em Breve</a></p>
         </div>
       </div>
     </div>
@@ -128,14 +89,13 @@
 <!-- Karate modo de vida section (about-karate) -->
 
 <div class="container about-karate">
-  <div class="row">
-    <div class="text-center">
-      <h1>Karate</h1>
-      <h2>Um modo de vida</h2>
-      <p style="font-family: 'Open Sans', sans-serif;">Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut lorem urna, dignissim at scelerisque sit amet, 
-        malesuada at quam. Morbi ac vehicula dolor, sit amet condimentum urna. Cras finibus dolor in nisi hendrerit 
-        facilisis. Mauris laoreet dictum velit id imperdiet. Proin et urna risus. Etiam consequat lacus eu urna tristique, 
-        in sagittis tellus rutrum. Praesent ut arcu urna. Fusce vehicula pulvinar porttitor.</p>
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <h1 class="text-center">Karatê</h1>
+      <h2 class="text-center">Um modo de vida</h2>
+      <p class="text-center">O Karatê é uma arte marcial completa, que tem como objetivo o aprimoramento integral do ser humano.
+        Mais do que um sistema de combate, é uma disciplina funcional que desenvolve as dimensões física,
+        mental e espiritual de seus praticantes.</p>
     </div>
   </div>
 </div>
@@ -146,154 +106,199 @@
   <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-lg-4">
-      <img class="rounded-circle mb-3"
-        src="https://source.unsplash.com/igLzPKOvZNw/140x140"
-        alt="Generic placeholder image" width="140" height="140">
-      <h2>Mente</h2>
-      <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula
-        ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+      {{ $orig_corpo := .Resources.GetMatch "corpo.jpg" }}
+      {{ .Scratch.Set "corpo_img" ($orig_corpo.Fill "140x140 Top") }}
+      {{ $corpo_img := .Scratch.Get "corpo_img" }}
+      <img class="rounded-circle shadow mb-3"
+        src="{{ $corpo_img.RelPermalink }}"
+        alt="Karateka faixa vermelha recebendo graduação para a faixa verde" width="140" height="140">
+      <h2>Corpo</h2>
+      <p>A prática do karatê aumenta a força, a resistência física, o equilíbrio e a flexibilidade, organiza a postura,
+        desenvolve a coordenação motora, promove agilidade e rapidez, desenvolve a consciência corporal e
+        melhora o condicionamento físico global.</p>
     </div>
     <div class="col-lg-4">
-      <img class="rounded-circle mb-3"
-        src="https://source.unsplash.com/J1BwEL2n530/140x140"
-        alt="Generic placeholder image" width="140" height="140">
-      <h2>Corpo</h2>
-      <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis
-        consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+      {{ $orig_mente := .Resources.GetMatch "mente.jpg" }}
+      {{ .Scratch.Set "mente_img" ($orig_mente.Fill "140x140 Top") }}
+      {{ $mente_img := .Scratch.Get "mente_img" }}
+      <img class="rounded-circle shadow mb-3"
+        src="{{ $mente_img.RelPermalink }}"
+        alt="Pessoa escrevendo" width="140" height="140">
+      <h2>Mente</h2>
+      <p>O karatê-dô aumenta o controle emocional, ajudando a lidar com a agressividade e a ansiedade;
+        desenvolve a concentração, a atenção e o pensamento estratégico, estimula a criatividade, a inteligência e
+        fortalece a autoestima.
       </p>
     </div>
     <div class="col-lg-4">
-      <img class="rounded-circle mb-3"
-        src="https://source.unsplash.com/uGlJHMEifB4/140x140"
-        alt="Generic placeholder image" width="140" height="140">
+      {{ $orig_espirito := .Resources.GetMatch "espirito.jpg" }}
+      {{ .Scratch.Set "espirito_img" ($orig_espirito.Fill "140x140 Center") }}
+      {{ $espirito_img := .Scratch.Get "espirito_img" }}
+      <img class="rounded-circle shadow mb-3"
+        src="{{ $espirito_img.RelPermalink }}"
+        alt="Karatekas ajoelhados praticando meditação." width="140" height="140">
       <h2>Espírito</h2>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta
-        felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-        massa justo sit amet risus.</p>
+      <p>O karatê-dô lapida o caráter de seus praticantes, desenvolvendo disciplina e respeito, transforma as
+        práticas cotidianas em meditação ativa, amplia a consciência, desenvolve a intuição, possibilita a
+        percepção da energia (ki) e ensina a utilizá-la.</p>
     </div>
   </div>
 </div>
 
-<!-- Quem pode treinar featurette-** -->
+<!-- Quem pode treinar section -->
 <div class="container marketing">
-  <hr class="featurette-divider">
+  <hr class="featurette-divider mb-5 mt-4">
 
   <div class="container about-karate">
-    <div class="row">
-      <div class="text-center">
-        <h2>Quem pode treinar</h2>
-        <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut lorem urna, dignissim at scelerisque sit amet, 
-          malesuada at quam. Morbi ac vehicula dolor, sit amet condimentum urna. Cras finibus dolor in nisi hendrerit 
-          facilisis. Mauris laoreet dictum velit id imperdiet. Proin et urna risus. Etiam consequat lacus eu urna tristique, 
-          in sagittis tellus rutrum. Praesent ut arcu urna. Fusce vehicula pulvinar porttitor.</p>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <h2 class="text-center">Quem pode treinar</h2>
+        <p class="text-center">Todos podem treinar karatê! E para começar, não é necessário conhecer e nem ter praticado outra
+          modalidade de esporte ou de arte marcial. Todas as aulas da Gichinkai começam com as técnicas mais
+          simples e básicas do karatê, como se todos estivessem praticando essa arte pela primeira vez. Assim, um
+          principiante sempre vai se sentir parte de um grupo de pessoas como ele.</p>
       </div>
     </div>
   </div>
 
-  <hr class="featurette-divider w-25">
+  <hr class="featurette-divider w-25 mb-5 mt-4">
 
   <div class="row featurette justify-content-center">
-    <div class="col-md-6 text-right">
+    <div class="col-md-3 order-md-1 mb-2">
+      {{ $orig_criancas := .Resources.GetMatch "criancas.jpg" }}
+      {{ .Scratch.Set "criancas_mobile" ($orig_criancas.Fill "140x140 Center") }}
+      {{ $criancas_mobile := .Scratch.Get "criancas_mobile" }}
+      {{ .Scratch.Set "criancas_desktop" ($orig_criancas.Fill "255x255 Center") }}
+      {{ $criancas_desktop := .Scratch.Get "criancas_desktop" }}
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ $criancas_mobile.RelPermalink }}">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $criancas_desktop.RelPermalink }}" alt="Pés de crianças sentadas em circulo">
+      </picture>
+    </div>
+    <div class="col-md-3 order-md-2 mt-3 mb-3 text-center text-md-left">
       <h2 class="featurette-heading">Crianças</h2>
-      <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-        commodo.</p>
+      <p>O karatê ensina a criança desde cedo a usar bem o corpo, desenvolvendo a coordenação motora e a
+        consciência corporal. Além disso, prepara a criança para lidar com o outro e ensina o autocontrole, a
+        tolerância à frustração, o respeito à hierarquia e aos limites, a coragem, a benevolência e a lealdade.</p>
     </div>
-    <div class="col-md-5 text-right">
-      <img class="featurette-image img-fluid mx-auto" src="https://source.unsplash.com/ryOMte-FerE/400x400" alt="Generic placeholder image">
+    <div class="col-md-3 order-md-3 mb-2">
+      {{ $orig_adultos := .Resources.GetMatch "adultos.jpg" }}
+      {{ .Scratch.Set "adultos_mobile" ($orig_adultos.Fill "140x140 Center") }}
+      {{ $adultos_mobile := .Scratch.Get "adultos_mobile" }}
+      {{ .Scratch.Set "adultos_desktop" ($orig_adultos.Fill "255x255 Center") }}
+      {{ $adultos_desktop := .Scratch.Get "adultos_desktop" }}
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ $adultos_mobile.RelPermalink }}">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $adultos_desktop.RelPermalink }}" alt="Karatekas adultos praticando karate em duplas">
+      </picture>
     </div>
-  </div>
-
-  <hr class="featurette-divider w-25">
-
-  <div class="row featurette justify-content-center">
-    <div class="col-md-6 order-md-2">
+    <div class="col-md-3 order-md-4 mt-3 mb-3 text-center text-md-left">
       <h2 class="featurette-heading">Adultos</h2>
-      <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-        commodo.</p>
-    </div>
-    <div class="col-md-5 order-md-1">
-      <img class="featurette-image img-fluid mx-auto" src="https://source.unsplash.com/8yMXitiya4w/400x400" alt="Generic placeholder image">
+      <p>Além dos benefícios da prática de uma atividade física, o karatê ensina a defesa pessoal, diminui a
+        ansiedade, aumenta a energia e a motivação, promove a socialização com base em valores saudáveis,
+        ensina a lidar com a agressividade e a desenvolver a assertividade, e promove um bem estar geral nos
+        seus praticantes.</p>
     </div>
   </div>
 
-  <hr class="featurette-divider w-25">
-
-  <div class="row featurette justify-content-center">
-    <div class="col-md-6 text-right">
-      <h2 class="featurette-heading">A melhor idade</h2>
-      <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-        commodo.</p>
+  <div class="row featurette justify-content-center mt-md-5">
+    <div class="col-md-3 order-md-1 mb-2">
+      {{ $orig_melhor_idade := .Resources.GetMatch "melhor_idade.jpg" }}
+      {{ .Scratch.Set "melhor_idade_mobile" ($orig_melhor_idade.Fill "140x140 Center") }}
+      {{ $melhor_idade_mobile := .Scratch.Get "melhor_idade_mobile" }}
+      {{ .Scratch.Set "melhor_idade_desktop" ($orig_melhor_idade.Fill "255x255 Center") }}
+      {{ $melhor_idade_desktop := .Scratch.Get "melhor_idade_desktop" }}
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ $melhor_idade_mobile.RelPermalink }}">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $melhor_idade_desktop.RelPermalink }}" alt="Karateka de mais idade, faixa preta, segurando uma folha nas mãos">
+      </picture>
     </div>
-    <div class="col-md-5 text-right">
-      <img class="featurette-image img-fluid mx-auto" src="https://source.unsplash.com/A8dbWpVbfZ0/400x400" alt="Generic placeholder image">
+    <div class="col-md-3 order-md-2 mt-3 mb-3 text-center text-md-left">
+      <h2 class="featurette-heading">Terceira idade</h2>
+      <p>Além de todos os outros benefícios citados, a prática do karatê-dô na terceira idade melhora drasticamente
+        a qualidade de vida, porque aumenta o bem-estar, diminui as perdas físicas e cognitivas comuns na
+        terceira idade, e, por meio do budô, estimula a alegria natural do seu praticante, promovendo a paz de
+        espírito e a consciência da beleza e do sentido da vida.</p>
     </div>
-  </div>
-
-  <hr class="featurette-divider w-25">
-
-  <div class="row featurette justify-content-center">
-    <div class="col-md-6 order-md-2">
+    <div class="col-md-3 order-md-3 mb-2">
+      {{ $orig_especiais := .Resources.GetMatch "especiais_2.jpg" }}
+      {{ .Scratch.Set "especiais_mobile" ($orig_especiais.Fill "140x140 Top") }}
+      {{ $especiais_mobile := .Scratch.Get "especiais_mobile" }}
+      {{ .Scratch.Set "especiais_desktop" ($orig_especiais.Fill "255x255 Top") }}
+      {{ $especiais_desktop := .Scratch.Get "especiais_desktop" }}
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ $especiais_mobile.RelPermalink }}">
+        <img class="rounded-circle shadow featurette-image img-fluid mx-auto d-block" src="{{ $especiais_desktop.RelPermalink }}" alt="Cadeira de rodas em uma praia deserta, ceu azul">
+      </picture>
+    </div>
+    <div class="col-md-3 order-md-4 mt-3 mb-2 text-center text-md-left">
       <h2 class="featurette-heading">Alunos especiais</h2>
-      <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-        commodo.</p>
-    </div>
-    <div class="col-md-5 order-md-1">
-      <img class="featurette-image img-fluid mx-auto" src="https://source.unsplash.com/c_xS7ngiWhQ/400x400" alt="Generic placeholder image">
+      <p>O karatê é um grande aliado no desenvolvimento global de pessoas com deficiência física, intelectual ou
+        sensorial, ou com transtornos do desenvolvimento. Além disso, auxilia na cura e/ou na qualidade de vida
+        de pessoas com doenças incapacitantes. Cada aluno é trabalhado de forma interdisciplinar, em diálogo
+        contínuo com os outros profissionais envolvidos no caso.</p>
     </div>
   </div>
 </div>
-<!-- /END THE FEATURETTES -->
+<!-- /END SECTION -->
 
-<!-- Locais de treino -->
+<!-- DOJO EM CASA SECTION -->
 <div class="container marketing">
-  <hr class="featurette-divider">
+  <hr class="featurette-divider mb-5 mt-5">
 
   <div class="container about-karate">
-    <div class="row">
-      <h2 class="mx-auto">Locais de Treino</h2>
-      <div id="map"></div>
-    </div>
-    <!-- Contact area -->
     <div class="row">
       <div class="mx-auto text-center">
-        <h2>Contato</h2>
-        <i class="material-icons-outlined" style="font-size:20px;color: var(--red);">gmail</i>
-        gichinkai@gmail.com
-        <i class="material-icons-outlined" style="font-size:20px;color: var(--red);">phone</i>
-        (11) 98525-5207
+        <h2 class="mb-5">Dojo em Casa</h2>
+        {{ $orig_dojo_em_casa := .Resources.GetMatch "dojo_em_casa.png" }}
+        {{ .Scratch.Set "dojo_em_casa_mobile" ($orig_dojo_em_casa.Fill "690x320 Center") }}
+        {{ $dojo_em_casa_mobile := .Scratch.Get "dojo_em_casa_mobile" }}
+        {{ .Scratch.Set "dojo_em_casa_desktop" ($orig_dojo_em_casa.Fill "1080x500 Center") }}
+        {{ $dojo_em_casa_desktop := .Scratch.Get "dojo_em_casa_desktop" }}
+        <div class="container row mb-3">
+          <div class="col-md-6 order-md-1 pr-0 mb-3">
+            <picture>
+              <source media="(max-width: 768px)" srcset="{{ $dojo_em_casa_mobile.RelPermalink }}">
+              <img class="rounded img-fluid" src="{{ $dojo_em_casa_desktop.RelPermalink }}" alt="Sensei demonstrando tecnica em aula online">
+            </picture>
+          </div>
+          <div class="col-md-6 order-md-2 text-md-left pr-0">
+            <p>Devido à pandemia de COVID-19, em 2020 as aulas e treinos estão sendo realizados à
+              distância, com aulas online transmitidas ao vivo pelo YouTube e disponibilizadas após os
+              treinos para revisão de técnicas. Contamos também com um grupo no Whatsapp dedicado aos
+              treinos online, para esclarecimento de dúvidas, compartilhamento dos treinos ao vivo e demais
+              eventos.<br>
+              Horários dos treinos ao vivo:</p>
+            <ul>
+              <li>Segunda a sexta: 9h</li>
+              <li>Segunda, quarta e sexta: 20h</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Contact area -->
+        <div class="row mt-4">
+          <div class="mx-auto text-center pl-2 pr-2">
+            <p>Entre em contato para ter mais informações sobre nossas aulas e agendar uma aula experimental.</p>
+            <a class="btn btn-md btn-primary" href="https://wa.me/5511985255207?text=Olá,%20gostaria%20de%20agendar%20uma%20aula%20experimental%20online!" role="button">Agendar aula</a>
+          </div>
+        </div>
       </div>
+    </div> 
+    <div class="mx-auto text-center">
+      <h2 class="mb-3">O que nossos alunos estão dizendo</h2> 
+    </div>  
+    <div id="owl-testimonial" class="owl-carousel owl-theme">
+      {{ with .Site.GetPage "testimonial" }}
+        {{ $paginator := .Paginate .Pages 50}}
+        {{ range $index, $value := $paginator.Pages }}
+          <div class="item mr-3 ml-3">
+            {{ block "testimonials_card" . }}
+              {{ partial "_testimonial" . }}
+            {{ end }}
+          </div>
+        {{ end }}
+      {{ end }}
     </div>
-    <form>
-      <div class="form-row  justify-content-center">
-        <div class="col-sm-4 mr-1 mb-3">
-          <label for="inputName" class="sr-only" for="inputName">Nome</label>
-          <input type="text" class="form-control form-control-sm" id="inputName" placeholder="Nome">
-        </div>
-        <div class="col-sm-4 mr-1 mb-3">
-          <label for="inputEmail" class="sr-only" for="inputEmail">Email</label>
-          <input type="email" class="form-control form-control-sm" id="inputEmail" placeholder="Email">
-        </div>
-        <div class="col-sm-4 mr-1 mb-3">
-          <label for="inputPhone" class="sr-only" for="inputPhone">Telefone</label>
-          <input type="tel" class="form-control form-control-sm" id="inputPhone" placeholder="Telefone">
-        </div>
-        <div class="col-sm-4 mr-1 mb-3">
-          <label for="inputSub" class="sr-only" for="inputSub">Assunto</label>
-          <input type="text" class="form-control form-control-sm" id="inputSub" placeholder="Assunto">
-        </div>
-        <div class="col-md-8 mb-3">
-          <label for="inputMsg" class="sr-only" for="inputMsg">Mensagem</label>
-          <textarea class="form-control" id="inputMsg" rows="4" placeholder="Mensagem"></textarea>
-        </div>
-        <div class="col-md-8 text-right">
-          <button type="submit" class="btn btn-primary mb-2">Enviar</button>
-        </div>
-      </div>
-    </form>
-  </div>
+  <!-- END SECTION -->
 </div>
 {{ end }}

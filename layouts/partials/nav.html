@@ -1,25 +1,53 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
-    <div class="container">
-        
-    <!-- <i class="material-icons-outlined" style="font-size:48px;color: var(--red);">directions_bike</i> -->
-    <img class="nav-logo" src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-      <a class="navbar-brand ml-3" href="#">
-        <span class="d-none d-md-inline-block text-primary" style="font-family: 'Kaushan Script';">{{ .Site.Title }}</span>
-      </a>
+    {{ if .IsHome }}
+      <div id="logo-large" class="my-2 order-0 w-md-100 w-75 container mr-lg-5 center-logo">
+        <a class="navbar-brand w-100" href="/">
+          <img class="nav-logo align-top" src="/images/logo_resized.png" width="100" height="150" alt="Logo Gichinkai">
+        </a>
+      </div>
+      <div id="logo-small" class="container w-50 my-2" style="display: none;">
+        <a class="navbar-brand ml-3" href="/">
+          <img class="nav-logo d-inline-block align-top" src="/images/icon_resized.png" width="30" height="30" alt="Logo Gichinkai">
+          <span class="d-none d-md-inline-block text-primary" style="font-family: 'Kaushan Script';">{{ .Site.Title }}</span>
+        </a>
+      </div>
+    {{ else }}
+      <div id="logo-small" class="container w-50 my-2">
+        <a class="navbar-brand ml-3" href="/">
+          <img class="nav-logo d-inline-block align-top" src="/images/icon.png" width="30" height="30" alt="Logo Gichinkai">
+          <span class="d-none d-md-inline-block text-primary" style="font-family: 'Kaushan Script';">{{ .Site.Title }}</span>
+        </a>
+      </div>
+    {{ end }}
+    {{ if .IsHome }}
+    <div id="collapsed-navbar" class="mb-2 container justify-content-end d-lg-none">
+    {{ else }}
+    <div id="collapsed-navbar" class="mb-2 container justify-content-end d-lg-none w-50">
+    {{ end }}
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          {{- $currentPage := . -}}
-          {{ range .Site.Menus.navbar }}
+    </div>
+    <div class="collapse navbar-collapse w-md-100 w-50 order-1 dual-collapse2 justify-content-end mr-5" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        {{- $currentPage := . -}}
+        {{ range .Site.Menus.navbar }}
           {{ $menuURL := .URL | absLangURL }}
-          <a class="nav-link{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}"
+          {{ if eq .Name "Blog" }}
+            <a class="nav-link{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}} disabled"
             href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+          {{ else }}
+            <a class="nav-link{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}"
+              href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
           {{ end }}
-        </div>
+        {{ end }}
       </div>
     </div>
-  </nav>
+</nav>
 
+{{ if .IsHome }}
+  <div id="navbar-separator" style="height: 150px;"></div>
+{{ else }}
+  <div id="navbar-separator" style="height: 20px;"></div>
+{{ end }}

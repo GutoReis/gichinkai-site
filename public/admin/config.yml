@@ -1,0 +1,78 @@
+backend:
+    name: git-gateway
+    # branch: master
+    branch: adjustment/design
+media_folder: static/images
+public_folder: /images
+site_url: "https://homolog-gichinkai.netlify.com/"
+custom_logo: "https://homolog-gichinkai.netlify.app/images/logo.png"
+locale: 'pt'
+collections:
+    - name: "blog"
+      label: "Posts"
+      folder: "content/posts"
+      path: "{{slug}}/index"
+      media_folder: "images"
+      public_folder: "images"
+      create: true
+      delete: false
+      extension: "md"
+      slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+      editor:
+        preview: true
+      fields:
+        - { label: "Titulo", name: "title", widget: "string" }
+        - { label: "Data criação", name: "date", widget: "datetime"}
+        - { label: "Data atualização", name: "lastmod", widget: "datetime"}
+        - { label: "Rascunho", name: "draft", widget: "boolean", default: true}
+        - { label: "Decrição", name: "description", widget: "text" }
+        - { label: "Autor", name: "authors", widget: "list", hint: "Separece os autores por , (virgula).  !Lembando, o nome do autor deve estar como consta na lista de autores na região de autores no admin!"}
+        - { label: "Banner", name: "featuredImage", widget: "image", hint: "A imagem deve ter LxA e deve ser nomeada como 'featured_image.jpg'" }
+        - { label: "Categoria", name: "categories", widget: "list", hint: "Separe as categorias por , (virgula)"}
+        - { label: "Tags", name: "tags", widget: "list", hint: "Separe as tags por , (virgula)"}
+        - { label: "Conteúdo", name: "body", widget: "markdown" }
+    
+    - name: "authors"
+      label: "Autores"
+      folder: "content/authors"
+      path: "{{slug}}/_index"
+      media_folder: ""
+      public_folder: ""
+      create: true
+      delete: false
+      extension: "md"
+      editor:
+        preview: true
+      fields:
+        - { label: "Nome", name: "title", widget: "string" }
+        - { label: "Foto", name: "photo", widget: "image", hint: "A imagem deve ser no minimo 400x400 (px)"}
+        - { label: "Biografia", name: "body", widget: "markdown"}
+    
+    - name: "pages"
+      label: "Paginas"
+      delete: false
+      editor:
+        preview: true
+      files:
+        - name: "nossa_historia"
+          label: "Nossa Historia"
+          file: "content/nossa_historia/_index.md"
+          fields:
+            - { label: "Pagina", name: "title", widget: "hidden"}
+            - { label: "Data criação", name: "date", widget: "hidden"}
+            - { label: "Titulo", name: "nossa_historia", widget: "string"}
+            - { label: "Rascunho", name: "draft", widget: "boolean", default: true}
+            - { label: "Banner", name: "image", widget: "image", hint: "A imagem deve ter LxA"}
+            - { label: "Introdução", name: "intro", widget: "text"}
+            - { label: "Conteúdo", name: "body", widget: "markdown"}
+        - name: "memorial"
+          label: "Memorial"
+          file: "content/memorial/_index.md"
+          fields:
+            - { label: "Pagina", name: "title", widget: "hidden"}
+            - { label: "Data criação", name: "date", widget: "hidden"}
+            - { label: "Titulo", name: "memory", widget: "string"}
+            - { label: "Rascunho", name: "draft", widget: "boolean", default: true}
+            - { label: "Banner", name: "image", widget: "image", hint: "A imagem deve ter LxA"}
+            - { label: "Introdução", name: "intro", widget: "text"}
+            - { label: "Conteúdo", name: "body", widget: "markdown"}

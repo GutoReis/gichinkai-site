@@ -1,0 +1,22 @@
+{{ $postImg := .Resources.GetMatch "images/featured_image.*" }}
+{{ .Scratch.Set "post_img_large" ($postImg.Fill "2545x512 Center") }}
+{{ $post_img_large := .Scratch.Get "post_img_large" }}
+{{ .Scratch.Set "post_img_desktop" ($postImg.Fill "1695x512 Center") }}
+{{ $post_img_desktop := .Scratch.Get "post_img_desktop" }}
+{{ .Scratch.Set "post_img_mobile" ($postImg.Fill "500x512 Center") }}
+{{ $post_img_mobile := .Scratch.Get "post_img_mobile" }}
+<div class="carousel-item active bg-primary">
+    <picture>
+        <source media="(max-width: 500px)" srcset="{{ $post_img_mobile.RelPermalink }}">
+        <source media="(min-width: 1695px)" srcset="{{ $post_img_large.RelPermalink }}">
+        <img class="first-slide" src="{{ $post_img_desktop.RelPermalink }}" alt="{{ .Params.title }}">
+    </picture>
+    <div class="overaly-div"></div>
+    <div class="container">
+        <div class="carousel-caption text-right">
+            <h1 class="text-white">{{ .Params.title }}</h1>
+            <p>{{ .Params.description }}</p>
+            <p><a class="btn btn-primary btn-lg" href="/posts" role="button">Visite o blog</a></p>
+        </div>
+    </div>
+</div>
