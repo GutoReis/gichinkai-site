@@ -256,7 +256,7 @@
         {{ .Scratch.Set "dojo_em_casa_desktop" ($orig_dojo_em_casa.Fill "1080x500 Center") }}
         {{ $dojo_em_casa_desktop := .Scratch.Get "dojo_em_casa_desktop" }}
         <div class="container row mb-3">
-          <div class="col-md-6 order-md-1 pr-0 mb-3">
+          <div class="col-md-6 order-md-1 pr-0 mb-3 my-md-auto">
             <picture>
               <source media="(max-width: 768px)" srcset="{{ $dojo_em_casa_mobile.RelPermalink }}">
               <img class="rounded img-fluid" src="{{ $dojo_em_casa_desktop.RelPermalink }}" alt="Sensei demonstrando tecnica em aula online">
@@ -269,9 +269,13 @@
               treinos online, para esclarecimento de dúvidas, compartilhamento dos treinos ao vivo e demais
               eventos.<br>
               Horários dos treinos ao vivo:</p>
+            Aulas Ao Vivo:
             <ul>
-              <li>Segunda a sexta: 9h</li>
-              <li>Segunda, quarta e sexta: 20h</li>
+              <li>Segunda e Quarta: 8h</li>
+            </ul>
+            Aulas Gravadas:
+            <ul>
+              <li>Sexta: 8h</li>
             </ul>
           </div>
         </div>
