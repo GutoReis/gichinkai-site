@@ -2,11 +2,32 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="15000">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <!-- <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li> -->
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active bg-primary">
+      {{ $new_dojo := .Resources.GetMatch "em_breve.jpg" }}
+      {{ .Scratch.Set "new_dojo_large" ($new_dojo.Fill "2545x512 Bottom")}}
+      {{ $new_dojo_large := .Scratch.Get "new_dojo_large" }}
+      {{ .Scratch.Set "new_dojo_desktop" ($new_dojo.Fill "1695x512 Bottom")}}
+      {{ $new_dojo_desktop := .Scratch.Get "new_dojo_desktop" }}
+      {{ .Scratch.Set "new_dojo_mobile" ($new_dojo.Fill "500x512 Left")}}
+      {{ $new_dojo_mobile := .Scratch.Get "new_dojo_mobile" }}
+      <div class="overlay-div"></div>
+      <picture>
+        <source media="(max-width: 500px)" srcset="{{ $new_dojo_mobile.RelPermalink }}">
+        <source media="(min-width: 1696px)" srcset="{{ $new_dojo_large.RelPermalink }}">
+        <img class="first-slide" src="{{ $new_dojo_desktop.RelPermalink }}" alt="Dojo em construção no campo."/>
+      </picture>
+      <div class="container">
+        <div class="carousel-caption text-left">
+          <h1 class="text-white">Em breve</h1>
+          <p>Nova sede Gichinkai em Borda da Mata - MG</p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="carousel-item active bg-primary">
       {{ $orig_welcome := .Resources.GetMatch "welcome.jpg" }}
       {{ .Scratch.Set "welcome_large" ($orig_welcome.Fill "2545x512 Center")}}
       {{ $welcome_large := .Scratch.Get "welcome_large" }}
@@ -27,9 +48,9 @@
           <p><a class="btn btn-lg btn-primary" href="/nossa_historia" role="button">Saiba Mais</a></p>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="carousel-item bg-primary">
+    <!-- <div class="carousel-item bg-primary">
       {{ with .Site.GetPage "/memorial" }}
         {{ $orig_memorial := .Resources.GetMatch "memorial.jpg" }}
         {{ .Scratch.Set "memorial_large" ($orig_memorial.Fill "2545x512 Top") }}
@@ -74,7 +95,7 @@
           <p><a class="btn btn-lg btn-primary" role="button">Em Breve</a></p>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
   <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -250,7 +271,7 @@
     <div class="row">
       <div class="mx-auto text-center">
         <h2 class="mb-5">Dojo em Casa</h2>
-        {{ $orig_dojo_em_casa := .Resources.GetMatch "dojo_em_casa.png" }}
+        {{ $orig_dojo_em_casa := .Resources.GetMatch "dojo_em_casa.jpg" }}
         {{ .Scratch.Set "dojo_em_casa_mobile" ($orig_dojo_em_casa.Fill "690x320 Center") }}
         {{ $dojo_em_casa_mobile := .Scratch.Get "dojo_em_casa_mobile" }}
         {{ .Scratch.Set "dojo_em_casa_desktop" ($orig_dojo_em_casa.Fill "1080x500 Center") }}
@@ -263,11 +284,10 @@
             </picture>
           </div>
           <div class="col-md-6 order-md-2 text-md-left pr-0">
-            <p>Devido à pandemia de COVID-19, em 2020 as aulas e treinos estão sendo realizados à
-              distância, com aulas online transmitidas ao vivo pelo YouTube e disponibilizadas após os
-              treinos para revisão de técnicas. Contamos também com um grupo no Whatsapp dedicado aos
-              treinos online, para esclarecimento de dúvidas, compartilhamento dos treinos ao vivo e demais
-              eventos.<br>
+            <p>Aulas e treinos à distância, com aulas online transmitidas ao 
+              vivo pelo YouTube e disponibilizadas após os treinos para revisão de técnicas. Contamos também 
+              com um grupo no Whatsapp dedicado aos treinos online, para esclarecimento de dúvidas, 
+              compartilhamento dos treinos ao vivo e demais eventos.<br>
               Horários dos treinos ao vivo:</p>
             Aulas Ao Vivo:
             <ul>
