@@ -5,10 +5,6 @@
     <link>https://agkarate.com.br/testimonial/ludd-muraleks/</link>
     <description>Recent content in Ludd Muraleks on Associação Gichinkai de Karatê-Dô</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>pt-br</language>
-    
-	<atom:link href="https://agkarate.com.br/testimonial/ludd-muraleks/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>pt-br</language><atom:link href="https://agkarate.com.br/testimonial/ludd-muraleks/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
